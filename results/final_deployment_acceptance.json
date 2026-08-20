@@ -1,0 +1,337 @@
+{
+  "schema": "phase11_k100_final_deployment_acceptance_aggregate_v1",
+  "status": "passed",
+  "aggregated_at_utc": "2026-08-18T09:18:34.988694+00:00",
+  "generator": {
+    "path": "/var/tmp/phase11_minimal_deployment_tools_final/aggregate_final_deployment_acceptance.py",
+    "size_bytes": 71332,
+    "sha256": "f5b469f1f12b8ee7ea33753043647065360be4483dbb916e062cb2d5c9703d9b"
+  },
+  "required_candidates": [
+    "M5",
+    "FP16"
+  ],
+  "required_gate_layout": {
+    "static_verify": "static_verification.json",
+    "cold_start_5": "cold_start_5/result.json",
+    "recovery_3": "recovery_3/result.json",
+    "smoke_k100_2": "smoke_k100_2/result.json",
+    "smoke_k100_3": "smoke_k100_3/result.json",
+    "stability_60min": "stability_60min/result.json"
+  },
+  "candidates": [
+    {
+      "label": "M5",
+      "status": "passed",
+      "bundle_id": "prithvi-k100-m5-v1",
+      "execution_kind": "segment25",
+      "official_image_id": "sha256:bdc7e817dfd8587ed477834b5304f35c6b0ffcbe9f51645cf64259bd81c17b01",
+      "portable_runtime_signature_sha256": "065d60f572bd4a9422dd408eb8b1aa0a6d3af8b5a208eca35c223275807b865b",
+      "bundle_root": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/bundles/prithvi-k100-m5-v1",
+      "acceptance_root": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/m5",
+      "manifest": {
+        "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/bundles/prithvi-k100-m5-v1/manifest.json",
+        "size_bytes": 46804,
+        "sha256": "f4dc433595c43332d4e29c2351363b3245f214273f058551788d50be29c388da"
+      },
+      "bundle_payload_file_count": 74,
+      "bundle_payload_total_bytes": 1032911027,
+      "receipts": {
+        "static_verify": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/m5/static_verification.json",
+          "size_bytes": 629,
+          "sha256": "e9e15120c3a8cfad4fb97ee92b02a1dfba86ced2bc87a26115e362c9aba336c0"
+        },
+        "cold_start_5": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/m5/cold_start_5/result.json",
+          "size_bytes": 18328,
+          "sha256": "a4abfa0ddb63122e7934ab40476caeab5b6c9e47a29a19b13974b9b6a27e158a"
+        },
+        "recovery_3": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/m5/recovery_3/result.json",
+          "size_bytes": 11462,
+          "sha256": "2769996334cdcb97ccacacf8faf112729e39a6df9c67a7e716e2ff6d34a2d769"
+        },
+        "smoke_k100_2": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/m5/smoke_k100_2/result.json",
+          "size_bytes": 3910,
+          "sha256": "22fa6dddea8dd9e0b4cc51923ed6dafdeb829419032dab18b7357c80e85c4d8e"
+        },
+        "smoke_k100_3": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/m5/smoke_k100_3/result.json",
+          "size_bytes": 3918,
+          "sha256": "9d6c748f2303759c64a8d406c222f74e718ffa790cea26ea2a472a929c8dd822"
+        },
+        "stability_60min": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/m5/stability_60min/result.json",
+          "size_bytes": 2445,
+          "sha256": "c3d404f52811f4707810ff761d1cc22cd7fa23cabfab9026cab8ca0494fbd2e1"
+        }
+      },
+      "support_artifacts": {
+        "k100_3_pre_entrypoint_launch_attestation": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/m5/smoke_k100_3/container_launch_attestation.json",
+          "size_bytes": 5379,
+          "sha256": "8ca53e164c54642070edc9c6bc50a821375a53352a3b44ad4e4b4f3666f7b4ef"
+        }
+      },
+      "gates": {
+        "static_verify": {
+          "passed": true
+        },
+        "cold_start_5": {
+          "passed": true,
+          "session_load_seconds_min": 8.846006363164634,
+          "session_load_seconds_max": 8.955341267865151
+        },
+        "recovery_3": {
+          "passed": true,
+          "active_termination_cycles": 3
+        },
+        "smoke_k100_2": {
+          "passed": true,
+          "node_label": "K100-2",
+          "hostname": "77cb5d6e951a",
+          "target_runtime_fingerprint": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/m5/smoke_k100_2/target_runtime_fingerprint.json",
+            "size_bytes": 5313,
+            "sha256": "f8557a12f90fafd7db418e9c2e618ab9dd3a72043cf185bd7a671f256e161527"
+          }
+        },
+        "smoke_k100_3": {
+          "passed": true,
+          "node_label": "K100-3",
+          "hostname": "ac0d54c03210",
+          "target_runtime_fingerprint": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/m5/smoke_k100_3/target_runtime_fingerprint.json",
+            "size_bytes": 4757,
+            "sha256": "3c4a68a442532a337464e73de3ae2596e89e39186a56944beb27f2c121130b31"
+          },
+          "pre_entrypoint_launch": {
+            "passed": true,
+            "attestation": {
+              "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/m5/smoke_k100_3/container_launch_attestation.json",
+              "size_bytes": 5379,
+              "sha256": "8ca53e164c54642070edc9c6bc50a821375a53352a3b44ad4e4b4f3666f7b4ef"
+            },
+            "pre_entrypoint_path": "/bundle/tools/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "host_hyhal_mounted_read_only": true
+          }
+        },
+        "stability_60min": {
+          "passed": true,
+          "requested_duration_seconds": 3600.0,
+          "observed_duration_seconds": 3600.0,
+          "inferences": 123106,
+          "telemetry_samples": 720,
+          "telemetry": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/m5/stability_60min/telemetry_5s.jsonl",
+            "size_bytes": 650224,
+            "sha256": "cb4e983b785861e51c261e33a45f75ac72091c511930a121a7f07d1a4060c051"
+          }
+        }
+      },
+      "all_six_required_gates_passed": true,
+      "claim_boundaries": {
+        "strict_logits_equivalence_inferred": false,
+        "native_int8_kernel_precision_inferred": false,
+        "operational_acceptance_does_not_select_the_pareto_winner": true
+      }
+    },
+    {
+      "label": "FP16",
+      "status": "passed",
+      "bundle_id": "prithvi-k100-fp16-full-v1",
+      "execution_kind": "fp16_full",
+      "official_image_id": "sha256:bdc7e817dfd8587ed477834b5304f35c6b0ffcbe9f51645cf64259bd81c17b01",
+      "portable_runtime_signature_sha256": "065d60f572bd4a9422dd408eb8b1aa0a6d3af8b5a208eca35c223275807b865b",
+      "bundle_root": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/bundles/prithvi-k100-fp16-full-v1",
+      "acceptance_root": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/fp16",
+      "manifest": {
+        "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/bundles/prithvi-k100-fp16-full-v1/manifest.json",
+        "size_bytes": 10325,
+        "sha256": "1f433a917aed5fead6dd95597a5a03f500a93ce564067e9dad4d25f4682bad25"
+      },
+      "bundle_payload_file_count": 19,
+      "bundle_payload_total_bytes": 1349558844,
+      "receipts": {
+        "static_verify": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/fp16/static_verification.json",
+          "size_bytes": 636,
+          "sha256": "379398dda37ffbfbf9c60137b587258be71396f318c113acda2b3b381d95da1c"
+        },
+        "cold_start_5": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/fp16/cold_start_5/result.json",
+          "size_bytes": 18374,
+          "sha256": "13b1d8671d471b951b10009724c1d0c4827c38cc77531cfef2fe42a4b37ed043"
+        },
+        "recovery_3": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/fp16/recovery_3/result.json",
+          "size_bytes": 11496,
+          "sha256": "d7f684ded8ccc2fb40a0a281266f310472657ddbf3ad7782b20242be88e89ba9"
+        },
+        "smoke_k100_2": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/fp16/smoke_k100_2/result.json",
+          "size_bytes": 3925,
+          "sha256": "cb258bbc3e0880171507d06de6a4df90069c4bf13c6b77e169a0d88951155c9c"
+        },
+        "smoke_k100_3": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/fp16/smoke_k100_3/result.json",
+          "size_bytes": 3934,
+          "sha256": "6c1a477363ffa57d9448938df8b3e8d105676aeaf8cbbab1da10c59d261515a5"
+        },
+        "stability_60min": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/fp16/stability_60min/result.json",
+          "size_bytes": 2449,
+          "sha256": "c76705a01c6fa81387c47540bcfa4b48b1628670a1d6d16f040e4e24bb122a6f"
+        }
+      },
+      "support_artifacts": {
+        "k100_3_pre_entrypoint_launch_attestation": {
+          "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/fp16/smoke_k100_3/container_launch_attestation.json",
+          "size_bytes": 5416,
+          "sha256": "9fe97a06c02bf45a0dfb19129e22fe9a17a675c21dcd3e6d5833c00c54434bad"
+        }
+      },
+      "gates": {
+        "static_verify": {
+          "passed": true
+        },
+        "cold_start_5": {
+          "passed": true,
+          "session_load_seconds_min": 9.636485011782497,
+          "session_load_seconds_max": 10.188001877162606
+        },
+        "recovery_3": {
+          "passed": true,
+          "active_termination_cycles": 3
+        },
+        "smoke_k100_2": {
+          "passed": true,
+          "node_label": "K100-2",
+          "hostname": "82c7defe0554",
+          "target_runtime_fingerprint": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/fp16/smoke_k100_2/target_runtime_fingerprint.json",
+            "size_bytes": 5313,
+            "sha256": "66cf9ba60b49d51b50fda3bfccbb8cfaecc4a10d42fea04beba1adf762c3a983"
+          }
+        },
+        "smoke_k100_3": {
+          "passed": true,
+          "node_label": "K100-3",
+          "hostname": "12b06b18afe1",
+          "target_runtime_fingerprint": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/fp16/smoke_k100_3/target_runtime_fingerprint.json",
+            "size_bytes": 4757,
+            "sha256": "e53e0ea98585a3b40a78fc5e5e3510c5f3881c848d0f5da4e3c253251906a2a7"
+          },
+          "pre_entrypoint_launch": {
+            "passed": true,
+            "attestation": {
+              "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/fp16/smoke_k100_3/container_launch_attestation.json",
+              "size_bytes": 5416,
+              "sha256": "9fe97a06c02bf45a0dfb19129e22fe9a17a675c21dcd3e6d5833c00c54434bad"
+            },
+            "pre_entrypoint_path": "/bundle/tools/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "host_hyhal_mounted_read_only": true
+          }
+        },
+        "stability_60min": {
+          "passed": true,
+          "requested_duration_seconds": 3600.0,
+          "observed_duration_seconds": 3600.0,
+          "inferences": 193634,
+          "telemetry_samples": 720,
+          "telemetry": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/fp16/stability_60min/telemetry_5s.jsonl",
+            "size_bytes": 649024,
+            "sha256": "abb3ed7ea7bc6d74c13f6a665f93a3d8db63879ad1955bc8c09e0f238c9c1576"
+          }
+        }
+      },
+      "all_six_required_gates_passed": true,
+      "claim_boundaries": {
+        "strict_logits_equivalence_inferred": false,
+        "native_int8_kernel_precision_inferred": false,
+        "operational_acceptance_does_not_select_the_pareto_winner": true
+      }
+    }
+  ],
+  "environmental_run_exclusions": {
+    "status": "passed",
+    "ledger": {
+      "path": "/var/tmp/20260818-phase11-invalid-environment-exclusions-node3-v1/environment_exclusion_ledger.json",
+      "size_bytes": 2398,
+      "sha256": "ca5c1e6393d0aef96d59522895b35c5456f4eb57e9866d13481c62be9f2ace43"
+    },
+    "root": "/var/tmp/20260818-phase11-invalid-environment-exclusions-node3-v1",
+    "entries": [
+      {
+        "entry_id": "k100_3_bdc7_hyhal_path_injected_too_late",
+        "failure_mode": "bdc7_with_node3_host_hyhal_lsmod_recursion_before_model",
+        "failure_stage": "runtime_import_before_model_inference",
+        "node_label": "K100-3",
+        "counts_toward_acceptance": false,
+        "successful_model_inferences": 0
+      },
+      {
+        "entry_id": "k100_3_bdc7_nohyhal_hip100",
+        "failure_mode": "bdc7_without_host_hyhal_hip100_no_rocm_device",
+        "failure_stage": "model_session_creation_before_successful_inference",
+        "node_label": "K100-3",
+        "counts_toward_acceptance": false,
+        "successful_model_inferences": 0
+      }
+    ],
+    "artifacts": {
+      "k100_3_bdc7_hyhal_path_injected_too_late": [
+        {
+          "kind": "directory_tree",
+          "path": "runs/late_path_no_receipt",
+          "file_count": 0,
+          "total_bytes": 0,
+          "tree_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "k100_3_bdc7_nohyhal_hip100": [
+        {
+          "kind": "directory_tree",
+          "path": "runs/nohyhal_hip100",
+          "file_count": 6,
+          "total_bytes": 17950,
+          "tree_sha256": "6919322f277e01ed77c48d4644a246672962ed1004c3972dcce52cd2b0a1e91e"
+        }
+      ]
+    },
+    "known_invalid_runs_count_toward_acceptance": false
+  },
+  "operational_tool_failure_exclusion": {
+    "status": "passed",
+    "ledger": {
+      "path": "/var/tmp/20260818-phase11-operational-tool-failure-node3-v1/operational_tool_failure_ledger.json",
+      "size_bytes": 1638,
+      "sha256": "c22aedc8a620f87a4ac100cdd89423a3ee50017606ffb71d32cdd8b9907e43aa"
+    },
+    "root": "/var/tmp/20260818-phase11-operational-tool-failure-node3-v1",
+    "candidate_label": "M5",
+    "failed_launcher_tree": {
+      "path": "/var/tmp/20260818-phase11-operational-tool-failure-node3-v1/failed_launcher_run",
+      "file_count": 8,
+      "total_bytes": 356496,
+      "tree_sha256": "07dcd4c55edd350087a9d6f65eff1cedc57f96aca3d968b4115c4016c27e2e6f"
+    },
+    "counts_toward_acceptance": false
+  },
+  "failures": [],
+  "claims": {
+    "both_candidates_operational_deployment_acceptance_passed": true,
+    "all_bundle_payloads_rehashed": true,
+    "all_six_receipts_per_candidate_identity_locked_and_semantically_passed": true,
+    "strict_logits_equivalence_inferred": false,
+    "native_int8_kernel_precision_inferred": false,
+    "pareto_recommendation_selected": false,
+    "known_invalid_environmental_runs_excluded_from_all_gates": true,
+    "docker_path_injected_before_entrypoint_for_k100_3": true,
+    "known_launcher_permission_failure_excluded_from_all_gates": true
+  }
+}

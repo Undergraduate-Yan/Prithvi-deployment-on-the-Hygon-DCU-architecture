@@ -1,0 +1,82 @@
+{
+  "schema": "phase11_k100_stability_60min_v1",
+  "status": "passed",
+  "started_at_utc": "2026-08-18T07:19:32.101833+00:00",
+  "claims": {
+    "continuous_60min_passed": true,
+    "deployment_ready": false
+  },
+  "bundle_id": "prithvi-k100-m5-v1",
+  "manifest_sha256": "f4dc433595c43332d4e29c2351363b3245f214273f058551788d50be29c388da",
+  "protocol": {
+    "requested_duration_seconds": 3600,
+    "observed_duration_seconds": 3600.0,
+    "telemetry_interval_seconds": 5,
+    "telemetry_allowed_interval_seconds": [
+      4.0,
+      7.5
+    ],
+    "max_inferences": null
+  },
+  "measurements": {
+    "inferences": 123106,
+    "errors": 0,
+    "error_rate": 0.0,
+    "nonfinite_outputs": 0,
+    "fixed_prediction_drifts": 0,
+    "inference_seconds_median": 0.026454050559550524,
+    "inference_seconds_p95": 0.029197076335549355,
+    "telemetry": {
+      "samples": 720,
+      "required_metrics": [
+        "temperature_c",
+        "power_w",
+        "vram_used_bytes"
+      ],
+      "coverage_sample_counts": {
+        "temperature_c": 720,
+        "power_w": 720,
+        "vram_used_bytes": 720
+      },
+      "all_three_metrics_present_in_every_sample": true,
+      "interval_count": 719,
+      "minimum_interval_seconds": 4.977934177,
+      "maximum_interval_seconds": 5.019971372,
+      "intervals_strictly_positive": true,
+      "minimum_interval_ge_4_seconds": true,
+      "maximum_interval_le_7_5_seconds": true,
+      "values": {
+        "temperature_c": {
+          "value_count": 720,
+          "minimum": 41.0,
+          "maximum": 67.0
+        },
+        "power_w": {
+          "value_count": 720,
+          "minimum": 108.0,
+          "maximum": 217.0
+        },
+        "vram_used_bytes": {
+          "value_count": 720,
+          "minimum": 3089604608.0,
+          "maximum": 18710523904.0
+        }
+      }
+    }
+  },
+  "gates": {
+    "duration_at_least_3600_seconds": true,
+    "at_least_one_inference": true,
+    "zero_inference_errors": true,
+    "zero_nonfinite_outputs": true,
+    "zero_fixed_prediction_drifts": true,
+    "telemetry_interval_eq_5_seconds": true,
+    "telemetry_sample_count_sufficient": true,
+    "temperature_power_vram_present_every_sample": true,
+    "telemetry_intervals_strictly_positive": true,
+    "telemetry_minimum_interval_ge_4_seconds": true,
+    "telemetry_maximum_interval_le_7_5_seconds": true,
+    "image_identity_attested": true
+  },
+  "ended_at_utc": "2026-08-18T08:19:42.408659+00:00"
+}

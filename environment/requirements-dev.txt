@@ -1,0 +1,9 @@
+# Lightweight local audit and paper-figure environment only.
+# Vendor K100 runtime packages must come from the matched DTK container.
+numpy>=1.26,<3
+pandas>=2.2,<3
+matplotlib>=3.7,<4
+onnx>=1.16,<2
+pytest>=8,<9
+ruff>=0.6,<1
+

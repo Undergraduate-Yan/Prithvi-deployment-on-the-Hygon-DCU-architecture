@@ -1,0 +1,85 @@
+{
+  "schema": "phase11_mixed_precision_m5_toolchain_lock_v1",
+  "created_date": "2026-08-18",
+  "candidate_id": "M5",
+  "fp16_backbone_blocks": [0, 14, 15, 16, 17, 18, 19, 20, 21],
+  "reused_m4_fp16_blocks": [0, 14, 17, 18],
+  "new_fp16_blocks": [15, 16, 19, 20, 21],
+  "head_precision": "fp32_compat_barrier",
+  "container_image_id": "sha256:bdc7e817dfd8587ed477834b5304f35c6b0ffcbe9f51645cf64259bd81c17b01",
+  "files": [
+    {
+      "path": "build_phase11_sensitivity_mixed_precision_m5.py",
+      "size_bytes": 22085,
+      "sha256": "59316ce267454174ac91a290cc99fcbef979a01c53218789d43fbad3bfddfeea"
+    },
+    {
+      "path": "compile_phase11_mixed_m5_incremental_fp16_caches.py",
+      "size_bytes": 8127,
+      "sha256": "637ee955f241615e78ede433e5886f26f6b06392a8fcae1658ebaff8284159b6"
+    },
+    {
+      "path": "finalize_phase11_mixed_precision_m5_cache_manifest.py",
+      "size_bytes": 14258,
+      "sha256": "2e79a196d03fc1785c21d949486db35b628e6690c1a5a3690b3ea5511cb30b74"
+    },
+    {
+      "path": "run_phase11_mixed_precision_m5_build_and_cache_node2.sh",
+      "size_bytes": 7604,
+      "sha256": "123236ff7dc2a2724d5d0c0e3bd8761c85dea2917f28f9483494c32fb11a3ca8"
+    },
+    {
+      "path": "run_phase11_mixed_precision_m5_admission_node2.sh",
+      "size_bytes": 6586,
+      "sha256": "d7e1d9f64962e33b7ea6d11a77ca999e7b5dfc7546e5496babc90b13263a20b9"
+    },
+    {
+      "path": "PHASE11_MIXED_PRECISION_M5_README.md",
+      "size_bytes": 3006,
+      "sha256": "b206f973a5ea694cc999de0aa98161c4d65c5af6379391284b3a806b659eb39b"
+    }
+  ],
+  "locked_dependencies": [
+    {
+      "path": "build_phase11_sensitivity_mixed_precision_m0_m4.py",
+      "size_bytes": 43770,
+      "sha256": "d2555c1bdd5c6c975218e5c371e1ae5de92075fe3e734e21c7ff936ed9ae81b1"
+    },
+    {
+      "path": "compile_phase11_mixed_fp16_segment_caches.py",
+      "size_bytes": 14539,
+      "sha256": "f58ad733e3821dcee1591cc9c6188b0a02917b0e55ae8889ec8e102c24d14ee9"
+    },
+    {
+      "path": "phase11_mixed_precision_common.py",
+      "size_bytes": 23030,
+      "sha256": "f445092c61a731105ba47d1128c12b52e8b658b8b9364f5afef4522ca6a5e5a8"
+    },
+    {
+      "path": "evaluate_phase11_mixed_precision_single.py",
+      "size_bytes": 8872,
+      "sha256": "e69b2870303a92d8d2bb91dcfe950256ad66268c82beb7a11a34f08d03119db0"
+    },
+    {
+      "path": "evaluate_phase11_mixed_precision_test90.py",
+      "size_bytes": 17348,
+      "sha256": "8bc54ffe04719cce53d22648b0ffc2fd1e8daaac8e2e4acb61c12910c61d4091"
+    },
+    {
+      "path": "aggregate_phase11_mixed_precision_test90.py",
+      "size_bytes": 9628,
+      "sha256": "717aa6c5e10b889c082acb4626105ad708c9006acf70380793f0b93c71fbd159"
+    }
+  ],
+  "remote_execution_status": "not_started_waiting_for_node2_idle",
+  "claims": {
+    "local_python_syntax_passed": true,
+    "local_bash_syntax_passed": true,
+    "generic_m5_schedule_static_test_passed": true,
+    "remote_static_build_passed": false,
+    "new_k100_caches_compiled": false,
+    "single_sample_admitted": false,
+    "fixed90_three_run_admitted": false,
+    "performance_measured": false
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "schema": "phase11_segment25_crossnode_machine2_benchmark_protocol_v1",
+  "frozen_on": "2026-08-17",
+  "target": {
+    "hostname": "machine2",
+    "image_id": "sha256:bdc7e817dfd8587ed477834b5304f35c6b0ffcbe9f51645cf64259bd81c17b01",
+    "bundle_path": "/var/tmp/phase11_int8_backbone_segment25_evidence_bundle_20260817",
+    "bundle_mount": "read_only",
+    "run_root": "/var/tmp/20260817-phase11-segment25-crossnode-machine2/all_resident_benchmark_v1",
+    "exact_origin_image_identity": false,
+    "matched_runtime_rebuild_only": true
+  },
+  "frozen_prerequisite_paths": {
+    "cache_portability_summary": "/var/tmp/20260817-phase11-segment25-crossnode-machine2/cache_portability_smoke_v2/cache_portability_validation_v2.json",
+    "target_device_resident_test90_result": "/var/tmp/20260817-phase11-segment25-crossnode-machine2/device_resident_test90_crossnode_v1/output/result.json",
+    "target_device_resident_test90_post_validation": "/var/tmp/20260817-phase11-segment25-crossnode-machine2/device_resident_test90_crossnode_v1/post_validation.json",
+    "runtime_content_comparison": "/var/tmp/phase11_runtime_fingerprint_comparison_machine2.json"
+  },
+  "prerequisite_contract": {
+    "expected_sha256_registration": "cache portability, raw target test90 and authoritative post-validation are hard-locked below; the launcher also requires their hashes as explicit arguments",
+    "cache_portability": {
+      "size_bytes": 37717,
+      "sha256": "49b696167390637a31b9688bd978f5a9febde47e21b43d29fdf3dd2af18b076d",
+      "status": "passed",
+      "all_recorded_gates": true,
+      "required_positive_claim_keys": [
+        "origin_caches_portable_on_machine2",
+        "cache_portability_verified"
+      ]
+    },
+    "target_test90": {
+      "authoritative_prerequisite": "post_validation.json",
+      "result_identity": {
+        "size_bytes": 40583,
+        "sha256": "a00cb99910b4f5273cc8719669b6c6a5c513456043145aeb1c1eb9508c260e2e"
+      },
+      "post_validation_identity": {
+        "size_bytes": 11079,
+        "sha256": "c8fa2dad602d7a53d2ffac0d66958aa0fe4282bee5b0adc5438f6e73dbd5e387"
+      },
+      "status": "diagnostic_completed",
+      "task_utility_diagnostic_passed": true,
+      "claims.device_resident_intersegment_io_test90": true,
+      "claims.all_25_segments_strict_migraphx_placement": true,
+      "all_recorded_gates": true,
+      "post_validation": {
+        "schema": "phase11_segment25_crossnode_device_test90_validation_v1",
+        "status": "passed",
+        "errors": [],
+        "all_recorded_gates": true,
+        "claims.cross_node_cache_portability_verified": true,
+        "claims.cross_node_task_utility_test90_verified": true,
+        "claims.device_resident_intersegment_io_test90": true,
+        "identity_link_to_raw_test90_result_required": true
+      }
+    },
+    "runtime_content_match": {
+      "status": "critical_runtime_content_match",
+      "selected_runtime_content_match": true,
+      "selected_runtime_content_sha256": "fe7324427d3d54499b5b4542cdbdf0af06e45f8290d7bab633f83799da9cf272",
+      "claims.critical_ort_migraphx_runtime_content_match": true,
+      "claims.exact_image_identity_match": false
+    }
+  },
+  "implementation": {
+    "benchmark_trial": {
+      "relative_path": "tools/benchmark_phase11_int8_backbone_all_resident_trial.py",
+      "size_bytes": 14454,
+      "sha256": "dd2a617f6cd1122c293bd4dc0f9cb8fe696fd174de44ed6ce37579acd561c10e"
+    },
+    "aggregator": {
+      "relative_path": "tools/aggregate_phase11_int8_backbone_all_resident_benchmark.py",
+      "size_bytes": 6461,
+      "sha256": "4a61150e8b2bf044bd4f6f74294c9ac0fa05c2272b8f1223ef518290cac3af23"
+    },
+    "static_lsmod": {
+      "relative_path": "tools/lsmod",
+      "size_bytes": 819664,
+      "sha256": "9328bce5211d360b0c7acaafdc9c4b927ac3773f7a7422600470afc5478f8e12",
+      "path_precedence_required": true
+    }
+  },
+  "benchmark": {
+    "variant": "int8_backbone_25_all_resident_device_iobinding_absolute_latency",
+    "batch": 1,
+    "warmup_per_trial": 30,
+    "measurements_per_trial": 100,
+    "fresh_process_trials": 3,
+    "trial_order": [1, 2, 3],
+    "trial_order_randomized": false,
+    "one_new_container_and_python_process_per_trial": true,
+    "sessions_concurrently_resident": 25,
+    "device_resident_intermediates": true,
+    "scope": "25 resident sessions; fixed device input/intermediate/output OrtValues; includes 25 Python ORT dispatches; excludes H2D, D2H and session loading",
+    "registered_hard_gates": {
+      "each_trial_status_passed": true,
+      "each_trial_measurement_count_eq_100": true,
+      "each_trial_output_matches_frozen_reference": true,
+      "trial_median_cv_le_5_percent": true
+    }
+  },
+  "telemetry": {
+    "host_pre_and_post_each_trial": true,
+    "poll_interval_seconds": 3,
+    "records": [
+      "timestamp",
+      "docker_stats",
+      "host_load_average",
+      "host_available_memory",
+      "hy_smi_temperature_power_vram_percent_dcu_busy_percent",
+      "hy_smi_vram_used"
+    ],
+    "observer_runs_concurrently_with_trial": true,
+    "host_side_observer_is_not_in_the_python_latency_timer_call_stack": true
+  },
+  "node3_reference": {
+    "median_of_trial_medians_ms": 24.316957,
+    "descriptive_interval_percent": 10.0,
+    "descriptive_lower_ms": 21.8852613,
+    "descriptive_upper_ms": 26.7486527,
+    "registered_hard_gate": false,
+    "affects_benchmark_status": false,
+    "interpretation": "Context only. Being outside this interval is reported, not failed, unless a future protocol is registered before measurement."
+  },
+  "claim_boundaries": {
+    "absolute_machine2_pipeline_latency_may_be_claimed_only_after_registered_gates_pass": true,
+    "node3_relative_performance_gate_registered": false,
+    "same_protocol_fp32_baseline": false,
+    "int8_speedup_claim_allowed": false,
+    "native_int8_kernel_verified": false,
+    "strict_cpu_migraphx_logit_equivalence": false,
+    "deployment_ready": false
+  }
+}

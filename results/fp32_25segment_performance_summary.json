@@ -1,0 +1,262 @@
+{
+  "schema": "phase11_fp32_segment25_headbarrier_performance_summary_v1",
+  "status": "passed",
+  "identities": {
+    "aggregate_script": {
+      "path": "/work/tools/aggregate_phase11_fp32_segment25_headbarrier_performance.py",
+      "size_bytes": 13052,
+      "sha256": "25bfeaefa2982c33e304bacae188fd4e23b30097b46c97f158d21acab2df9706"
+    },
+    "expected_trial_script_sha256": "31af48acd99b1ddbc614854bbf99721ca0f1d86bc984b21605883740a7f743dd",
+    "candidate": {
+      "size_bytes": 60551388,
+      "sha256": "593db691abcb2e07dd8df2f1fabc8315eeab08380161c93199778bc1963f299f"
+    },
+    "passed_test90_result": {
+      "size_bytes": 39291,
+      "sha256": "0904da34078801106b6b414dcc17d1b612b448a997460563fc7055c4e6988b3b"
+    }
+  },
+  "protocol": {
+    "track": "same_protocol_fp32_reference",
+    "batch": 1,
+    "warmup_per_scope_per_trial": 30,
+    "measurements_per_scope_per_trial": 100,
+    "fresh_process_trials": 3,
+    "trial_median_cv_max_percent": 5.0,
+    "model_only_is_primary": true,
+    "end_to_end_logits_is_secondary": true
+  },
+  "scope_summaries": {
+    "model_only": {
+      "median_of_trial_medians_ms": 21.349258499999998,
+      "trial_median_min_ms": 21.296076,
+      "trial_median_max_ms": 21.620837,
+      "trial_median_cv_percent": 0.8131339265463685,
+      "median_of_trial_p95_ms": 23.227036499999997,
+      "median_of_trial_p99_ms": 24.41058786,
+      "median_trial_throughput_samples_per_second": 46.43132076968469,
+      "pooled_300_calls_descriptive_only": {
+        "count": 300,
+        "median_ms": 21.4418425,
+        "p95_ms": 23.28511715,
+        "p99_ms": 24.499319579999998,
+        "mean_ms": 21.61396505,
+        "std_ms": 0.7554446307347752,
+        "min_ms": 20.960737,
+        "max_ms": 28.521636,
+        "throughput_samples_per_second": 46.26638368696724
+      }
+    },
+    "end_to_end_logits": {
+      "median_of_trial_medians_ms": 22.209284,
+      "trial_median_min_ms": 22.076825,
+      "trial_median_max_ms": 22.560291,
+      "trial_median_cv_percent": 1.1212129610964754,
+      "median_of_trial_p95_ms": 23.733766799999994,
+      "median_of_trial_p99_ms": 25.490543920000057,
+      "median_trial_throughput_samples_per_second": 44.66590536817134,
+      "pooled_300_calls_descriptive_only": {
+        "count": 300,
+        "median_ms": 22.2450805,
+        "p95_ms": 23.7546746,
+        "p99_ms": 25.462277639999993,
+        "mean_ms": 22.517513639999997,
+        "std_ms": 1.341040520415476,
+        "min_ms": 21.801054,
+        "max_ms": 37.068388,
+        "throughput_samples_per_second": 44.409876507129326
+      }
+    }
+  },
+  "gates": {
+    "three_fresh_process_trials_passed": true,
+    "each_scope_has_100_measurements_per_trial": true,
+    "candidate_identity_constant_across_trials": true,
+    "model_only_trial_median_cv_le_5pct": true,
+    "end_to_end_logits_trial_median_cv_le_5pct": true
+  },
+  "claims": {
+    "same_protocol_fp32_baseline_valid": true,
+    "formal_speedup_denominator_allowed": true,
+    "model_only_absolute_latency_claim_allowed": true,
+    "end_to_end_logits_absolute_latency_claim_allowed": true,
+    "monolithic_fp32_latency_claim": false,
+    "deployment_ready": false
+  },
+  "trial_artifacts": [
+    {
+      "trial_index": 1,
+      "scope_order": [
+        "model_only",
+        "end_to_end_logits"
+      ],
+      "result": {
+        "path": "/work/run/trial_1/output/result.json",
+        "size_bytes": 25763,
+        "sha256": "a691ed1a816ad21a7905219b5158c7021e1faae7a110d06243b66680411b7711"
+      },
+      "telemetry_raw": {
+        "path": "/work/run/trial_1/telemetry.log",
+        "size_bytes": 4356,
+        "sha256": "ddf701e80671a435eb21d14f69f620a9d4c6dcdff49d69b9dd9a764e08d5e040"
+      },
+      "statistics": {
+        "model_only": {
+          "count": 100,
+          "median_ms": 21.620837,
+          "p95_ms": 23.227036499999997,
+          "p99_ms": 24.41058786,
+          "mean_ms": 21.78121767,
+          "std_ms": 0.6357164874614343,
+          "min_ms": 21.318106,
+          "max_ms": 24.699555,
+          "throughput_samples_per_second": 45.91111549182732
+        },
+        "end_to_end_logits": {
+          "count": 100,
+          "median_ms": 22.560291,
+          "p95_ms": 23.733766799999994,
+          "p99_ms": 25.565727980000055,
+          "mean_ms": 22.789989609999992,
+          "std_ms": 1.4938688824167634,
+          "min_ms": 21.92668,
+          "max_ms": 36.627986,
+          "throughput_samples_per_second": 43.87891425633696
+        }
+      },
+      "latency_artifacts": {
+        "model_only": {
+          "path": "/work/run/trial_1/output/model_only_latencies_ms.npy",
+          "size_bytes": 928,
+          "sha256": "c09df80107c10f899064dd0aa451423bcb30eddfa7b903730eed5648db257167"
+        },
+        "end_to_end_logits": {
+          "path": "/work/run/trial_1/output/end_to_end_logits_latencies_ms.npy",
+          "size_bytes": 928,
+          "sha256": "81baa054a16a882758ed0c13081480d6608c427b162caa6fcddf8ef81968def8"
+        }
+      },
+      "session_load_seconds_excluded": 12.439405041048303,
+      "process_max_rss_kib": 9894644
+    },
+    {
+      "trial_index": 2,
+      "scope_order": [
+        "end_to_end_logits",
+        "model_only"
+      ],
+      "result": {
+        "path": "/work/run/trial_2/output/result.json",
+        "size_bytes": 25752,
+        "sha256": "169630084d4a74324dbc9a3e6aaeb5a6126460b2c0a4acaafba75751072c03b4"
+      },
+      "telemetry_raw": {
+        "path": "/work/run/trial_2/telemetry.log",
+        "size_bytes": 4354,
+        "sha256": "8be3fb516f47864fed53edd9aa77a227c148d5f0252adbc847162eaba550b05e"
+      },
+      "statistics": {
+        "model_only": {
+          "count": 100,
+          "median_ms": 21.296076,
+          "p95_ms": 23.2892229,
+          "p99_ms": 25.07714088000002,
+          "mean_ms": 21.53718618,
+          "std_ms": 0.9547430141329256,
+          "min_ms": 20.991899,
+          "max_ms": 28.521636,
+          "throughput_samples_per_second": 46.43132076968469
+        },
+        "end_to_end_logits": {
+          "count": 100,
+          "median_ms": 22.076825,
+          "p95_ms": 24.43560755,
+          "p99_ms": 25.490543920000057,
+          "mean_ms": 22.388441290000006,
+          "std_ms": 1.632688845560056,
+          "min_ms": 21.801054,
+          "max_ms": 37.068388,
+          "throughput_samples_per_second": 44.66590536817134
+        }
+      },
+      "latency_artifacts": {
+        "model_only": {
+          "path": "/work/run/trial_2/output/model_only_latencies_ms.npy",
+          "size_bytes": 928,
+          "sha256": "8d906a670987e6ceccbfbeb2d457a98e01e6ed1c56f5eb2b7af85f50547e330c"
+        },
+        "end_to_end_logits": {
+          "path": "/work/run/trial_2/output/end_to_end_logits_latencies_ms.npy",
+          "size_bytes": 928,
+          "sha256": "77eedc4b04f9aff3a02f9ba35a3cb214f0a203ab3c0db0f3644d6ec9e718886d"
+        }
+      },
+      "session_load_seconds_excluded": 12.308289307169616,
+      "process_max_rss_kib": 9872536
+    },
+    {
+      "trial_index": 3,
+      "scope_order": [
+        "model_only",
+        "end_to_end_logits"
+      ],
+      "result": {
+        "path": "/work/run/trial_3/output/result.json",
+        "size_bytes": 25752,
+        "sha256": "7aff99be3dcfbc3ef51bf9be761af6a105e512c03145d9900011f0002b1952df"
+      },
+      "telemetry_raw": {
+        "path": "/work/run/trial_3/telemetry.log",
+        "size_bytes": 4353,
+        "sha256": "51e8f0b86783ef558a8e0f646e9365267d2dd66c69bdbeb0cb2dc687fa22b314"
+      },
+      "statistics": {
+        "model_only": {
+          "count": 100,
+          "median_ms": 21.349258499999998,
+          "p95_ms": 23.1007782,
+          "p99_ms": 24.03930386,
+          "mean_ms": 21.5234913,
+          "std_ms": 0.6045416432935206,
+          "min_ms": 20.960737,
+          "max_ms": 24.139478,
+          "throughput_samples_per_second": 46.4608639026885
+        },
+        "end_to_end_logits": {
+          "count": 100,
+          "median_ms": 22.209284,
+          "p95_ms": 23.497786,
+          "p99_ms": 25.248807900000003,
+          "mean_ms": 22.374110020000003,
+          "std_ms": 0.649299372359487,
+          "min_ms": 21.850218,
+          "max_ms": 26.282952,
+          "throughput_samples_per_second": 44.69451518322336
+        }
+      },
+      "latency_artifacts": {
+        "model_only": {
+          "path": "/work/run/trial_3/output/model_only_latencies_ms.npy",
+          "size_bytes": 928,
+          "sha256": "f775791f43dfec7039e96810c6c4a182b95744636f3c9b5d2d0eaab0a4a7c48b"
+        },
+        "end_to_end_logits": {
+          "path": "/work/run/trial_3/output/end_to_end_logits_latencies_ms.npy",
+          "size_bytes": 928,
+          "sha256": "4828d060d88413577ee701909b3dbc8c005806c919f07faa47c470d9362e9fbb"
+        }
+      },
+      "session_load_seconds_excluded": 12.441341764992103,
+      "process_max_rss_kib": 9900884
+    }
+  ],
+  "evidence_boundary": {
+    "baseline_is_25_segments_not_monolithic": true,
+    "speedup_requires_a_candidate_measured_under_the_matching_scope": true,
+    "pooled_300_call_statistics_are_descriptive_only": true,
+    "provider_placement_is_inherited_from_frozen_admission_evidence": true,
+    "raw_hy_smi_telemetry_is_preserved_but_not_parsed_as_device_memory_here": true,
+    "process_max_rss_is_not_K100_device_memory": true
+  }
+}

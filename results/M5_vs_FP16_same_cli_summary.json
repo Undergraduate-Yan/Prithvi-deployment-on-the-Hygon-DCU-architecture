@@ -1,0 +1,467 @@
+{
+  "schema": "phase11_k100_deployment_cli_pair_summary_v1",
+  "status": "completed_formal_latency_gate_failed",
+  "created_at_utc": "2026-08-18T08:44:50.827697+00:00",
+  "protocol": {
+    "node_label": "K100-2",
+    "image_id": "sha256:bdc7e817dfd8587ed477834b5304f35c6b0ffcbe9f51645cf64259bd81c17b01",
+    "same_locked_interface": "infer_k100.py::K100BundleRunner.run",
+    "infer_k100_sha256": "fc338d90f7592f6a75cfa28191702598777b21914415e7178cef932de60571b7",
+    "fixed_batch": 1,
+    "warmup_per_candidate_per_trial": 30,
+    "measurements_per_candidate_per_trial": 100,
+    "trials_per_candidate": 3,
+    "fresh_container_processes_total": 6,
+    "candidate_order": [
+      {
+        "trial_index": 1,
+        "sequence": [
+          "m5",
+          "fp16"
+        ]
+      },
+      {
+        "trial_index": 2,
+        "sequence": [
+          "fp16",
+          "m5"
+        ]
+      },
+      {
+        "trial_index": 3,
+        "sequence": [
+          "m5",
+          "fp16"
+        ]
+      }
+    ],
+    "position_balance_rule": "per-candidate position-count difference <= 1",
+    "timing_scope": "steady float32 input to synchronized float32 logits through the public bundle runner; excludes integrity validation, cache/session load, argmax/hash and I/O",
+    "trial_median_cv_limit_percent": 5.0,
+    "m5_over_fp16_median_latency_limit": 1.05,
+    "aggregation_is_read_only_over_six_existing_trial_directories": true,
+    "gpu_inference_is_not_executed_by_this_aggregator": true
+  },
+  "identities": {
+    "aggregator": {
+      "path": "/var/tmp/phase11_deployment_cli_pair_benchmark_20260818/aggregate_bundle_cli_pair.py",
+      "size_bytes": 26628,
+      "sha256": "5904f9c7f2f4a93c0613746a5c780021b02a486155f068921bf42e23c8dbaf5c"
+    },
+    "expected_trial_script_sha256": "da7ae2c77e4b469ba0674751e996a5dfcaf0226a638c90b364e3a3503e821560",
+    "m5_manifest_sha256": "f4dc433595c43332d4e29c2351363b3245f214273f058551788d50be29c388da",
+    "fp16_manifest_sha256": "1f433a917aed5fead6dd95597a5a03f500a93ce564067e9dad4d25f4682bad25",
+    "static_lsmod_sha256": "9328bce5211d360b0c7acaafdc9c4b927ac3773f7a7422600470afc5478f8e12"
+  },
+  "fixed_sample": {
+    "raw_input": {
+      "array_sha256": "23bd7b08aa08352cfa52b0086c3a6aac18b8b0e6a63f3cdbcae7409c667aa62c",
+      "shape": [
+        1,
+        6,
+        224,
+        224
+      ],
+      "dtype": "float32",
+      "same_values_shape_and_dtype_for_both_bundles_and_all_six_trials": true,
+      "shape_dtype_enforced_by_locked_trial_and_infer_k100_tools": true
+    },
+    "bundle_specific_expected_prediction_array_sha256": {
+      "m5": "2d52822eb454dc9db94ef1d11594a6e68e65c3c61d48b4df9ec4a1dedf377c94",
+      "fp16": "71b9794c38a3c80937b4c775d0923eb9db39475574a112eafbd67855bd530720"
+    },
+    "cross_bundle_expected_prediction_identity_required_equal": false,
+    "each_bundle_expected_prediction_stable_across_its_three_trials": true,
+    "all_780_predictions_matched_their_own_bundle_oracle": true
+  },
+  "variants": {
+    "m5": {
+      "bundle_id": "prithvi-k100-m5-v1",
+      "manifest_sha256": "f4dc433595c43332d4e29c2351363b3245f214273f058551788d50be29c388da",
+      "trial_count": 3,
+      "fresh_container_count": 3,
+      "warmup_per_trial": 30,
+      "measurements_per_trial": 100,
+      "aggregate": {
+        "count": 300,
+        "median_ms": 26.308936532586813,
+        "p95_ms": 28.517769742757082,
+        "p99_ms": 30.744196576997638,
+        "mean_ms": 26.566518841621775,
+        "min_ms": 25.442151818424463,
+        "max_ms": 32.828524708747864,
+        "throughput_samples_per_second": 37.64136377677378
+      },
+      "trial_median_ms": [
+        26.41985402442515,
+        26.320177828893065,
+        26.202522218227386
+      ],
+      "trial_median_cv_percent": 0.4134263849794203,
+      "trial_median_cv_le_5_percent": true,
+      "candidate_position_counts": {
+        "position_1": 2,
+        "position_2": 1
+      },
+      "trials": [
+        {
+          "trial_index": 1,
+          "candidate_position": 1,
+          "sequence": [
+            "m5",
+            "fp16"
+          ],
+          "result": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_01/position_01_m5/result.json",
+            "size_bytes": 31618,
+            "sha256": "f98f8a7ba4ef7cee605d0bb816d22eb220f044af67381cd287bbf304f5391861"
+          },
+          "container_inspect": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_01/position_01_m5/container_inspect_exited.json",
+            "size_bytes": 15161,
+            "sha256": "2b9ca1f21db2f3b682e47c6a1b33a3abe121feb495d21499e7f875e2642500f6"
+          },
+          "container_log": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_01/position_01_m5/container.log",
+            "size_bytes": 35284,
+            "sha256": "3d84f92b70ccbfd2653bd728095f4d59a361c04c3519ffae6e5263c630f44dfb"
+          },
+          "container": {
+            "container_id": "cef92a42c387c8d22d82bf197babedd09bfd82b7f66152fd99b25f83d9bbe1c9",
+            "container_name": "/phase11-cli-pair-t1-p1-m5-node2-960663",
+            "container_hostname": "cef92a42c387",
+            "image_id": "sha256:bdc7e817dfd8587ed477834b5304f35c6b0ffcbe9f51645cf64259bd81c17b01",
+            "started_at": "2026-08-18T08:36:35.374016961Z",
+            "finished_at": "2026-08-18T08:36:53.839518981Z",
+            "docker_path": "/bundle/tools/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "bundle_host_path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/bundles/prithvi-k100-m5-v1",
+            "tools_host_path": "/var/tmp/phase11_deployment_cli_pair_benchmark_20260818",
+            "run_host_path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_01/position_01_m5"
+          },
+          "summary": {
+            "count": 100,
+            "median_ms": 26.41985402442515,
+            "p95_ms": 29.693188797682524,
+            "p99_ms": 31.048434451222427,
+            "mean_ms": 26.845607445575297,
+            "min_ms": 25.983233936131,
+            "max_ms": 32.828524708747864,
+            "throughput_samples_per_second": 37.25004181884587
+          },
+          "fixed_input_array_sha256": "23bd7b08aa08352cfa52b0086c3a6aac18b8b0e6a63f3cdbcae7409c667aa62c",
+          "expected_prediction_array_sha256": "2d52822eb454dc9db94ef1d11594a6e68e65c3c61d48b4df9ec4a1dedf377c94"
+        },
+        {
+          "trial_index": 2,
+          "candidate_position": 2,
+          "sequence": [
+            "fp16",
+            "m5"
+          ],
+          "result": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_02/position_02_m5/result.json",
+            "size_bytes": 31635,
+            "sha256": "684db236a35b4e7eb9a621449d789861c611d2ba23e18f0714250c46cf88fd6f"
+          },
+          "container_inspect": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_02/position_02_m5/container_inspect_exited.json",
+            "size_bytes": 15160,
+            "sha256": "57785c71c714e5c5b351a91fa790e790886b5565cc011acaa2a2d6c8f082e86e"
+          },
+          "container_log": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_02/position_02_m5/container.log",
+            "size_bytes": 35301,
+            "sha256": "4e8f63f1b2ec2c460ee0ccdfbc6aef5c6b8532a099d5260a8e91b7bb900826ec"
+          },
+          "container": {
+            "container_id": "bd228d5396d9b10281f6cff966fca9014b41425c8609ea3c2c8701407cadb314",
+            "container_name": "/phase11-cli-pair-t2-p2-m5-node2-960663",
+            "container_hostname": "bd228d5396d9",
+            "image_id": "sha256:bdc7e817dfd8587ed477834b5304f35c6b0ffcbe9f51645cf64259bd81c17b01",
+            "started_at": "2026-08-18T08:37:37.17306672Z",
+            "finished_at": "2026-08-18T08:37:54.997926498Z",
+            "docker_path": "/bundle/tools/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "bundle_host_path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/bundles/prithvi-k100-m5-v1",
+            "tools_host_path": "/var/tmp/phase11_deployment_cli_pair_benchmark_20260818",
+            "run_host_path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_02/position_02_m5"
+          },
+          "summary": {
+            "count": 100,
+            "median_ms": 26.320177828893065,
+            "p95_ms": 28.34652892779559,
+            "p99_ms": 30.738647254183896,
+            "mean_ms": 26.61406543571502,
+            "min_ms": 25.933715049177408,
+            "max_ms": 31.757252756506205,
+            "throughput_samples_per_second": 37.57411667959754
+          },
+          "fixed_input_array_sha256": "23bd7b08aa08352cfa52b0086c3a6aac18b8b0e6a63f3cdbcae7409c667aa62c",
+          "expected_prediction_array_sha256": "2d52822eb454dc9db94ef1d11594a6e68e65c3c61d48b4df9ec4a1dedf377c94"
+        },
+        {
+          "trial_index": 3,
+          "candidate_position": 1,
+          "sequence": [
+            "m5",
+            "fp16"
+          ],
+          "result": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_03/position_01_m5/result.json",
+            "size_bytes": 31618,
+            "sha256": "5edb1cd39f9101ace0fcccf78cb61df5f156bf7c2c08b06aca46dea29c0e5fa1"
+          },
+          "container_inspect": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_03/position_01_m5/container_inspect_exited.json",
+            "size_bytes": 15161,
+            "sha256": "f0e9e5f65d16e37687aae656c095d190a9a82ed2512d643fba94c9333131d683"
+          },
+          "container_log": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_03/position_01_m5/container.log",
+            "size_bytes": 35284,
+            "sha256": "03211f38be8fe9b35703dc93df15840ea38c1d9c65dab7bd5ed8afdb7d8abaa7"
+          },
+          "container": {
+            "container_id": "7af179f7d84ea75cad3ec0ee4d8ef6cad46ad38edc5ea3ac3a5466bade21da3e",
+            "container_name": "/phase11-cli-pair-t3-p1-m5-node2-960663",
+            "container_hostname": "7af179f7d84e",
+            "image_id": "sha256:bdc7e817dfd8587ed477834b5304f35c6b0ffcbe9f51645cf64259bd81c17b01",
+            "started_at": "2026-08-18T08:37:56.786741168Z",
+            "finished_at": "2026-08-18T08:38:14.402333637Z",
+            "docker_path": "/bundle/tools/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "bundle_host_path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/bundles/prithvi-k100-m5-v1",
+            "tools_host_path": "/var/tmp/phase11_deployment_cli_pair_benchmark_20260818",
+            "run_host_path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_03/position_01_m5"
+          },
+          "summary": {
+            "count": 100,
+            "median_ms": 26.202522218227386,
+            "p95_ms": 26.61125329323113,
+            "p99_ms": 27.867745859548453,
+            "mean_ms": 26.239883643575013,
+            "min_ms": 25.442151818424463,
+            "max_ms": 28.52133708074689,
+            "throughput_samples_per_second": 38.10992508897256
+          },
+          "fixed_input_array_sha256": "23bd7b08aa08352cfa52b0086c3a6aac18b8b0e6a63f3cdbcae7409c667aa62c",
+          "expected_prediction_array_sha256": "2d52822eb454dc9db94ef1d11594a6e68e65c3c61d48b4df9ec4a1dedf377c94"
+        }
+      ]
+    },
+    "fp16": {
+      "bundle_id": "prithvi-k100-fp16-full-v1",
+      "manifest_sha256": "1f433a917aed5fead6dd95597a5a03f500a93ce564067e9dad4d25f4682bad25",
+      "trial_count": 3,
+      "fresh_container_count": 3,
+      "warmup_per_trial": 30,
+      "measurements_per_trial": 100,
+      "aggregate": {
+        "count": 300,
+        "median_ms": 15.1512217707932,
+        "p95_ms": 15.55205169133842,
+        "p99_ms": 17.59374279994517,
+        "mean_ms": 15.174565895770987,
+        "min_ms": 14.553310815244913,
+        "max_ms": 18.8958290964365,
+        "throughput_samples_per_second": 65.8997434831853
+      },
+      "trial_median_ms": [
+        15.141271520406008,
+        15.167130390182137,
+        15.151321422308683
+      ],
+      "trial_median_cv_percent": 0.08602701408662485,
+      "trial_median_cv_le_5_percent": true,
+      "candidate_position_counts": {
+        "position_1": 1,
+        "position_2": 2
+      },
+      "trials": [
+        {
+          "trial_index": 1,
+          "candidate_position": 2,
+          "sequence": [
+            "m5",
+            "fp16"
+          ],
+          "result": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_01/position_02_fp16/result.json",
+            "size_bytes": 25495,
+            "sha256": "b24570cd4fe6f090a20ace98e27789426b46d2cdb9b028207ae75aa20db5bfd1"
+          },
+          "container_inspect": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_01/position_02_fp16/container_inspect_exited.json",
+            "size_bytes": 15185,
+            "sha256": "eafe0ad4910cec497b54a1d267efb6b0b10c1644f9e0b4350db71fdae4389394"
+          },
+          "container_log": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_01/position_02_fp16/container.log",
+            "size_bytes": 35203,
+            "sha256": "7cfd10deae14c4097ca2a17f307fd09497e0a0012b4bfeac89fe98a7fde277a6"
+          },
+          "container": {
+            "container_id": "4e34183db620e101965cf6b971b6cb675a1507f2e07a9633ab1028bfbfa604b0",
+            "container_name": "/phase11-cli-pair-t1-p2-fp16-node2-960663",
+            "container_hostname": "4e34183db620",
+            "image_id": "sha256:bdc7e817dfd8587ed477834b5304f35c6b0ffcbe9f51645cf64259bd81c17b01",
+            "started_at": "2026-08-18T08:36:55.636967132Z",
+            "finished_at": "2026-08-18T08:37:15.462167491Z",
+            "docker_path": "/bundle/tools/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "bundle_host_path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/bundles/prithvi-k100-fp16-full-v1",
+            "tools_host_path": "/var/tmp/phase11_deployment_cli_pair_benchmark_20260818",
+            "run_host_path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_01/position_02_fp16"
+          },
+          "summary": {
+            "count": 100,
+            "median_ms": 15.141271520406008,
+            "p95_ms": 15.385606931522489,
+            "p99_ms": 15.582513818517343,
+            "mean_ms": 15.132655329070985,
+            "min_ms": 14.657126273959875,
+            "max_ms": 18.8958290964365,
+            "throughput_samples_per_second": 66.08225577430048
+          },
+          "fixed_input_array_sha256": "23bd7b08aa08352cfa52b0086c3a6aac18b8b0e6a63f3cdbcae7409c667aa62c",
+          "expected_prediction_array_sha256": "71b9794c38a3c80937b4c775d0923eb9db39475574a112eafbd67855bd530720"
+        },
+        {
+          "trial_index": 2,
+          "candidate_position": 1,
+          "sequence": [
+            "fp16",
+            "m5"
+          ],
+          "result": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_02/position_01_fp16/result.json",
+            "size_bytes": 25500,
+            "sha256": "c96ddc465413fc2555d7a449c66688fbdfad114b7ac114aee6786354a83bace8"
+          },
+          "container_inspect": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_02/position_01_fp16/container_inspect_exited.json",
+            "size_bytes": 15185,
+            "sha256": "cd6b2839b4497b86a71eec51c42008d7b39c5fc0b925eec3ea9d526bbe460c06"
+          },
+          "container_log": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_02/position_01_fp16/container.log",
+            "size_bytes": 35208,
+            "sha256": "df33e64f1d85c1a560463978df49bccb1602dffee38be9773afc544e257c8acf"
+          },
+          "container": {
+            "container_id": "d5a98f89744c44e699c2fdb201a42477a904e704b68958978061cb1f5a43e0ed",
+            "container_name": "/phase11-cli-pair-t2-p1-fp16-node2-960663",
+            "container_hostname": "d5a98f89744c",
+            "image_id": "sha256:bdc7e817dfd8587ed477834b5304f35c6b0ffcbe9f51645cf64259bd81c17b01",
+            "started_at": "2026-08-18T08:37:17.279695347Z",
+            "finished_at": "2026-08-18T08:37:35.420260222Z",
+            "docker_path": "/bundle/tools/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "bundle_host_path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/bundles/prithvi-k100-fp16-full-v1",
+            "tools_host_path": "/var/tmp/phase11_deployment_cli_pair_benchmark_20260818",
+            "run_host_path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_02/position_01_fp16"
+          },
+          "summary": {
+            "count": 100,
+            "median_ms": 15.167130390182137,
+            "p95_ms": 16.357834520749748,
+            "p99_ms": 18.22964423336089,
+            "mean_ms": 15.274359988979995,
+            "min_ms": 14.612127095460892,
+            "max_ms": 18.507348839193583,
+            "throughput_samples_per_second": 65.46919155509434
+          },
+          "fixed_input_array_sha256": "23bd7b08aa08352cfa52b0086c3a6aac18b8b0e6a63f3cdbcae7409c667aa62c",
+          "expected_prediction_array_sha256": "71b9794c38a3c80937b4c775d0923eb9db39475574a112eafbd67855bd530720"
+        },
+        {
+          "trial_index": 3,
+          "candidate_position": 2,
+          "sequence": [
+            "m5",
+            "fp16"
+          ],
+          "result": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_03/position_02_fp16/result.json",
+            "size_bytes": 25489,
+            "sha256": "fc15c46bc15f3c42e0f6c288799bbb57600c5b4ef0ff15ea384309ca53baae98"
+          },
+          "container_inspect": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_03/position_02_fp16/container_inspect_exited.json",
+            "size_bytes": 15185,
+            "sha256": "dd1aada6b35f83860f2096aa5e31a3d7920904eef21823f734f9cf98c96cd7af"
+          },
+          "container_log": {
+            "path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_03/position_02_fp16/container.log",
+            "size_bytes": 35197,
+            "sha256": "799d9a32daaad82292d4f1d42dada1f5390b8c0242ee16c7a1df9b33e59dca20"
+          },
+          "container": {
+            "container_id": "40d475a5e0f8c811a081eb166b7fde6a8a3224ad0aaa3ace997e0422d2b87975",
+            "container_name": "/phase11-cli-pair-t3-p2-fp16-node2-960663",
+            "container_hostname": "40d475a5e0f8",
+            "image_id": "sha256:bdc7e817dfd8587ed477834b5304f35c6b0ffcbe9f51645cf64259bd81c17b01",
+            "started_at": "2026-08-18T08:38:16.238897635Z",
+            "finished_at": "2026-08-18T08:38:34.522208465Z",
+            "docker_path": "/bundle/tools/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "bundle_host_path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/bundles/prithvi-k100-fp16-full-v1",
+            "tools_host_path": "/var/tmp/phase11_deployment_cli_pair_benchmark_20260818",
+            "run_host_path": "/var/tmp/20260818-phase11-minimal-deployment-node2-v1/receipts/paired_cli_m5_vs_fp16_v1/trial_03/position_02_fp16"
+          },
+          "summary": {
+            "count": 100,
+            "median_ms": 15.151321422308683,
+            "p95_ms": 15.467007970437407,
+            "p99_ms": 16.30364504177124,
+            "mean_ms": 15.11668236926198,
+            "min_ms": 14.553310815244913,
+            "max_ms": 17.26936362683773,
+            "throughput_samples_per_second": 66.15208122870823
+          },
+          "fixed_input_array_sha256": "23bd7b08aa08352cfa52b0086c3a6aac18b8b0e6a63f3cdbcae7409c667aa62c",
+          "expected_prediction_array_sha256": "71b9794c38a3c80937b4c775d0923eb9db39475574a112eafbd67855bd530720"
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "m5_median_ms": 26.308936532586813,
+    "fp16_median_ms": 15.1512217707932,
+    "m5_over_fp16_median_latency_ratio": 1.7364234337393296,
+    "fp16_over_m5_speed_ratio": 0.5758963974855681,
+    "m5_latency_delta_vs_fp16_percent": 73.64234337393296,
+    "paired_trial_m5_over_fp16_median_ratios": [
+      1.744890050272126,
+      1.735343281938845,
+      1.7293885785860899
+    ],
+    "m5_not_slower_than_fp16_by_more_than_5_percent": false
+  },
+  "gates": {
+    "exact_image_all_six_containers": true,
+    "six_unique_fresh_containers": true,
+    "docker_level_path_locked": true,
+    "bundles_read_only_and_receipts_separate": true,
+    "all_bundle_payload_sha256_verified_each_trial": true,
+    "same_raw_input_array_sha_shape_dtype": true,
+    "each_bundle_prediction_oracle_stable_across_three_trials": true,
+    "all_predictions_match_own_bundle_expected_sha": true,
+    "migraphx_selected_all_sessions": true,
+    "cpu_ep_fallback_disabled_all_sessions": true,
+    "three_trials_each": true,
+    "thirty_warmups_each_trial": true,
+    "one_hundred_measurements_each_trial": true,
+    "candidate_order_maximally_balanced": true,
+    "m5_trial_median_cv_le_5_percent": true,
+    "fp16_trial_median_cv_le_5_percent": true,
+    "m5_over_fp16_median_latency_le_1_05": false
+  },
+  "claims": {
+    "formal_same_cli_latency_comparison_allowed": true,
+    "m5_latency_upgrade_gate_passed": false,
+    "deployment_recommendation_may_change_from_this_latency_gate_alone": false,
+    "same_raw_input_values_shape_dtype_confirmed": true,
+    "bundle_specific_prediction_oracles_preserved": true,
+    "existing_six_passed_trials_reused_without_gpu_rerun": true,
+    "native_int8_kernel_precision_proven_here": false,
+    "strict_logits_equivalence_proven_here": false,
+    "historical_strict_failure_overridden": false
+  },
+  "decision": "M5 fails the deployment-plan latency condition (>5% slower than FP16 full)."
+}
