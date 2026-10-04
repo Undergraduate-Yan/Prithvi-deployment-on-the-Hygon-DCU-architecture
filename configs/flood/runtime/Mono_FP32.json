@@ -1,0 +1,64 @@
+{
+  "benchmark_input": {
+    "formal_test_used": false,
+    "path": "artifact://7f0e2c08cf337dadf277a91976e6f9f7b3f8e022a2b06ad97547dcb562f5be80/configuration_validation_input_00.npy",
+    "sample_id": "Spain_7786924",
+    "sha256": "7f0e2c08cf337dadf277a91976e6f9f7b3f8e022a2b06ad97547dcb562f5be80",
+    "size_bytes": 1204352,
+    "source_index": 0,
+    "source_role": "configuration-validation only"
+  },
+  "execution": {
+    "cache": {
+      "path": "artifact://43318e7555063c7733603e16c3c27b6223105423b530a7b70d3f01130ef295df/prithvi_fp32_single_fpn4maxpool.mxr",
+      "sha256": "43318e7555063c7733603e16c3c27b6223105423b530a7b70d3f01130ef295df",
+      "size_bytes": 1413746440
+    },
+    "input_name": "image",
+    "kind": "mono",
+    "model": {
+      "path": "artifact://ac1a502b79a6551788dabc0fb25dda81e1e5c3f747197f955aaf8e0861fb0fec/candidate.onnx",
+      "sha256": "ac1a502b79a6551788dabc0fb25dda81e1e5c3f747197f955aaf8e0861fb0fec",
+      "size_bytes": 1277126412
+    },
+    "output_name": "logits"
+  },
+  "external_contract": {
+    "batch": 1,
+    "input": "FP32[1,6,224,224]",
+    "output": "FP32[1,2,224,224] logits"
+  },
+  "hardware": "海光 K100 AI 加速卡",
+  "name": "Mono-FP32",
+  "phase2e_adaptation": {
+    "configuration_validation_input_only": true,
+    "formal_90_image_test_used": false,
+    "model_cache_identities_changed": false,
+    "payload_change": "path-only rebind from node2 to identity-equivalent node3 copies where required; other /var/tmp paths retained after identity verification",
+    "source_manifest": {
+      "path": "artifact://b704a0666ecce2f0bf120e4900056634f94d3beb5130c66001e1cdb4828d7592/B0.json",
+      "sha256": "b704a0666ecce2f0bf120e4900056634f94d3beb5130c66001e1cdb4828d7592",
+      "size_bytes": 1863
+    }
+  },
+  "runtime_contract": {
+    "cpu_fallback_disabled": true,
+    "io_binding": true,
+    "onnxruntime": "1.19.2",
+    "provider": "MIGraphXExecutionProvider",
+    "static_lsmod": {
+      "path": "artifact://9328bce5211d360b0c7acaafdc9c4b927ac3773f7a7422600470afc5478f8e12/lsmod",
+      "sha256": "9328bce5211d360b0c7acaafdc9c4b927ac3773f7a7422600470afc5478f8e12",
+      "size_bytes": 819664
+    },
+    "synchronize_inputs": true,
+    "synchronize_outputs": true
+  },
+  "schema": "journal_stage2_k100_variant_v1",
+  "selection_boundary": {
+    "formal_test_used": false,
+    "input_role": "configuration-validation performance input only"
+  },
+  "status": "frozen_ready",
+  "variant": "B0"
+}

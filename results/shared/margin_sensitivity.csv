@@ -1,0 +1,5 @@
+Task,Role,Metric,Lower bound,.0001,.0005,.001,.0025,.005,.01
+flood,Flood-13S-MP,miou,-8.328e-04,Fail,Fail,Pass,Pass,Pass,Pass
+flood,Flood-13S-FP16,miou,-3.811e-04,Fail,Pass,Pass,Pass,Pass,Pass
+cloud,Cloud-14S-FP16,mIoU,-8.916e-05,Pass,Pass,Pass,Pass,Pass,Pass
+cloud,Cloud-14S-MP-X,agreement,-5.969e-03,Fail,Fail,Fail,Fail,Fail,Pass

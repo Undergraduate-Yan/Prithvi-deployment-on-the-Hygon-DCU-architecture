@@ -1,0 +1,11 @@
+Runner / topology,Node,Precision,Median (ms),P95 (ms),P99 (ms)
+Python / 1S,2,FP32,19.133,21.086,23.698
+Python / 1S,2,FP16,14.704,16.661,19.321
+Python / 1S,3,FP32,19.858,22.267,25.075
+Python / 1S,3,FP16,15.288,16.962,20.225
+Runner-A / 13S,2,FP32,34.912,36.967,40.040
+Runner-A / 13S,2,FP16,32.094,33.981,36.737
+Runner-A / 13S,2,Mixed C5,39.180,41.257,43.651
+Runner-A / 13S,3,FP32,33.153,35.217,36.776
+Runner-A / 13S,3,FP16,30.132,31.565,32.680
+Runner-A / 13S,3,Mixed C5,37.932,39.843,40.930

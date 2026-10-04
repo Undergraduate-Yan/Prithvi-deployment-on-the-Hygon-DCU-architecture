@@ -1,0 +1,36 @@
+{
+  "scope": "Descriptive evaluation of the previously accessed 90-image public pool",
+  "sample_count": 90,
+  "input_shape": [
+    1,
+    6,
+    224,
+    224
+  ],
+  "output_shape": [
+    1,
+    2,
+    224,
+    224
+  ],
+  "input_scale": 0.0001,
+  "normalization": "Embedded in the flood graph; do not normalize twice",
+  "bootstrap": {
+    "resamples": 10000,
+    "seed": 42,
+    "unit": "paired scene",
+    "estimand": "mean of defined paired scene metric differences"
+  },
+  "tolerated_decreases": {
+    "miou": 0.005,
+    "water_iou": 0.01,
+    "boundary_water_iou": 0.01
+  },
+  "minimum_agreement": 0.995,
+  "boundary_metric": "Intersection of foreground and background dilations with a 5x5 neighborhood, restricted to valid pixels",
+  "runtime_index_0": {
+    "recorded_id": "Ghana_313799",
+    "actual_source_id": "Ghana_1078550"
+  },
+  "clean89_scope": "Post-hoc omission of runtime index 0; distinct from the unused official validation reserve"
+}

@@ -1,0 +1,13 @@
+ID,Time,Task,n,Class,Scope
+A01,2026-08-07,Flood,1,selection-exposed,one image and target loaded for CPU/K100 mechanism check
+A02,2026-08-07,Flood,90,selection-exposed,complete FP32 evaluation with retained predictions
+A03,2026-08-10,Flood,90,selection-exposed,complete paired FP32/FP16 evaluation
+A04,2026-08-10,Flood,90,selection-exposed,complete mixed-provider INT8 diagnostic
+A05,2026-08-10,Flood,90,selection-exposed,complete strict-provider INT8 compatibility diagnostic
+A06,2026-08-18,Flood,90,selection-exposed,"D0-D5 complete 90-image diagnostics; six candidates, three recorded runs each"
+A07,2026-08-20,Flood,90,metadata-or-derived-only,identity and preprocessing replay; retained sample-ID/tensor misalignment reconstructed
+A08,2026-08-22,Flood,0,metadata-or-derived-only,stage-local ledger initialized at zero; not a project-level zero-access assertion
+A09,2026-08-22,Flood,90,inference-only,evaluation of the frozen configuration with per-scene predictions
+A10,2026-08-24,Cloud,975,inference-only,one evaluation-data access; excluded from the formal evaluation
+A11,2026-08-25,Cloud,300,inference-only,"data materialized once; one formal evaluation per frozen variant; 24,300 calls per variant"
+A12,2026-08-28,Flood and Cloud,0,metadata-or-derived-only,"read-only confusion, margin, process-level latency CI, and clean-89 post-hoc derivations; no dataset payload or new inference"

@@ -1,0 +1,9 @@
+Task / candidate,Observed outcome,Interpretation
+Flood B0-B2 merge,Host RSS about 47.03 GiB,Exceeds the 47 GiB guard; unusable under the stated guard
+Flood B7-B14 retaining B11; B21-head,Host RSS about 47.09 GiB,Memory gate failed
+Flood B13-B16; B15-B18; B19-B22,CPU semantic checks failed,Rejected before promotion
+Flood 5-session mixed,Host RSS 53.92 GiB; no complete cache set,Resource-blocked attempt
+Flood 1-session mixed,Not launched after bounded stopping,No completed artifact or timing
+Cloud B21 / B22 mixed trials,58 GiB stopping limit reached,Uncompleted resource-limited trials
+Cloud B17 mixed trial,Outer termination,No accepted compiled candidate
+Cloud B23 mixed trial,Valid compiled candidate; formal agreement failed,Retained negative task result

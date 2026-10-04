@@ -1,0 +1,12 @@
+Task,Role,ROI/scene,Samples,Calls/sample,Status
+Flood,official training,431,431,1,development only
+Flood,calibration,64,64,1,quantization calibration only
+Flood,configuration validation,64,64,1,precision selection and topology validation
+Flood,official validation reserve,89,89,not accessed,not evaluated; future-confirmation eligibility not assessed
+Flood,90-image public-test pool,90,90,1 per candidate,selection-exposed descriptive evaluation
+Cloud,training,1186,5930,one random 224x224 crop per epoch,checkpoint training only
+Cloud,model validation,107,535,16 deterministic windows,checkpoint and early-stopping validation
+Cloud,calibration,256,1280,registered calibration windows,quantization calibration only
+Cloud,deployment validation,256,1280,registered deterministic windows,compile/numerical/system development
+Cloud,975-sample / 195-ROI development evaluation,195,975,registered windows,excluded from formal evaluation
+Cloud,frozen 300-scene formal evaluation,300,300,81 frozen 224x224 tiles,frozen formal evaluation

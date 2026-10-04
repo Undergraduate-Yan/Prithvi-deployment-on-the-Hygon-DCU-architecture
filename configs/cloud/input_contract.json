@@ -1,0 +1,154 @@
+{
+  "bands": [
+    {
+      "common_name": "BLUE",
+      "name": "B02",
+      "native_resolution_m": 10,
+      "rasterio_one_based_index": 2,
+      "taco_zero_based_index": 1
+    },
+    {
+      "common_name": "GREEN",
+      "name": "B03",
+      "native_resolution_m": 10,
+      "rasterio_one_based_index": 3,
+      "taco_zero_based_index": 2
+    },
+    {
+      "common_name": "RED",
+      "name": "B04",
+      "native_resolution_m": 10,
+      "rasterio_one_based_index": 4,
+      "taco_zero_based_index": 3
+    },
+    {
+      "common_name": "NIR_NARROW",
+      "name": "B8A",
+      "native_resolution_m": 20,
+      "rasterio_one_based_index": 9,
+      "taco_zero_based_index": 8
+    },
+    {
+      "common_name": "SWIR1",
+      "name": "B11",
+      "native_resolution_m": 20,
+      "rasterio_one_based_index": 11,
+      "taco_zero_based_index": 10
+    },
+    {
+      "common_name": "SWIR2",
+      "name": "B12",
+      "native_resolution_m": 20,
+      "rasterio_one_based_index": 12,
+      "taco_zero_based_index": 11
+    }
+  ],
+  "dataset": "CloudSEN12+ TACO 1.1.2 Sentinel-2 L2A high/509",
+  "dataset_commit": "f9490f7de11b4f387f72ef800e73ccbb754711de",
+  "external_model_io": {
+    "dtype": "FP32",
+    "input_name": "input",
+    "output_dtype": "FP32",
+    "output_name": "logits",
+    "output_shape": [
+      1,
+      4,
+      224,
+      224
+    ],
+    "shape": [
+      1,
+      6,
+      224,
+      224
+    ],
+    "temporal_frames": 1
+  },
+  "formal_test_payload_access_count": 0,
+  "label_raster": {
+    "documented_scribble_or_nolabel_nodata": 99,
+    "dtype": "uint8",
+    "ignore_index": 255,
+    "nodata_metadata": 255,
+    "shape": [
+      1,
+      512,
+      512
+    ],
+    "valid_primary_ids": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "normalization": {
+    "double_normalization_gate": "data loader applies once; exported model and Runner apply zero additional normalization",
+    "mean": [
+      0.20592650340892424,
+      0.21923400858467046,
+      0.22272650518804932,
+      0.34347781061352434,
+      0.25785957500381157,
+      0.202518440999147
+    ],
+    "model_graph_contains_normalization": false,
+    "onnx_external_input_semantics": "already scaled and normalized FP32",
+    "operation": "(reflectance - training_mean) / training_std in FP32 exactly once",
+    "statistics_manifest": {
+      "sha256": "aea38a18181d246e164824c327439a501488174c79f860b4bb79a3bf25195727",
+      "size_bytes": 3272
+    },
+    "statistics_source": "256 deterministic coverage-stratified unique ROIs from the frozen training set only",
+    "status": "FROZEN",
+    "std": [
+      0.26007981612252296,
+      0.24578255272067706,
+      0.24758331278577964,
+      0.20353990322067164,
+      0.15844321837668404,
+      0.1511271839787069
+    ]
+  },
+  "reflectance": {
+    "clipping": "none; nodata excluded before statistics and training",
+    "operation": "raw_uint16 * 0.0001 in FP32 exactly once",
+    "scale_factor": 0.0001
+  },
+  "schema": "cloud_input_contract_v1",
+  "source_audit": {
+    "sha256": "d2040198f037b741033638ab36059091ef77bafa08bf50366affe91af01ed518",
+    "size_bytes": 22990
+  },
+  "spatial_sampling": {
+    "calibration": "deterministic stratified 224x224 crops from calibration set only",
+    "deployment_validation": "deterministic hashed 224x224 crops from deployment-validation set only",
+    "formal_test": "same frozen sliding-window rule after pretest freeze only",
+    "training": "seeded random 224x224 crops fully inside the valid 509x509 window",
+    "validation_and_task_evaluation": "deterministic 224x224 sliding windows; starts [0,112,224,285] on each axis; average overlapping logits; evaluate only valid 509x509 pixels"
+  },
+  "status": "PASS",
+  "stored_raster": {
+    "dtype": "uint16",
+    "grid_resolution_m": 10,
+    "native_band_resolution_note": "B8A/B11/B12 are natively 20 m but are already aligned in the official L2A TACO 10 m raster. No downstream band resampling is applied.",
+    "nodata": 65535,
+    "shape": [
+      14,
+      512,
+      512
+    ],
+    "upstream_resampling_algorithm": "not published in the audited metadata; treat stored pixels as the source product"
+  },
+  "valid_window": {
+    "columns": [
+      0,
+      509
+    ],
+    "padding_excluded": "right 3 columns and bottom 3 rows",
+    "rows": [
+      0,
+      509
+    ]
+  }
+}

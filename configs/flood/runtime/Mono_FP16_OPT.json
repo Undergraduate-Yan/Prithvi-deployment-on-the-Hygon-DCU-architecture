@@ -1,0 +1,114 @@
+{
+  "benchmark_input": {
+    "formal_test_used": false,
+    "path": "artifact://7f0e2c08cf337dadf277a91976e6f9f7b3f8e022a2b06ad97547dcb562f5be80/configuration_validation_input_00.npy",
+    "sample_id": "Spain_7786924",
+    "sha256": "7f0e2c08cf337dadf277a91976e6f9f7b3f8e022a2b06ad97547dcb562f5be80",
+    "size_bytes": 1204352,
+    "source_index": 0,
+    "source_role": "configuration-validation only"
+  },
+  "execution": {
+    "cache": {
+      "path": "artifact://b4f1d0aa7734831e617bc5d06805d0c2ae23cd3eb8cc14f36d81cf0b42b3d46b/session_00.mxr",
+      "sha256": "b4f1d0aa7734831e617bc5d06805d0c2ae23cd3eb8cc14f36d81cf0b42b3d46b",
+      "size_bytes": 708186318
+    },
+    "input_name": "image",
+    "kind": "mono",
+    "model": {
+      "path": "artifact://53e823dcccc71c5f2fdb7ce1db7116a2e55693e8253516833591a2cc21fd9565/mono_fp16_opt_candidate.onnx",
+      "sha256": "53e823dcccc71c5f2fdb7ce1db7116a2e55693e8253516833591a2cc21fd9565",
+      "size_bytes": 638948264
+    },
+    "output_name": "logits",
+    "session_id": "MONO_FP16_OPT_CANDIDATE_00"
+  },
+  "external_contract": {
+    "batch": 1,
+    "input": "FP32[1,6,224,224]",
+    "output": "FP32[1,2,224,224] logits"
+  },
+  "formal_90_image_test_access_count": 0,
+  "formal_90_image_test_used": false,
+  "hardware": "海光 K100 AI 加速卡",
+  "name": "Mono-FP16-Opt",
+  "phase2e_adaptation": {
+    "configuration_validation_input_only": true,
+    "formal_90_image_test_used": false,
+    "model_cache_identities_changed": false,
+    "payload_change": "path-only rebind from node2 to identity-equivalent node3 copies where required; other /var/tmp paths retained after identity verification",
+    "source_manifest": {
+      "path": "artifact://9a3290d6696aa87b2c80529ee2dc3761861f3d7aded635d029c819de0553d955/B1.json",
+      "sha256": "9a3290d6696aa87b2c80529ee2dc3761861f3d7aded635d029c819de0553d955",
+      "size_bytes": 1900
+    }
+  },
+  "phase3_optimization": {
+    "buffer_and_io_binding_reuse": "common C++ runner v3 preallocates device buffers and creates I/O bindings once",
+    "build_manifest": {
+      "path": "artifact://3d163105e02e1d1612045bb05ed02de0dc5b5d81ee74d04f2a36f0cacac08825/mono_fp16_opt_build_manifest.json",
+      "sha256": "3d163105e02e1d1612045bb05ed02de0dc5b5d81ee74d04f2a36f0cacac08825",
+      "size_bytes": 5798
+    },
+    "compile_summary": {
+      "path": "artifact://f0053b09a275819de19692b81cbc320ad6e6823ad8b361b53ecfceb7734e8f96/summary.json",
+      "sha256": "f0053b09a275819de19692b81cbc320ad6e6823ad8b361b53ecfceb7734e8f96",
+      "size_bytes": 7181
+    },
+    "line": "auxiliary_monolithic_production",
+    "rewrite_summary": {
+      "casts_after": 124,
+      "casts_before": 275,
+      "fp32_output_nodes_after": 393,
+      "fp32_output_nodes_before": 611,
+      "head_casts_removed": 22,
+      "head_resize_groups_converted_to_fp16": 11,
+      "layernorm_groups_affine_moved_to_fp16": 49,
+      "nodes_after": 2331,
+      "nodes_before": 2482,
+      "provable_identity_casts_removed": 31
+    },
+    "source_config": {
+      "path": "artifact://0cbe786fa12230fcf57f522b4895336b7f47ab318b71c80dcfb3d974afaced9c/Mono_FP16.json",
+      "sha256": "0cbe786fa12230fcf57f522b4895336b7f47ab318b71c80dcfb3d974afaced9c",
+      "size_bytes": 2450
+    }
+  },
+  "runtime_contract": {
+    "cpu_fallback_disabled": true,
+    "io_binding": true,
+    "onnxruntime": "1.19.2",
+    "provider": "MIGraphXExecutionProvider",
+    "static_lsmod": {
+      "path": "artifact://9328bce5211d360b0c7acaafdc9c4b927ac3773f7a7422600470afc5478f8e12/lsmod",
+      "sha256": "9328bce5211d360b0c7acaafdc9c4b927ac3773f7a7422600470afc5478f8e12",
+      "size_bytes": 819664
+    },
+    "synchronize_inputs": true,
+    "synchronize_outputs": true
+  },
+  "schema": "journal_stage2_k100_variant_v1",
+  "selected_source_variant": "Mono-FP16-Opt-Candidate",
+  "selection_boundary": {
+    "formal_test_used": false,
+    "input_role": "configuration-validation performance input only"
+  },
+  "selection_provenance": {
+    "candidate_statistically_faster": true,
+    "median_latency_ms": 13.2692915,
+    "model_and_cache_bytes_changed_vs_selected_candidate": false,
+    "paired_cluster_bootstrap_difference_ci95_ms": [
+      -0.13074549999999974,
+      -0.09137758749999937
+    ],
+    "relative_change_vs_mono_fp16_pct": -0.8055549762051473,
+    "selection_gate": {
+      "path": "artifact://3272ca720b876ad68e2fd9b31c43bf92c371d94f57f707120e9ae30583dd1927/mono_final_selection_gate.json",
+      "sha256": "3272ca720b876ad68e2fd9b31c43bf92c371d94f57f707120e9ae30583dd1927",
+      "size_bytes": 3405
+    }
+  },
+  "status": "frozen_ready",
+  "variant": "Mono-FP16-Opt"
+}

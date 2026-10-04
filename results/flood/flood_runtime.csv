@@ -1,0 +1,7 @@
+Metric,1S FP32,1S FP16,13S Mixed C5
+Incremental device memory (GiB),4.817,3.149,10.682
+Gross energy (J/call),5.352,3.531,4.653
+Median startup (s),23.115,18.723,17.033
+Median recovery (s),33.988,29.090,27.819
+Calls in approximately 3600 s,151580,215971,151370
+Errors / non-finite outputs,0 / 0,0 / 0,0 / 0

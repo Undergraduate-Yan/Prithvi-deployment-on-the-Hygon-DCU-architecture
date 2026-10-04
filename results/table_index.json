@@ -1,0 +1,152 @@
+[
+  {
+    "table": "S2",
+    "title": "Canonical data units and roles",
+    "file": "results/shared/data_units.csv",
+    "measurement_scope": "ROI denotes region of interest. Counts of 5930 and 535 refer to sample observations rather than unique regions. The formal cloud evaluation comprises 300 full scenes."
+  },
+  {
+    "table": "S3",
+    "title": "Project-level access chronology",
+    "file": "results/shared/access_chronology.csv",
+    "measurement_scope": "Access dates establish the sequence of configuration development and evaluation. Flood public-pool results remain descriptive because the pool was accessed before configuration freezing."
+  },
+  {
+    "table": "S4",
+    "title": "Software roles and retained versions",
+    "file": "results/shared/software_environment.csv",
+    "measurement_scope": ""
+  },
+  {
+    "table": "S5",
+    "title": "Three-node hardware snapshot",
+    "file": "results/shared/hardware_snapshot.csv",
+    "measurement_scope": "Snapshot date: 28 August 2026. Available RAM is time-dependent and is not a compile budget."
+  },
+  {
+    "table": "S6",
+    "title": "Frozen ONNX/cache identity coverage",
+    "file": "results/shared/artifact_identity_coverage.csv",
+    "measurement_scope": "Sizes are independently rounded. ONNX + MXR rounded subtotals need not reproduce the rounded bundle total exactly. Ordered artifact hashes can be requested from the corresponding author under the conditions in Section S11; model and cache payloads are not included."
+  },
+  {
+    "table": "S7",
+    "title": "Local same-input block statistics on 64 configuration scenes",
+    "file": "results/flood/blockwise_discrepancy_64.csv",
+    "measurement_scope": "P90 denotes the 90th percentile across the retained scenes. L_i is MAE; s_i is relative-l2 error. Q/DQ ancestry is a source-graph property, not by itself proof of an integer kernel."
+  },
+  {
+    "table": "S8",
+    "title": "Configuration candidates and equal-resource controls",
+    "file": "results/flood/configuration_candidates.csv",
+    "measurement_scope": "All candidates use the training-derived configuration set. U42-U46 identify the random-seed controls. The public-pool flood results are reported separately in Table S14."
+  },
+  {
+    "table": "S9",
+    "title": "Retained topology lineage",
+    "file": "results/shared/topology_lineage.csv",
+    "measurement_scope": "Graph labels identify distinct candidate roles. Auxiliary and attempted graphs are not accepted deployments."
+  },
+  {
+    "table": "S10",
+    "title": "Rejected or uncompleted restructuring candidates",
+    "file": "results/shared/rejected_candidates.csv",
+    "measurement_scope": ""
+  },
+  {
+    "table": "S11",
+    "title": "Flood complete-graph compilation costs and deployment-bundle size",
+    "file": "results/flood/flood_compile.csv",
+    "measurement_scope": "Corresponds to manuscript Table 5. Mixed-precision compilation time is a lower bound because reused-session durations are missing."
+  },
+  {
+    "table": "S12",
+    "title": "Compilation measurements by graph-construction scope",
+    "file": "results/shared/compile_measurement_scopes.csv",
+    "measurement_scope": "The 13S mixed-precision measurement in this table covers selected merges. Complete-graph accounting is reported in Table S11. Unavailable and uninstrumented measurements remain explicitly identified."
+  },
+  {
+    "table": "S13",
+    "title": "Representative kernel traces and their scope",
+    "file": "results/shared/representative_kernel_paths.csv",
+    "measurement_scope": "I8II and HBH are retained kernel-category labels. Unreported counts are not treated as zero. These measurements establish path realization under their trace scopes."
+  },
+  {
+    "table": "S14",
+    "title": "Descriptive flood segmentation results",
+    "file": "results/flood/flood_accuracy.csv",
+    "measurement_scope": "Corresponds to manuscript Table 3. All scores describe the 90-image public pool, which was accessed during configuration development."
+  },
+  {
+    "table": "S15",
+    "title": "Flood paired scene-bootstrap descriptive screen",
+    "file": "results/flood/flood_descriptive_bootstrap.csv",
+    "measurement_scope": "Difference is candidate minus its paired reference for the stated scene-level metric. The retained mean paired mIoU differences are not differences of pooled mIoU values. No independent-confirmation interpretation is made."
+  },
+  {
+    "table": "S16",
+    "title": "Post-hoc clean-89 flood sensitivity",
+    "file": "results/flood/flood_clean89_posthoc.csv",
+    "measurement_scope": "Removal of runtime index 0 is post hoc and does not create an independent test set."
+  },
+  {
+    "table": "S17",
+    "title": "Formal cloud segmentation results",
+    "file": "results/cloud/cloud_accuracy.csv",
+    "measurement_scope": "Corresponds to manuscript Table 7. All variants use the 14-session cloud topology. The formal evaluation contains 300 full scenes and 24,300 tile calls per variant."
+  },
+  {
+    "table": "S18",
+    "title": "Complete formal cloud paired scene-bootstrap results",
+    "file": "results/cloud/cloud_formal_bootstrap.csv",
+    "measurement_scope": "Difference is candidate minus reference; bounds are one-sided 95% lower bounds. PASS/FAIL is retained per criterion. The mixed candidate is rejected because of agreement."
+  },
+  {
+    "table": "S19",
+    "title": "Cloud absolute class and binary aggregation metrics",
+    "file": "results/cloud/cloud_class_metrics.csv",
+    "measurement_scope": "Prev. means class prevalence. The any-cloud aggregation combines the three non-clear classes. Rounded display metrics do not replace the retained full-precision confusion matrices."
+  },
+  {
+    "table": "S20",
+    "title": "Exploratory practical-margin sensitivity",
+    "file": "results/shared/margin_sensitivity.csv",
+    "measurement_scope": "Threshold columns are hypothetical tolerated decreases. Registered acceptance decisions are unchanged."
+  },
+  {
+    "table": "S21",
+    "title": "Controlled flood model-call latency",
+    "file": "results/flood/flood_latency.csv",
+    "measurement_scope": "Corresponds to manuscript Table 4. Each row includes 1000 measured calls across five processes."
+  },
+  {
+    "table": "S22",
+    "title": "Cloud model-call latency on the 14-session topology",
+    "file": "results/cloud/cloud_latency.csv",
+    "measurement_scope": "Corresponds to manuscript Table 8. The mixed candidate fails the task-agreement requirement despite its measured latency."
+  },
+  {
+    "table": "S23",
+    "title": "Cloud process-level latency uncertainty",
+    "file": "results/cloud/cloud_process_latency_ci.csv",
+    "measurement_scope": "Median of process medians differs from the pooled-call median in the preceding table. Confidence intervals use the retained five fresh-process medians."
+  },
+  {
+    "table": "S24",
+    "title": "Configuration-validation latency for graph-reduction candidates",
+    "file": "results/flood/configuration_graph_reduction_latency.csv",
+    "measurement_scope": "These configuration-validation protocols characterize graph-reduction candidates and are separate from the five-process controlled benchmark."
+  },
+  {
+    "table": "S25",
+    "title": "Flood runtime resources and sustained-operation results",
+    "file": "results/flood/flood_runtime.csv",
+    "measurement_scope": "Corresponds to manuscript Table 6. The FP32 sustained-operation result uses the isolated Node 2 experiment. The partly shared Node 3 experiment is excluded from this comparison."
+  },
+  {
+    "table": "S26",
+    "title": "Cloud runtime resources and sustained-operation results",
+    "file": "results/cloud/cloud_runtime.csv",
+    "measurement_scope": "Corresponds to manuscript Table 9. Resource and sustained-operation measurements use different node assignments; cross-node differences do not isolate precision effects."
+  }
+]

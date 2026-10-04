@@ -1,16 +1,14 @@
 * text=auto
 *.py text eol=lf
-*.sh text eol=lf
-*.c text eol=lf
 *.md text eol=lf
-*.json text eol=lf
-*.csv text eol=lf
-*.tex text eol=lf
-*.bib text eol=lf
-*.yml text eol=lf
-*.yaml text eol=lf
-*.ps1 text eol=crlf
-*.pdf binary
-*.png binary
-*.xlsx binary
-
+*.sh text eol=lf
+*.cpp text eol=lf
+*.hpp text eol=lf
+# These exact source/model topology bytes are dependencies of identity checks.
+src/precision/segment_builder.py -text
+src/precision/cloud_quantizer_base.py -text
+src/graph/rcs13_builder.py -text
+configs/topology/flood_partition_locked.json -text
+# Preserve retained numerical tables byte-for-byte.
+results/** -text
+manifests/datasets/** -text

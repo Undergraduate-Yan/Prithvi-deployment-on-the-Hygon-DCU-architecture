@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite the associated manuscript and identify the code commit used."
+type: software
+title: "Prithvi deployment on the Hygon DCU architecture"
+repository-code: "https://github.com/Undergraduate-Yan/Prithvi-K100-Auditable-Deployment"
+authors:
+  - family-names: Yan
+    given-names: Chengang
+  - family-names: Tan
+    given-names: Haining
+  - family-names: Yin
+    given-names: Longxiang
+  - family-names: Wang
+    given-names: Youwei
+  - family-names: Luo
+    given-names: Jie
+  - family-names: Qiu
+    given-names: Jibing
+    email: qiujibing@ict.ac.cn

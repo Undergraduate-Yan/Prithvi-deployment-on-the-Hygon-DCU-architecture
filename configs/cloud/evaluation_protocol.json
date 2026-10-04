@@ -1,0 +1,37 @@
+{
+  "configuration_selection_after_unlock_allowed": false,
+  "noninferiority_margins": {
+    "MacroF1": -0.005,
+    "agreement": -0.005,
+    "mIoU": -0.005,
+    "per_major_class_IoU": -0.01
+  },
+  "old_formal_test_eligible": false,
+  "roi_independent": true,
+  "scenes": 300,
+  "schema": "cloud_phase7r_formal_protocol_v1",
+  "statistics": {
+    "confidence": 0.95,
+    "one_sided_noninferiority": true,
+    "paired_scene_bootstrap": 10000,
+    "seed": 42
+  },
+  "status": "FROZEN",
+  "tiling": {
+    "axis_starts": [
+      0,
+      224,
+      448,
+      672,
+      896,
+      1120,
+      1344,
+      1568,
+      1776
+    ],
+    "fusion": "average overlapping logits",
+    "patch": 224,
+    "patches_per_scene": 81
+  },
+  "transaction_count": 1
+}

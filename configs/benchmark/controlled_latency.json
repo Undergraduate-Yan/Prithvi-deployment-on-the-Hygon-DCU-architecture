@@ -1,0 +1,22 @@
+{
+  "fresh_processes": 5,
+  "warmup_calls_per_process": 50,
+  "measured_calls_per_process": 200,
+  "cpu_affinity": "Fixed within each comparison; choose a valid CPU on the target host",
+  "scope": "All sessions, final synchronization, and FP32 logits transfer to host",
+  "comparison_groups": {
+    "flood_13s": "C++ Runner-A",
+    "flood_1s": "Python I/O binding",
+    "cloud_14s": "C++ Runner-A cloud contract"
+  },
+  "excluded": [
+    "scene loading",
+    "tiling",
+    "stitching",
+    "scoring"
+  ],
+  "process_bootstrap": {
+    "resamples": 10000,
+    "seed": 42
+  }
+}

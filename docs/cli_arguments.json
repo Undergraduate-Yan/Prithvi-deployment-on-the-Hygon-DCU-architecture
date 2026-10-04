@@ -1,0 +1,508 @@
+[
+  {
+    "file": "src/benchmarking/benchmark_flood.py",
+    "arguments": [
+      "trial_parser.add_argument(\"--manifest\", required=True, type=Path)",
+      "trial_parser.add_argument(\"--input\", required=True, type=Path)",
+      "trial_parser.add_argument(\"--output\", required=True, type=Path)",
+      "trial_parser.add_argument(\"--trial-index\", required=True, type=int)",
+      "trial_parser.add_argument(\"--warmup\", type=int, default=30)",
+      "trial_parser.add_argument(\"--measured\", type=int, default=100)",
+      "trial_parser.add_argument(\"--device\", type=int, default=0)",
+      "trial_parser.add_argument(\"--profile\", action=\"store_true\")",
+      "aggregate_parser.add_argument(\"--results-root\", required=True, type=Path)",
+      "aggregate_parser.add_argument(\"--output\", required=True, type=Path)",
+      "aggregate_parser.add_argument(\"--expected-trials\", type=int, default=3)",
+      "aggregate_parser.add_argument(\"--seed\", type=int, default=42)",
+      "aggregate_parser.add_argument(\"--bootstrap-draws\", type=int, default=10_000)"
+    ]
+  },
+  {
+    "file": "src/benchmarking/collect_compile_memory.py",
+    "arguments": [
+      "parser.add_argument(\"--root-pid\", type=int, required=True)",
+      "parser.add_argument(\"--output\", type=Path)",
+      "parser.add_argument(\"--interval-seconds\", type=float, default=1.0)",
+      "parser.add_argument(\"--once\", action=\"store_true\")"
+    ]
+  },
+  {
+    "file": "src/benchmarking/run_cpp_processes.py",
+    "arguments": [
+      "parser.add_argument('--runner', type=Path, required=True)",
+      "parser.add_argument('--plan', type=Path, required=True)",
+      "parser.add_argument('--input-raw', type=Path, required=True)",
+      "parser.add_argument('--cpu', type=int, required=True)",
+      "parser.add_argument('--device', type=int, default=0)",
+      "parser.add_argument('--output-dir', type=Path, required=True)"
+    ]
+  },
+  {
+    "file": "src/benchmarking/summarize_cloud_kernels.py",
+    "arguments": [
+      "parser.add_argument(\"--int8-result\", required=True, type=Path)",
+      "parser.add_argument(\"--int8-kernel-csv\", required=True, type=Path)",
+      "parser.add_argument(\"--fp16-result\", required=True, type=Path)",
+      "parser.add_argument(\"--fp16-kernel-csv\", required=True, type=Path)",
+      "parser.add_argument(\"--output\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/benchmarking/trace_cloud_session.py",
+    "arguments": [
+      "parser.add_argument(\"--model\", required=True, type=Path)",
+      "parser.add_argument(\"--cache\", required=True, type=Path)",
+      "parser.add_argument(\"--feeds\", required=True, type=Path)",
+      "parser.add_argument(\"--session-ordinal\", required=True, type=int)",
+      "parser.add_argument(\"--repetitions\", type=int, default=20)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/common.py",
+    "arguments": []
+  },
+  {
+    "file": "src/diagnostics/aggregate_blocks.py",
+    "arguments": [
+      "parser.add_argument(\"--input\", required=True, type=Path)",
+      "parser.add_argument(\"--input-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--output\", required=True, type=Path)",
+      "parser.add_argument(\"--plot\", type=Path)",
+      "parser.add_argument(\"--report\", type=Path)"
+    ]
+  },
+  {
+    "file": "src/diagnostics/compare_cloud_split.py",
+    "arguments": [
+      "parser.add_argument(\"--reference-model\", required=True, type=Path)",
+      "parser.add_argument(\"--prefix-model\", required=True, type=Path)",
+      "parser.add_argument(\"--suffix-model\", required=True, type=Path)",
+      "parser.add_argument(\"--input-pack\", required=True, type=Path)",
+      "parser.add_argument(\"--input-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--output\", required=True, type=Path)",
+      "parser.add_argument(\"--samples\", type=int, default=32)"
+    ]
+  },
+  {
+    "file": "src/diagnostics/compare_providers.py",
+    "arguments": [
+      "parser.add_argument(\"--model\", required=True, type=Path)",
+      "parser.add_argument(\"--input-pack\", required=True, type=Path)",
+      "parser.add_argument(\"--input-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--output\", required=True, type=Path)",
+      "parser.add_argument(\"--samples\", type=int, default=8)",
+      "parser.add_argument(\"--save-arrays\", type=Path)"
+    ]
+  },
+  {
+    "file": "src/diagnostics/diagnose_blocks.py",
+    "arguments": [
+      "parser.add_argument(\"--input-pack\", required=True, type=Path)",
+      "parser.add_argument(\"--input-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--segment-report\", required=True, type=Path)",
+      "parser.add_argument(\"--models-dir\", required=True, type=Path)",
+      "parser.add_argument(\"--cache-dir\", type=Path)",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/diagnostics/instrument_intermediates.py",
+    "arguments": [
+      "parser.add_argument(\"--input\", required=True, type=Path)",
+      "parser.add_argument(\"--output\", required=True, type=Path)",
+      "parser.add_argument(\"--node-indices\", required=True, help=\"comma-separated topological node indices\")",
+      "parser.add_argument(\"--manifest\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/evaluation/evaluate_cloud.py",
+    "arguments": [
+      "parser.add_argument(\"--model\", action=\"append\", required=True, type=Path)",
+      "parser.add_argument(\"--cache\", action=\"append\", required=True, type=Path)",
+      "parser.add_argument(\"--payload-root\", required=True, type=Path)",
+      "parser.add_argument(\"--input-contract\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)",
+      "parser.add_argument(\"--role\", required=True)"
+    ]
+  },
+  {
+    "file": "src/evaluation/evaluate_cloud_configuration.py",
+    "arguments": [
+      "parser.add_argument(\"--model\", action=\"append\", required=True, type=Path)",
+      "parser.add_argument(\"--cache\", action=\"append\", type=Path)",
+      "parser.add_argument(\"--provider\", choices=(\"cpu\", \"migraphx\"), required=True)",
+      "parser.add_argument(\"--deployment-validation-root\", required=True, type=Path)",
+      "parser.add_argument(\n        \"--indices-file\",\n        type=Path,\n        help=\"Optional JSON array of deployment-validation ordinals for a CPU-only selection screen.\",\n    )",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)",
+      "parser.add_argument(\"--role\", required=True)"
+    ]
+  },
+  {
+    "file": "src/evaluation/evaluate_flood.py",
+    "arguments": [
+      "parser.add_argument(\"--label\", required=True)",
+      "parser.add_argument(\"--config\", required=True, type=Path)",
+      "parser.add_argument(\"--input-pack\", required=True, type=Path)",
+      "parser.add_argument(\"--input-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/evaluation/flood_metrics.py",
+    "arguments": [
+      "parser.add_argument(\"--reference\", required=True, type=parse_variant)",
+      "parser.add_argument(\"--variant\", action=\"append\", default=[], type=parse_variant)",
+      "parser.add_argument(\"--output-csv\", required=True, type=Path)",
+      "parser.add_argument(\"--summary-json\", required=True, type=Path)",
+      "parser.add_argument(\"--frozen-test-ids\", type=Path)"
+    ]
+  },
+  {
+    "file": "src/graph/build_reduced_graph.py",
+    "arguments": [
+      "parser.add_argument(\"--base-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--replacements-json\", required=True, type=Path)",
+      "parser.add_argument(\"--expected-sessions\", required=True, type=int)",
+      "parser.add_argument(\"--candidate-name\", required=True)",
+      "parser.add_argument(\"--candidate-label\", required=True)",
+      "parser.add_argument(\"--output\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/graph/clean_merged_onnx.py",
+    "arguments": [
+      "parser.add_argument(\"--input\", type=Path, required=True)",
+      "parser.add_argument(\"--output\", type=Path, required=True)",
+      "parser.add_argument(\"--feeds\", type=Path, required=True)",
+      "parser.add_argument(\"--shim\", type=Path, required=True)",
+      "parser.add_argument(\"--report\", type=Path, required=True)"
+    ]
+  },
+  {
+    "file": "src/graph/extract_subgraph.py",
+    "arguments": [
+      "parser.add_argument(\"--input\", required=True, type=Path)",
+      "parser.add_argument(\"--output\", required=True, type=Path)",
+      "parser.add_argument(\"--input-names\", required=True, help=\"comma-separated boundary tensors\")",
+      "parser.add_argument(\"--output-names\", required=True, help=\"comma-separated failing tensors\")",
+      "parser.add_argument(\"--manifest\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/graph/lower_cloud_layernorm.py",
+    "arguments": [
+      "parser.add_argument(\"--input\", required=True, type=Path)",
+      "parser.add_argument(\"--output\", required=True, type=Path)",
+      "parser.add_argument(\"--report\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/graph/partition_cloud.py",
+    "arguments": [
+      "parser.add_argument(\"--variant\", required=True, choices=VARIANTS)",
+      "parser.add_argument(\"--source-model\", required=True, type=Path)",
+      "parser.add_argument(\"--source-sha256\", required=True)",
+      "parser.add_argument(\"--flood-topology\", required=True, type=Path)",
+      "parser.add_argument(\"--base-builder\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/graph/partition_flood_fp32.py",
+    "arguments": [
+      "parser.add_argument(\"--source\", type=Path, required=True)",
+      "parser.add_argument(\"--output-dir\", type=Path, required=True)",
+      "parser.add_argument(\"--inferred-source\", type=Path, required=True)",
+      "parser.add_argument(\"--report\", type=Path, required=True)"
+    ]
+  },
+  {
+    "file": "src/graph/partition_flood_int8.py",
+    "arguments": [
+      "ap.add_argument(\"--source\", type=Path, required=True)",
+      "ap.add_argument(\"--output-dir\", type=Path, required=True)",
+      "ap.add_argument(\"--report\", type=Path, required=True)"
+    ]
+  },
+  {
+    "file": "src/graph/rcs13_builder.py",
+    "arguments": [
+      "parser.add_argument(\"--variant\", required=True, choices=(\"RCS13-FP32\", \"RCS13-FP16-A\"))",
+      "parser.add_argument(\"--source-model\", required=True, type=Path)",
+      "parser.add_argument(\"--source-sha256\", required=True)",
+      "parser.add_argument(\"--topology\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/graph/rewrite_convtranspose.py",
+    "arguments": [
+      "ap.add_argument(\"source\", type=Path)",
+      "ap.add_argument(\"output\", type=Path)",
+      "ap.add_argument(\"report\", type=Path)"
+    ]
+  },
+  {
+    "file": "src/graph/rewrite_layernorm.py",
+    "arguments": [
+      "ap.add_argument(\"source\", type=Path)",
+      "ap.add_argument(\"output\", type=Path)",
+      "ap.add_argument(\"report\", type=Path)"
+    ]
+  },
+  {
+    "file": "src/graph/split_cloud_decoder.py",
+    "arguments": [
+      "parser.add_argument(\"--input\", required=True, type=Path)",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)",
+      "parser.add_argument(\"--manifest\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/model_export/cloud_model.py",
+    "arguments": [
+      "parser.add_argument(\"--data-root\", type=Path, required=True)",
+      "parser.add_argument(\"--output-root\", type=Path, required=True)",
+      "parser.add_argument(\"--backbone-checkpoint\", type=Path, required=True)",
+      "parser.add_argument(\"--normalization-json\", type=Path, required=True)",
+      "parser.add_argument(\"--batch-size\", type=int, default=8)",
+      "parser.add_argument(\"--num-workers\", type=int, default=4)",
+      "parser.add_argument(\"--max-epochs\", type=int, default=50)",
+      "parser.add_argument(\"--patience\", type=int, default=8)",
+      "parser.add_argument(\"--learning-rate\", type=float, default=5e-5)",
+      "parser.add_argument(\"--weight-decay\", type=float, default=0.05)",
+      "parser.add_argument(\"--precision\", default=\"16-mixed\", choices=(\"16-mixed\", \"32-true\"))",
+      "parser.add_argument(\"--smoke-only\", action=\"store_true\")"
+    ]
+  },
+  {
+    "file": "src/model_export/evaluate_fp32_baseline.py",
+    "arguments": []
+  },
+  {
+    "file": "src/model_export/export_cloud_onnx.py",
+    "arguments": [
+      "parser.add_argument(\"--checkpoint\", type=Path, required=True)",
+      "parser.add_argument(\"--backbone-checkpoint\", type=Path, required=True)",
+      "parser.add_argument(\"--data-manifest\", type=Path, required=True)",
+      "parser.add_argument(\"--trainer-module\", type=Path, required=True)",
+      "parser.add_argument(\"--output-onnx\", type=Path, required=True)",
+      "parser.add_argument(\"--output-report\", type=Path, required=True)",
+      "parser.add_argument(\"--opset\", type=int, default=17)",
+      "parser.add_argument(\"--device\", choices=(\"cpu\", \"cuda\"), default=\"cpu\")",
+      "parser.add_argument(\"--verify-ort\", action=\"store_true\")"
+    ]
+  },
+  {
+    "file": "src/model_export/export_flood_cli.py",
+    "arguments": [
+      "parser.add_argument('--project-root', type=Path, required=True,\n                        help='Root containing the frozen flood data, checkpoint and evaluation metadata; see docs/data_and_models.md')"
+    ]
+  },
+  {
+    "file": "src/model_export/export_onnx_fp32.py",
+    "arguments": []
+  },
+  {
+    "file": "src/model_export/train_fp32_baseline.py",
+    "arguments": []
+  },
+  {
+    "file": "src/precision/assemble_cloud_mixed.py",
+    "arguments": [
+      "parser.add_argument(\"--fp16-model-root\", required=True, type=Path)",
+      "parser.add_argument(\"--fp16-cache-root\", required=True, type=Path)",
+      "parser.add_argument(\"--fp16-tail-model\", action=\"append\", required=True, type=Path)",
+      "parser.add_argument(\"--fp16-tail-cache\", action=\"append\", required=True, type=Path)",
+      "parser.add_argument(\"--mp-model\", required=True, type=Path)",
+      "parser.add_argument(\"--mp-cache\", required=True, type=Path)",
+      "parser.add_argument(\"--replaced-ordinal\", required=True, type=int)",
+      "parser.add_argument(\"--int8-block\", action=\"append\", required=True, type=int)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/precision/build_fp16_b.py",
+    "arguments": [
+      "parser.add_argument(\"--source-manifest\", type=Path, required=True)",
+      "parser.add_argument(\"--output-root\", type=Path, required=True)"
+    ]
+  },
+  {
+    "file": "src/precision/build_fp16_c.py",
+    "arguments": [
+      "parser.add_argument(\"--source-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/precision/build_fp16_segments.py",
+    "arguments": [
+      "parser.add_argument(\"--legacy-builder\", required=True, type=Path)",
+      "parser.add_argument(\"--fp16-source\", required=True, type=Path)",
+      "parser.add_argument(\"--fp16-source-report\", required=True, type=Path)",
+      "parser.add_argument(\"--int8-quantization-report\", required=True, type=Path)",
+      "parser.add_argument(\"--frozen-int8-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--repaired-head-model\", required=True, type=Path)",
+      "parser.add_argument(\"--repaired-head-cache\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/precision/cloud_quantizer_base.py",
+    "arguments": [
+      "parser.add_argument(\"--source\", required=True, type=Path)",
+      "parser.add_argument(\"--calibration-root\", required=True, type=Path)",
+      "parser.add_argument(\"--formal-access-ledger\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)",
+      "parser.add_argument(\"--mode\", choices=(\"smoke\", \"official\"), default=\"official\")",
+      "parser.add_argument(\"--sample-limit\", type=int)",
+      "parser.add_argument(\"--selection-manifest\", type=Path)"
+    ]
+  },
+  {
+    "file": "src/precision/evaluate_precision_maps.py",
+    "arguments": [
+      "parser.add_argument(\"--input-pack\", required=True, type=Path)",
+      "parser.add_argument(\"--input-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--int8-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--all-fp16-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--fp16-compile-result\", required=True, type=Path)",
+      "parser.add_argument(\"--precision-map-dir\", required=True, type=Path)",
+      "parser.add_argument(\"--fp32-model\", required=True, type=Path)",
+      "parser.add_argument(\"--fp32-cache\", required=True, type=Path)",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)",
+      "parser.add_argument(\"--runtime-passes\", type=int, default=3)"
+    ]
+  },
+  {
+    "file": "src/precision/generate_precision_maps.py",
+    "arguments": [
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)",
+      "parser.add_argument(\"--aggregated-diagnostics\", type=Path)"
+    ]
+  },
+  {
+    "file": "src/precision/quantize_cloud.py",
+    "arguments": [
+      "parser.add_argument(\"--source\", required=True, type=Path)",
+      "parser.add_argument(\"--calibration-root\", required=True, type=Path)",
+      "parser.add_argument(\"--selection-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--task-protocol\", required=True, type=Path)",
+      "parser.add_argument(\"--deployment-validation-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--formal-access-ledger\", required=True, type=Path)",
+      "parser.add_argument(\"--base-quantizer\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/precision/segment_builder.py",
+    "arguments": [
+      "parser.add_argument(\"--fp16-source\", type=Path, required=True)",
+      "parser.add_argument(\"--fp16-source-report\", type=Path, required=True)",
+      "parser.add_argument(\"--int8-quantization-report\", type=Path, required=True)",
+      "parser.add_argument(\"--frozen-int8-manifest\", type=Path, required=True)",
+      "parser.add_argument(\"--repaired-head-model\", type=Path, required=True)",
+      "parser.add_argument(\"--repaired-head-cache\", type=Path, required=True)",
+      "parser.add_argument(\"--output-root\", type=Path, required=True)",
+      "parser.add_argument(\"--candidates\", type=parse_candidates, default=list(CANDIDATES))",
+      "parser.add_argument(\n        \"--payload-mode\",\n        choices=(\"hardlink\", \"copy\"),\n        default=\"hardlink\",\n        help=\"Materialize immutable INT8/head runtime payload under output-root; hardlink is zero-copy and requires one filesystem.\",\n    )"
+    ]
+  },
+  {
+    "file": "src/preprocessing/cloud_decode.py",
+    "arguments": []
+  },
+  {
+    "file": "src/preprocessing/prepare_cloud_local.py",
+    "arguments": [
+      "parser.add_argument('--records', required=True, type=Path)",
+      "parser.add_argument('--source-root', required=True, type=Path)",
+      "parser.add_argument('--output-root', required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/preprocessing/prepare_flood_inputs.py",
+    "arguments": [
+      "parser.add_argument(\"--selection-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--frozen-test-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--split-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--frozen-test-evidence\", required=True, type=Path)",
+      "parser.add_argument(\"--frozen-first-sample-tensor\", required=True, type=Path)",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)",
+      "parser.add_argument(\"--metadata-output\", type=Path)"
+    ]
+  },
+  {
+    "file": "src/runtime/compile_cloud_session.py",
+    "arguments": [
+      "parser.add_argument(\"--config-id\", required=True)",
+      "parser.add_argument(\"--model\", required=True, type=Path)",
+      "parser.add_argument(\"--feeds\", required=True, type=Path)",
+      "parser.add_argument(\"--cache\", required=True, type=Path)",
+      "parser.add_argument(\"--shim\", required=True, type=Path)",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)",
+      "parser.add_argument(\"--intra-op-threads\", type=int, default=1)"
+    ]
+  },
+  {
+    "file": "src/runtime/compile_flood_session.py",
+    "arguments": [
+      "parser.add_argument(\"--config-id\", required=True)",
+      "parser.add_argument(\"--model\", required=True, type=Path)",
+      "parser.add_argument(\"--feeds\", required=True, type=Path)",
+      "parser.add_argument(\"--cache\", required=True, type=Path)",
+      "parser.add_argument(\"--shim\", required=True, type=Path)",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)",
+      "parser.add_argument(\"--intra-op-threads\", type=int, default=4)"
+    ]
+  },
+  {
+    "file": "src/runtime/flood_runner.py",
+    "arguments": []
+  },
+  {
+    "file": "src/runtime/materialize_cpp_plan.py",
+    "arguments": [
+      "parser.add_argument(\"--manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--validation-result\", type=Path)",
+      "parser.add_argument(\"--output\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/runtime/prepare_cloud_feeds.py",
+    "arguments": [
+      "parser.add_argument(\"--model\", action=\"append\", required=True, type=Path)",
+      "parser.add_argument(\"--dv-inputs\", required=True, type=Path)",
+      "parser.add_argument(\"--sample-index\", type=int, default=0)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/statistics/cloud_analysis.py",
+    "arguments": [
+      "parser.add_argument(\"--candidate\", action=\"append\", required=True, help=\"ROLE=RESULT_DIRECTORY\")",
+      "parser.add_argument(\"--reference-role\", required=True)",
+      "parser.add_argument(\"--records\", required=True, type=Path)",
+      "parser.add_argument(\"--payload-root\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)",
+      "parser.add_argument(\"--bootstrap\", type=int, default=10_000)",
+      "parser.add_argument(\"--seed\", type=int, default=42)"
+    ]
+  },
+  {
+    "file": "src/statistics/flood_analysis.py",
+    "arguments": []
+  },
+  {
+    "file": "src/statistics/flood_paired_bootstrap.py",
+    "arguments": [
+      "parser.add_argument(\"--input\", required=True, type=Path)",
+      "parser.add_argument(\"--reference\", required=True)",
+      "parser.add_argument(\"--iterations\", type=int, default=10000)",
+      "parser.add_argument(\"--seed\", type=int, default=42)",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)"
+    ]
+  }
+]

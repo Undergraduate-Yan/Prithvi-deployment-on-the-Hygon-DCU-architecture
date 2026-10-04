@@ -1,0 +1,4 @@
+Node,Kernel,Cores/threads,NUMA,RAM (GiB),Available (GiB),Swap (GiB)
+Node1,5.4.0-198-generic,16/32,2,62.78,52.71,0.00
+Node2,5.4.0-216-generic,16/32,2,15.60,7.04,8.00
+Node3,5.4.0-189-generic,16/32,2,62.78,53.57,0.00

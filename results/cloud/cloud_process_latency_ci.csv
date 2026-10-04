@@ -1,0 +1,7 @@
+Node,Role,Processes,Calls,Median of medians (ms),95% CI (ms)
+Node1,Cloud-14S-FP16,5,1000,32.701,"[32.423, 33.971]"
+Node1,Cloud-14S-FP32,5,1000,36.600,"[35.961, 37.608]"
+Node1,Cloud-14S-MP-X,5,1000,32.422,"[31.647, 32.707]"
+Node3,Cloud-14S-FP16,5,1000,30.805,"[30.711, 31.598]"
+Node3,Cloud-14S-FP32,5,1000,34.508,"[34.313, 34.854]"
+Node3,Cloud-14S-MP-X,5,1000,30.846,"[30.495, 31.375]"

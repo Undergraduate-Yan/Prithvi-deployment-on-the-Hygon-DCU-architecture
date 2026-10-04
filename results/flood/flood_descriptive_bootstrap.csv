@@ -1,0 +1,21 @@
+Candidate,Metric,Difference,Lower 95%,Margin,Status
+Flood-25S-D5-Control,miou,-0.000087,-0.000802,-0.005,Within descriptive margin
+Flood-25S-D5-Control,water_iou,-0.000218,-0.001724,-0.010,Within descriptive margin
+Flood-25S-D5-Control,Boundary IoU,-0.000094,-0.001683,-0.010,Within descriptive margin
+Flood-25S-D5-Control,agreement,-0.001332,-0.001758,-0.005,Within descriptive margin
+Flood-13S-MP,miou,-0.000211,-0.000833,-0.005,Within descriptive margin
+Flood-13S-MP,water_iou,-0.000494,-0.001750,-0.010,Within descriptive margin
+Flood-13S-MP,Boundary IoU,0.000384,-0.000704,-0.010,Within descriptive margin
+Flood-13S-MP,agreement,-0.001304,-0.001738,-0.005,Within descriptive margin
+Flood-1S-FP16,miou,-0.000268,-0.000400,-0.005,Within descriptive margin
+Flood-1S-FP16,water_iou,-0.000569,-0.000840,-0.010,Within descriptive margin
+Flood-1S-FP16,Boundary IoU,-0.000363,-0.000757,-0.010,Within descriptive margin
+Flood-1S-FP16,agreement,-0.000189,-0.000253,-0.005,Within descriptive margin
+Flood-1S-FP32,miou,0.000000,0.000000,-0.005,Within descriptive margin
+Flood-1S-FP32,water_iou,0.000000,0.000000,-0.010,Within descriptive margin
+Flood-1S-FP32,Boundary IoU,0.000000,0.000000,-0.010,Within descriptive margin
+Flood-1S-FP32,agreement,0.000000,0.000000,-0.005,Within descriptive margin
+Flood-13S-FP16,miou,-0.000253,-0.000381,-0.005,Within descriptive margin
+Flood-13S-FP16,water_iou,-0.000538,-0.000796,-0.010,Within descriptive margin
+Flood-13S-FP16,Boundary IoU,-0.000329,-0.000732,-0.010,Within descriptive margin
+Flood-13S-FP16,agreement,-0.000191,-0.000254,-0.005,Within descriptive margin

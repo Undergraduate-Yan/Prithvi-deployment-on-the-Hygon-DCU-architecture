@@ -1,0 +1,643 @@
+{
+  "benchmark_input": {
+    "formal_test_used": false,
+    "path": "artifact://7f0e2c08cf337dadf277a91976e6f9f7b3f8e022a2b06ad97547dcb562f5be80/configuration_validation_input_00.npy",
+    "sha256": "7f0e2c08cf337dadf277a91976e6f9f7b3f8e022a2b06ad97547dcb562f5be80",
+    "size_bytes": 1204352
+  },
+  "execution": {
+    "kind": "segment13",
+    "segments": [
+      {
+        "cache": {
+          "path": "artifact://9db0a8d0a92bc9a9d47d41701c8835e14c872248c331d701a3c09e7b1cd7012d/session_00.mxr",
+          "sha256": "9db0a8d0a92bc9a9d47d41701c8835e14c872248c331d701a3c09e7b1cd7012d",
+          "size_bytes": 119258792
+        },
+        "end_block": 1,
+        "index": 0,
+        "inputs": [
+          {
+            "elem_type": 1,
+            "name": "image",
+            "shape": [
+              1,
+              6,
+              224,
+              224
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "artifact://67a411379480a9021e5f0f99458d620a2d60258178ca1db61561a5b828e3d7ca/session_00.onnx",
+          "sha256": "67a411379480a9021e5f0f99458d620a2d60258178ca1db61561a5b828e3d7ca",
+          "size_bytes": 107899971
+        },
+        "outputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.1/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "primary_output": "/task/model/encoder/blocks.1/Add_1_output_0",
+        "retain_outputs": [],
+        "session_id": "RCS13_FP32_00",
+        "start_block": 0
+      },
+      {
+        "cache": {
+          "path": "artifact://7abfa05edb4b6047d992e46b01980db418603e9e491f94e342d85ca8012c66f3/session_01.mxr",
+          "sha256": "7abfa05edb4b6047d992e46b01980db418603e9e491f94e342d85ca8012c66f3",
+          "size_bytes": 56065034
+        },
+        "end_block": 2,
+        "index": 1,
+        "inputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.1/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "artifact://900e359d4d70dd5aa71fa00036faf328ed4cf0be09489c1cb3a72c0c95bc9ef1/session_01.onnx",
+          "sha256": "900e359d4d70dd5aa71fa00036faf328ed4cf0be09489c1cb3a72c0c95bc9ef1",
+          "size_bytes": 50397009
+        },
+        "outputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.2/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "primary_output": "/task/model/encoder/blocks.2/Add_1_output_0",
+        "retain_outputs": [],
+        "session_id": "RCS13_FP32_01",
+        "start_block": 2
+      },
+      {
+        "cache": {
+          "path": "artifact://f8bd6dd321713c085b9190af427b92153548d0fb9c43073476e51f69fe5a86b7/session_02.mxr",
+          "sha256": "f8bd6dd321713c085b9190af427b92153548d0fb9c43073476e51f69fe5a86b7",
+          "size_bytes": 56065034
+        },
+        "end_block": 3,
+        "index": 2,
+        "inputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.2/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "artifact://fdf78301c79fb62d969dfedcccfd7a22c8170d7805a821a68e4f04b59479adc0/session_02.onnx",
+          "sha256": "fdf78301c79fb62d969dfedcccfd7a22c8170d7805a821a68e4f04b59479adc0",
+          "size_bytes": 50397009
+        },
+        "outputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.3/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "primary_output": "/task/model/encoder/blocks.3/Add_1_output_0",
+        "retain_outputs": [],
+        "session_id": "RCS13_FP32_02",
+        "start_block": 3
+      },
+      {
+        "cache": {
+          "path": "artifact://282e0dba057ea1b2bb1f8e227dbe66ff2f1020505bc3d4005c7b952d8d6ff0c4/session_03.mxr",
+          "sha256": "282e0dba057ea1b2bb1f8e227dbe66ff2f1020505bc3d4005c7b952d8d6ff0c4",
+          "size_bytes": 56065034
+        },
+        "end_block": 4,
+        "index": 3,
+        "inputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.3/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "artifact://ce3b8bc984ad9f80818f22c324a61fa674913948fd744cd1638af7dce657b6ed/session_03.onnx",
+          "sha256": "ce3b8bc984ad9f80818f22c324a61fa674913948fd744cd1638af7dce657b6ed",
+          "size_bytes": 50397009
+        },
+        "outputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.4/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "primary_output": "/task/model/encoder/blocks.4/Add_1_output_0",
+        "retain_outputs": [],
+        "session_id": "RCS13_FP32_03",
+        "start_block": 4
+      },
+      {
+        "cache": {
+          "path": "artifact://0913de3ba6703c87eab6c384eb4be58b56d3236729b36051cec774acd67420fa/session_04.mxr",
+          "sha256": "0913de3ba6703c87eab6c384eb4be58b56d3236729b36051cec774acd67420fa",
+          "size_bytes": 56065034
+        },
+        "end_block": 5,
+        "index": 4,
+        "inputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.4/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "artifact://a17b6e1d2e1cef12969d877ca36cac7be542ed331705b348396152faf7de1af2/session_04.onnx",
+          "sha256": "a17b6e1d2e1cef12969d877ca36cac7be542ed331705b348396152faf7de1af2",
+          "size_bytes": 50397009
+        },
+        "outputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.5/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "primary_output": "/task/model/encoder/blocks.5/Add_1_output_0",
+        "retain_outputs": [
+          "/task/model/encoder/blocks.5/Add_1_output_0"
+        ],
+        "session_id": "RCS13_FP32_04",
+        "start_block": 5
+      },
+      {
+        "cache": {
+          "path": "artifact://50592cfdc080ccd91863164e03572ce7ab6a55a5c448d5e67546cd3369a7e80e/session_05.mxr",
+          "sha256": "50592cfdc080ccd91863164e03572ce7ab6a55a5c448d5e67546cd3369a7e80e",
+          "size_bytes": 56065034
+        },
+        "end_block": 6,
+        "index": 5,
+        "inputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.5/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "artifact://7320c4e06ad6ae1360a0a441bb7b81170f765843be4135ececbd9309304acb44/session_05.onnx",
+          "sha256": "7320c4e06ad6ae1360a0a441bb7b81170f765843be4135ececbd9309304acb44",
+          "size_bytes": 50397009
+        },
+        "outputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.6/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "primary_output": "/task/model/encoder/blocks.6/Add_1_output_0",
+        "retain_outputs": [],
+        "session_id": "RCS13_FP32_05",
+        "start_block": 6
+      },
+      {
+        "cache": {
+          "path": "artifact://2afd19f5771738ad245032c2c6f5f5122abb7ecfda358f742697dc40176bb88b/session_06.mxr",
+          "sha256": "2afd19f5771738ad245032c2c6f5f5122abb7ecfda358f742697dc40176bb88b",
+          "size_bytes": 224256213
+        },
+        "end_block": 10,
+        "index": 6,
+        "inputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.6/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "artifact://e2f4a148a8342068ae133fa123b990607a7e08e7ab4942f2ed7cbe109e99e6f4/session_06.onnx",
+          "sha256": "e2f4a148a8342068ae133fa123b990607a7e08e7ab4942f2ed7cbe109e99e6f4",
+          "size_bytes": 201587187
+        },
+        "outputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.10/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "primary_output": "/task/model/encoder/blocks.10/Add_1_output_0",
+        "retain_outputs": [],
+        "session_id": "RCS13_FP32_06",
+        "start_block": 7
+      },
+      {
+        "cache": {
+          "path": "artifact://f09d5b9489504abd2f767e62612192d0b752c74ea723e1220237af21b1c66a70/session_07.mxr",
+          "sha256": "f09d5b9489504abd2f767e62612192d0b752c74ea723e1220237af21b1c66a70",
+          "size_bytes": 224256432
+        },
+        "end_block": 14,
+        "index": 7,
+        "inputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.10/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "artifact://4ca74511724e6009be94fb76efaea88901fe5d50980ed759cf7d31a17fd94456/session_07.onnx",
+          "sha256": "4ca74511724e6009be94fb76efaea88901fe5d50980ed759cf7d31a17fd94456",
+          "size_bytes": 201587866
+        },
+        "outputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.11/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          },
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.14/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "primary_output": "/task/model/encoder/blocks.14/Add_1_output_0",
+        "retain_outputs": [
+          "/task/model/encoder/blocks.11/Add_1_output_0"
+        ],
+        "session_id": "RCS13_FP32_07",
+        "start_block": 11
+      },
+      {
+        "cache": {
+          "path": "artifact://ef730aaa209b3ee8317640b4ae999206b28caeef6a0701de25eead1e8ea634d8/session_08.mxr",
+          "sha256": "ef730aaa209b3ee8317640b4ae999206b28caeef6a0701de25eead1e8ea634d8",
+          "size_bytes": 112128703
+        },
+        "end_block": 16,
+        "index": 8,
+        "inputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.14/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "artifact://67de62f439fae17219f49cf0e3272e69fb7c50baab2996133cd16bc2a0948613/session_08.onnx",
+          "sha256": "67de62f439fae17219f49cf0e3272e69fb7c50baab2996133cd16bc2a0948613",
+          "size_bytes": 100794036
+        },
+        "outputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.16/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "primary_output": "/task/model/encoder/blocks.16/Add_1_output_0",
+        "retain_outputs": [],
+        "session_id": "RCS13_FP32_08",
+        "start_block": 15
+      },
+      {
+        "cache": {
+          "path": "artifact://79a13baae7ce9807140111f65d69ee634fcbe7445457815d0eda8ddd56ecb6fc/session_09.mxr",
+          "sha256": "79a13baae7ce9807140111f65d69ee634fcbe7445457815d0eda8ddd56ecb6fc",
+          "size_bytes": 112128920
+        },
+        "end_block": 18,
+        "index": 9,
+        "inputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.16/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "artifact://a81baee28d0320f9d909495afc866ffe4acaee57b8727377b3daf10e5ad91fee/session_09.onnx",
+          "sha256": "a81baee28d0320f9d909495afc866ffe4acaee57b8727377b3daf10e5ad91fee",
+          "size_bytes": 100794176
+        },
+        "outputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.17/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          },
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.18/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "primary_output": "/task/model/encoder/blocks.18/Add_1_output_0",
+        "retain_outputs": [
+          "/task/model/encoder/blocks.17/Add_1_output_0"
+        ],
+        "session_id": "RCS13_FP32_09",
+        "start_block": 17
+      },
+      {
+        "cache": {
+          "path": "artifact://a9fb2aaa20798a769b027a414a69bdfd9f57605e702408d25ea1ad9bc6daa71f/session_10.mxr",
+          "sha256": "a9fb2aaa20798a769b027a414a69bdfd9f57605e702408d25ea1ad9bc6daa71f",
+          "size_bytes": 112128703
+        },
+        "end_block": 20,
+        "index": 10,
+        "inputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.18/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "artifact://40b32ba11aa7004cf9826cb68fc8d0449bb7566db78322b0dade996e59cab2e2/session_10.onnx",
+          "sha256": "40b32ba11aa7004cf9826cb68fc8d0449bb7566db78322b0dade996e59cab2e2",
+          "size_bytes": 100794126
+        },
+        "outputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.20/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "primary_output": "/task/model/encoder/blocks.20/Add_1_output_0",
+        "retain_outputs": [],
+        "session_id": "RCS13_FP32_10",
+        "start_block": 19
+      },
+      {
+        "cache": {
+          "path": "artifact://ba2dd98e51e47ee2851efd03717f29c835a5665adbf8d28b4c5ca8f3978026bc/session_11.mxr",
+          "sha256": "ba2dd98e51e47ee2851efd03717f29c835a5665adbf8d28b4c5ca8f3978026bc",
+          "size_bytes": 112128703
+        },
+        "end_block": 22,
+        "index": 11,
+        "inputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.20/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "artifact://92f9b1d8b755ce5e984c060a4952306ec5625163cab01741db0148d06d1a01dc/session_11.onnx",
+          "sha256": "92f9b1d8b755ce5e984c060a4952306ec5625163cab01741db0148d06d1a01dc",
+          "size_bytes": 100794156
+        },
+        "outputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.22/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "primary_output": "/task/model/encoder/blocks.22/Add_1_output_0",
+        "retain_outputs": [],
+        "session_id": "RCS13_FP32_11",
+        "start_block": 21
+      },
+      {
+        "cache": {
+          "path": "artifact://2fc2e1f538c8912945c05b91669dbffffbec4ebc632beabc24f26965b873035d/session_12.mxr",
+          "sha256": "2fc2e1f538c8912945c05b91669dbffffbec4ebc632beabc24f26965b873035d",
+          "size_bytes": 117149915
+        },
+        "end_block": 24,
+        "index": 12,
+        "inputs": [
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.22/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          },
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.5/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          },
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.11/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          },
+          {
+            "elem_type": 1,
+            "name": "/task/model/encoder/blocks.17/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "block23_plus_UPerNet_head",
+        "model": {
+          "path": "artifact://28359b1c6ee2161bc4b589e0ebf4433b0194c29881a4d5e956674b036da7d9a7/session_12.onnx",
+          "sha256": "28359b1c6ee2161bc4b589e0ebf4433b0194c29881a4d5e956674b036da7d9a7",
+          "size_bytes": 110894849
+        },
+        "outputs": [
+          {
+            "elem_type": 1,
+            "name": "logits",
+            "shape": [
+              1,
+              2,
+              224,
+              224
+            ]
+          },
+          {
+            "elem_type": 1,
+            "name": "/task/model/decoder/fpn4/fpn4.0/MaxPool_output_0",
+            "shape": [
+              1,
+              1024,
+              7,
+              7
+            ]
+          }
+        ],
+        "primary_output": "logits",
+        "retain_outputs": [],
+        "session_id": "RCS13_FP32_12",
+        "start_block": 23
+      }
+    ]
+  },
+  "external_contract": {
+    "batch": 1,
+    "input": "FP32[1,6,224,224]",
+    "output": "FP32[1,2,224,224] logits"
+  },
+  "formal_90_image_test_used": false,
+  "hardware": "海光 K100 AI 加速卡",
+  "image": "sha256:bdc7e817dfd8587ed477834b5304f35c6b0ffcbe9f51645cf64259bd81c17b01",
+  "runtime_contract": {
+    "cpu_fallback_disabled": true,
+    "device_id": 0,
+    "onnxruntime": "1.19.2",
+    "provider": "MIGraphXExecutionProvider",
+    "static_lsmod": {
+      "path": "artifact://9328bce5211d360b0c7acaafdc9c4b927ac3773f7a7422600470afc5478f8e12/lsmod",
+      "sha256": "9328bce5211d360b0c7acaafdc9c4b927ac3773f7a7422600470afc5478f8e12",
+      "size_bytes": 819664
+    }
+  },
+  "schema": "journal_stage2_k100_variant_v1",
+  "sources": {
+    "build_manifest": {
+      "path": "artifact://151b868ad711ade0242e97dea8c6e145283fca42664e200b43fbe36ba66d02a8/rcs13_fp32_manifest.json",
+      "sha256": "151b868ad711ade0242e97dea8c6e145283fca42664e200b43fbe36ba66d02a8",
+      "size_bytes": 33818
+    },
+    "compile_summary": {
+      "path": "artifact://c209f4f616fbfbfd8e20afcca359adaf588fdb3c55ffa4ab47dac133c4b9bc89/summary.json",
+      "sha256": "c209f4f616fbfbfd8e20afcca359adaf588fdb3c55ffa4ab47dac133c4b9bc89",
+      "size_bytes": 90369
+    }
+  },
+  "status": "frozen_ready",
+  "variant": "RCS13-FP32"
+}

@@ -1,4 +1,0 @@
-bundle,manifest_sha256,payload_files,payload_bytes,payload_mib,median_ms,p95_ms,p99_ms,throughput_samples_s,trial_median_cv_percent,cold_start_successes,recovery_successes,stability_minutes,inference_errors,nonfinite_outputs,prediction_drifts,deployment_status
-M5,f4dc433595c43332d4e29c2351363b3245f214273f058551788d50be29c388da,74,1032911027,985.061,26.309,28.518,30.744,37.641,0.413,5,3,60,0,0,0,passed
-Full FP16,1f433a917aed5fead6dd95597a5a03f500a93ce564067e9dad4d25f4682bad25,19,1349558844,1287.040,15.151,15.552,17.594,65.900,0.086,5,3,60,0,0,0,passed
-

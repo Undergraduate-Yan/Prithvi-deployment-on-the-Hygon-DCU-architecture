@@ -1,0 +1,11 @@
+Record,Role,S,Time (s),Peak (GiB),Scope
+Initial uninstrumented record,Flood-1S-FP16-Diagnostic,1,not retained,not retained,timing not instrumented
+Fresh single-Session build,Flood-1S-FP16,1,1517.759806,7.640,Session creation; outer wall 1519.651678 s
+1S FP32 record,Flood-1S-FP32,1,1514.97598185,not instrumented,complete retained compile records
+25S FP32 record,Flood-25S-FP32,25,1408.2397988880984,not instrumented,complete retained compile records
+25S D5 control record,Flood-25S-D5-Control,25,not retained,not instrumented,timing not available
+5S mixed attempt,Flood-5S-MP-Attempt,5,not retained,53.92,blocked; no complete cache set
+1S mixed stop,Flood-1S-MP-Attempt,1,not launched,not instrumented,not launched after bounded stop
+22S auxiliary branch,Flood-22S-MP-Aux,22,308.938867,3.553993,selected merges only; reused time unavailable
+20S controlled branch,Flood-20S-MP,20,567.435395,3.553993,selected merges only; reused time unavailable
+13S mixed record,Flood-13S-MP,13,1580.113591,3.288097,selected merges only; reused time unavailable

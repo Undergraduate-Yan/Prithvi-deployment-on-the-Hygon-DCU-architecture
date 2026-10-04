@@ -1,0 +1,3 @@
+# Analysis dependencies; exact auxiliary versions are not all recorded in the manuscript.
+numpy
+matplotlib

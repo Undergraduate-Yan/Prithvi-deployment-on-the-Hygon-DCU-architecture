@@ -1,66 +1,83 @@
-# Auditable Prithvi-EO-2.0 Deployment on a K100 AI Accelerator
+# Prithvi deployment on the Hygon DCU architecture
 
 [中文说明](README_zh.md)
 
-This repository is the Git-ready source and compact evidence package for the paper:
+Research code and compact derived records associated with:
 
-> **Auditable Mixed-Precision Deployment of Prithvi-EO-2.0 on a K100 AI Accelerator: Accuracy, Kernel Paths, and System Trade-offs**
+**Onboard Deployment of Remote Sensing Foundation Models for the Hygon DCU Architecture**
 
-It contains the reproducible Python/Bash toolchain, immutable protocol files, compact result summaries, deployment utilities, and English/Chinese LaTeX sources. Multi-gigabyte checkpoints, ONNX graphs, MXR caches, datasets, container images, and raw profiler output are deliberately excluded from Git and are referenced by size/SHA256 instead.
+Chengang Yan, Haining Tan, Longxiang Yin, Youwei Wang, Jie Luo and Jibing Qiu.
+Correspondence: qiujibing@ict.ac.cn.
 
-## Main result
+## Research scope
 
-- **Full FP16** is the speed-oriented primary deployment for the evaluated checkpoint and K100 software stack.
-- **M5** is a storage-oriented deployable alternative: its complete bundle is 23.463% smaller, but it is 73.642% slower than Full FP16 under the same production-style CLI.
-- M5 is at latency parity with the topology-matched 25-segment FP32 baseline (22.080 ms versus 22.209 ms); this is **not** reported as a formal INT8 speedup.
-- The historical strict CPU--MIGraphX logit diagnostic remains failed. Task-level acceptance does not overwrite that result.
+The study evaluates Prithvi-EO-2.0–UPerNet on Hygon K100 accelerators through ground-based flood and cloud segmentation. It links blockwise numerical diagnostics, precision assignment and graph restructuring to task accuracy, compilation resources and inference performance.
 
-## Repository layout
+- Flood deployment uses a 25-session diagnostic graph and a common 13-session comparison topology. Results on the previously accessed 90-image public pool are descriptive.
+- Cloud deployment uses a repaired 14-session graph. Evaluation on 300 previously unused, region-disjoint scenes accepts FP16 and rejects the mixed candidate because of prediction agreement.
+- The measurements provide ground-based evidence relevant to future onboard deployment. They do not establish completed in-orbit operation.
 
-```text
-src/baseline/                  Initial checkpoint, FP32, and Full-FP16 checks
-src/phase11/                   Final K100 graph, evaluation, performance, and kernel tools
-src/phase11/phase11_minimal_deployment/
-                               Immutable bundle and operational-acceptance tools
-src/phase11/phase11_deployment_cli_pair_benchmark/
-                               Same-CLI M5 versus Full-FP16 benchmark
-protocols/                     Copies of the frozen experiment protocols
-artifacts/                     External-artifact identities and mounting instructions
-results/                       Compact authoritative JSON/CSV summaries
-paper/                         English/Chinese LaTeX, figures, audits, and final PDFs
-docs/                          Experiment map, evidence boundaries, and release guidance
-scripts/                       Repository and external-artifact verification utilities
-```
+## Contents
 
-## Reproduction levels
+| Directory | Purpose |
+|---|---|
+| `src/` | Preprocessing, export, diagnostics, graph/precision operations, inference, metrics and statistics |
+| `cpp/` | Separate flood and cloud C++ runner contracts |
+| `scripts/` | Command entry points and offline table/statistical analysis |
+| `configs/` | Task protocols, precision maps, topology records and runtime manifest templates |
+| `environment/` | Analysis, model preparation, quantization and K100 environment requirements |
+| `manifests/` | Dataset selection, external artifact identities and source identities |
+| `results/` | Retained supplementary tables and scene-level derived records |
+| `figures/` | Diagnostic plotting entry point and figure scope |
+| `docs/` | Reproduction instructions, methods, availability and paper-to-code mapping |
 
-1. **Offline audit**: inspect paper tables, JSON summaries, hashes, and run static tests without K100 hardware.
-2. **Artifact reconstruction**: provide the frozen checkpoint/ONNX inputs and rebuild compatible FP32, INT8, and M0--M5 segment manifests.
-3. **K100 execution**: use the locked DTK/MIGraphX/ORT container, compile/load MXR caches, run task gates, kernel traces, performance, and deployment acceptance.
+## Start here
 
-Start with [docs/reproduction.md](docs/reproduction.md) and [artifacts/README.md](artifacts/README.md).
+The commands below are usage instructions. This repository does not claim that its reorganized entry points have been executed on the reader's environment.
 
-## Quick offline check
+### Read retained tables without K100
 
 ```bash
-python scripts/repo_check.py
-python scripts/summarize_results.py
-python -m pytest -q
+python scripts/reproduce_tables.py --output-dir outputs/tables
 ```
 
-Verify separately stored artifacts:
+This formats the retained CSV values as Markdown. It does not recalculate experimental results.
+
+### Reanalyse derived records without inference
+
+Use a separate Python environment with `environment/requirements-analysis.txt`:
 
 ```bash
-python scripts/verify_external_artifacts.py \
-  --manifest artifacts/required_artifacts.example.json \
-  --root /absolute/path/to/k100_artifacts
+python scripts/analyze_results.py flood --output-dir outputs/flood-analysis
+python scripts/analyze_results.py cloud --output-dir outputs/cloud-analysis
 ```
 
-## Evidence boundaries
+The flood analysis separates pooled scores from mean paired scene differences. The cloud analysis uses scene confusion matrices and the retained full-precision agreement records. See [evaluation protocols](docs/evaluation_protocols.md).
 
-Provider placement, realized kernel precision, task accuracy, system latency, and operational reliability are separate claims. See [docs/evidence_boundaries.md](docs/evidence_boundaries.md) before reusing any number or making acceleration claims.
+### Prepare and run models
 
-## Publication and licensing
+```bash
+python scripts/prepare_inputs.py --help
+python scripts/export_model.py --help
+python scripts/diagnose_blocks.py --help
+python scripts/build_deployment.py --help
+python scripts/evaluate.py --help
+python scripts/benchmark.py --help
+```
 
-The repository has been scrubbed of known credentials and excludes large/licensed model artifacts. A project license and author metadata have intentionally **not** been invented; resolve [LICENSE_PENDING.md](LICENSE_PENDING.md) and the release checklist before making a public repository.
+Model execution requires the external data, task weights, graph/cache artifacts and vendor runtime described in [data and models](docs/data_and_models.md) and [K100 environment](environment/k100_runtime.md). Some identity-locked construction procedures additionally require their exact calibration manifests and build reports. The repository alone does not supply every prerequisite for end-to-end reproduction.
 
+Read [reproduction instructions](docs/reproduction.md) and the [paper-to-code map](docs/paper_mapping.md) before selecting an experiment. Independent source inspection, offline reanalysis and hardware execution have different requirements.
+
+## Numerical and execution contracts
+
+- Preserve the task-specific preprocessing: normalization is embedded in the flood graph and external to the cloud graph.
+- Keep FP32 external inputs and logits, tensor names, session order and feature taps consistent with the selected artifact identities.
+- Compare latency within the same runner, node, topology and measurement scope.
+- Retained schema identifiers are machine-readable provenance labels. Their historical use of words such as `formal` does not establish independence of the flood public pool.
+
+## Citation and permissions
+
+Use [CITATION.cff](CITATION.cff) for attribution and identify the repository commit used in a reproduction. The code is maintained in [Prithvi-K100-Auditable-Deployment](https://github.com/Undergraduate-Yan/Prithvi-K100-Auditable-Deployment). No article DOI is asserted here.
+
+Code use and redistribution are governed by [LICENSE](LICENSE). No open-source license has been selected. Third-party components retain their own terms; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

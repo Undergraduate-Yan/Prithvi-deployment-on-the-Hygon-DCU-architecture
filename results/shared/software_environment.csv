@@ -1,0 +1,9 @@
+Component,Version / setting,Role
+Accelerator,Hygon K100 AI,Target inference platform
+Host CPU,Hygon C86 5380; 16 cores / 32 threads; 2 NUMA nodes,Host execution
+Host / container OS,Ubuntu 20.04 / Ubuntu 22.04.5,Separate host and container identities
+ONNX Runtime,1.19.2,Deployed inference
+MIGraphX,5.1.0,Execution provider / compiler
+DTK / HIP,25.04.2 / 6.3.25405,Accelerator toolchain
+PyTorch / ONNX,2.5.1 / 1.22.0,Model preparation and export
+ONNX Runtime,1.26.0,Offline quantization only; not the deployed inference runtime

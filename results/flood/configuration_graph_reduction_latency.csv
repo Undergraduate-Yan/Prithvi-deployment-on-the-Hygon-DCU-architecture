@@ -1,0 +1,9 @@
+Configuration,Protocol,S,Calls,Median (ms),P95 (ms)
+Flood-1S-FP32,3 x 100 characterization,1,300,17.197,18.934
+Flood-1S-FP16-Diagnostic,3 x 100 characterization,1,300,13.324,13.717
+Flood-25S-FP32,3 x 100 characterization,25,300,20.847,22.594
+Flood-25S-D5-Control,3 x 100 characterization,25,300,21.373,23.558
+Flood-13S-MP,3 x 100 characterization,13,300,19.253,21.274
+Flood-1S-FP32,10 x 200 repeat characterization,1,2000,17.278,20.815
+Flood-1S-FP16-Diagnostic,10 x 200 repeat characterization,1,2000,13.393,13.888
+Flood-13S-MP,10 x 200 repeat characterization,13,2000,19.263,21.534

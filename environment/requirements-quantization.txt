@@ -1,0 +1,4 @@
+# Install in a separate offline quantization environment.
+onnxruntime==1.26.0
+onnx==1.22.0
+numpy

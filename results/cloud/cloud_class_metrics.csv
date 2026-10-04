@@ -1,0 +1,11 @@
+Role,Aggregation,Class,Prev.,Precision,Recall,F1,IoU
+Cloud-14S-FP32,four_class,Clear,0.6489,0.9112,0.9473,0.9289,0.8673
+Cloud-14S-FP32,four_class,Thick Cloud,0.1961,0.9188,0.8481,0.8820,0.7889
+Cloud-14S-FP32,four_class,Thin Cloud,0.0834,0.5437,0.6287,0.5831,0.4115
+Cloud-14S-FP32,four_class,Cloud Shadow,0.0715,0.6901,0.4621,0.5535,0.3827
+Cloud-14S-FP32,clear_vs_any_cloud,Any Cloud,0.3511,0.8949,0.8295,0.8609,0.7558
+Cloud-14S-FP16,four_class,Clear,0.6489,0.9112,0.9474,0.9290,0.8674
+Cloud-14S-FP16,four_class,Thick Cloud,0.1961,0.9187,0.8481,0.8820,0.7889
+Cloud-14S-FP16,four_class,Thin Cloud,0.0834,0.5437,0.6286,0.5831,0.4115
+Cloud-14S-FP16,four_class,Cloud Shadow,0.0715,0.6907,0.4617,0.5534,0.3826
+Cloud-14S-FP16,clear_vs_any_cloud,Any Cloud,0.3511,0.8951,0.8294,0.8610,0.7559

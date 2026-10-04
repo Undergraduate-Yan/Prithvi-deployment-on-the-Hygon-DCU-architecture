@@ -1,0 +1,5 @@
+Sessions,Precision,Bundle (GiB),Peak host RSS (GiB),Compile time (s)
+1,FP16,1.255,7.640,1517.760
+13,FP32,2.506,4.233,1642.890
+13,FP16,1.255,4.048,1600.524
+13,Mixed C5,0.912,3.978,>=2080.613

@@ -1,0 +1,12 @@
+Metric,FP32,FP16,Mixed candidate
+mIoU,0.612601,0.612581,0.612098
+Macro-F1,0.736891,0.736860,0.736416
+Pixel accuracy,0.866554,0.866591,0.866405
+Clear IoU,0.867286,0.867366,0.866653
+Thick-cloud IoU,0.788892,0.788902,0.789275
+Thin-cloud IoU,0.411542,0.411500,0.409902
+Cloud-shadow IoU,0.382683,0.382556,0.382562
+Agreement,1.000000,0.999371,0.994727
+mIoU difference lower bound,Reference,-0.000089,-0.001370
+Agreement difference lower bound,Reference,-0.000725,-0.005969
+Decision,Reference,Accepted,Rejected

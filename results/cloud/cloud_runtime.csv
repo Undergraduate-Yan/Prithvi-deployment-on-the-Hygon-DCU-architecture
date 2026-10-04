@@ -1,0 +1,10 @@
+Metric,FP32,FP16
+Resource-measurement node,3,1
+Incremental device memory (GiB),12.462,10.893
+Incremental energy above idle (J/tile),4.890,1.957
+Median startup (s),29.187,25.769
+Median recovery (s),28.986,25.774
+Sustained-operation node,3,2
+Duration (s),5111.418,5349.822
+Completed calls,139017,145192
+Errors / prediction drift,0 / 0,0 / 0

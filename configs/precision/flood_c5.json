@@ -1,0 +1,29 @@
+{
+  "name": "Flood-13S-MP",
+  "fp16_blocks": [
+    0,
+    8,
+    10,
+    14,
+    15,
+    17,
+    18,
+    19,
+    20
+  ],
+  "remaining_backbone": "INT8/QDQ ancestry",
+  "head": "floating point",
+  "ranking": [
+    "local relative-l2 P90 descending",
+    "local MAE P90 descending",
+    "local max-abs P90 descending",
+    "block index ascending"
+  ],
+  "selection_set": "64 training-derived configuration scenes",
+  "quantization": {
+    "format": "QDQ",
+    "weight": "signed INT8, per-channel symmetric",
+    "activation": "signed INT8, per-tensor asymmetric",
+    "calibration": "MinMax, 64 calibration scenes"
+  }
+}

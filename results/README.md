@@ -1,26 +1,12 @@
-# Compact result evidence
+# Retained study records
 
-This directory contains small, Git-suitable copies of the authoritative summaries used by the paper. It intentionally excludes raw tensors, full latency arrays when embedded elsewhere, ONNX/MXR artifacts, Docker inspect archives, telemetry JSONL, and profiler logs.
+The numerical and protocol CSVs indexed by `table_index.json` match the corresponding supplementary tables. They are copied records, not outputs of a new experiment. Full-precision scene records support separate offline analysis.
 
-## Human-readable tables
+- `flood/per_scene_metrics.csv` retains source sample identifiers, confusion counts, metric values and prediction identities for six configurations. Runtime index 0 has the source-identity discrepancy explained in `docs/evaluation_protocols.md`.
+- `cloud/per_scene/*_confusion.csv` retains the 300 scene confusion matrices for each model role.
+- `cloud/per_scene_metrics.csv` retains full-precision scene metrics and agreement ratios.
+- `cloud/bootstrap_full_precision.csv` and `cloud/metrics_full_precision.csv` retain the original numerical summaries.
 
-- `paper_metrics.csv`: fixed 90-image task metrics, strict diagnostic, logical capacity, topology-matched latency, and device-memory summary.
-- `deployment_comparison.csv`: complete bundle capacity and production-style same-CLI comparison.
+The cloud role names map as follows: `Cloud-RCS-FP32-Compat` → Cloud-14S-FP32; `Cloud-RCS-FP16-Opt-v2` → Cloud-14S-FP16; `Cloud-RCS-MP-Task-v2` → Cloud-14S-MP-X. Original role identifiers remain intact for pairing.
 
-## Authoritative machine-readable summaries
-
-- `fp32_25segment_performance_summary.json`
-- `m0_m4_performance_summary.json`
-- `M5_performance_summary.json`
-- `M0_test90_summary.json` ... `M5_test90_summary.json`
-- `m0_m5_combined_pareto.json`
-- `kernel_evidence_summary.json`
-- `candidate_block_kernel_matrix.csv`
-- `final_deployment_acceptance.json`
-- `M5_vs_FP16_same_cli_summary.json`
-- 60-minute M5/FP16 result summaries
-
-The CSV tables use the rounded values published in the manuscript. For re-analysis, use the corresponding JSON evidence and preserve its schema, status, and claim boundaries.
-
-Do not infer a formal INT8 speedup from the `1.006` M5/FP32 factor. The difference is treated as latency parity. Do not infer strict logit equivalence from task-level passes.
-
+Reading a table does not reproduce the underlying model run. Use each script's stated input requirements and keep regenerated output outside this directory.

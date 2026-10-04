@@ -1,0 +1,21 @@
+{
+  "flood": {
+    "diagnostic_sessions": 25,
+    "controlled_sessions": 13,
+    "feature_taps": [
+      5,
+      11,
+      17,
+      23
+    ],
+    "input": "FP32 [1,6,224,224]",
+    "output": "FP32 [1,2,224,224]"
+  },
+  "cloud": {
+    "initial_sessions": 13,
+    "repaired_sessions": 14,
+    "repair": "Split the decoder-containing final session at retained feature boundaries without changing learned weights",
+    "input": "FP32 [1,6,224,224], normalized outside graph",
+    "output": "FP32 [1,4,224,224]"
+  }
+}

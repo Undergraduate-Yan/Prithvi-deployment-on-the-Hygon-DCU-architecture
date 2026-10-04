@@ -1,120 +1,83 @@
-# Reproduction guide
+# Reproduction workflow
 
-This repository supports three levels of reproduction. Use a new output directory for every run; never overwrite frozen evidence.
+Run commands from the repository root and choose new output directories. The examples document interfaces; they are not execution logs or a claim of completed hardware validation.
 
-## 0. Offline repository audit
+## 1. Offline tables and statistics
 
-```bash
-python scripts/repo_check.py
-python scripts/summarize_results.py
-python -m pytest -q
-```
-
-This verifies source syntax, JSON integrity, repository size policy, secret patterns, and the compact paper tables. It does not execute a model.
-
-## 1. Prepare external artifacts
-
-Copy `.env.example` to `.env` locally and set only filesystem paths. Do not add credentials.
-
-Place the checkpoint, source ONNX models, compiled caches, dataset, and fixed inputs below a separate artifact root. Use:
+Use Python with NumPy for `analyze_results.py`. Markdown table export uses only the standard library.
 
 ```bash
-python scripts/verify_external_artifacts.py \
-  --manifest artifacts/required_artifacts.example.json \
-  --root "$K100_ARTIFACT_ROOT"
+python scripts/reproduce_tables.py --output-dir outputs/tables
+python scripts/analyze_results.py flood --output-dir outputs/flood-analysis
+python scripts/analyze_results.py cloud --output-dir outputs/cloud-analysis
 ```
 
-The artifact root is outside Git. See `artifacts/README.md` for storage options and the difference between source artifacts and generated caches.
+The statistical commands use the included derived records. They do not train, infer, select new configurations or change retained tables. Computational requirements include memory for 10,000 paired scene resamples.
 
-## 2. Baseline checkpoint and Full FP16
-
-The initial migration utilities are retained under `src/baseline/`:
-
-1. `k100_checkpoint_forward_smoke.py` and `verify_real_sample_cpu_k100.py` establish strict checkpoint loading and a fixed real-sample CPU/K100 comparison.
-2. `evaluate_full_test_k100_fp32.py` reproduces the fixed 90-image FP32 task metrics.
-3. `evaluate_full_test_k100_fp32_fp16.py` evaluates native FP16 task preservation.
-4. The paired benchmark scripts preserve the original FP32/FP16 performance protocol.
-
-These launchers reflect the archived environment and may contain frozen `/workspace` conventions. Provide paths through their CLI/environment interfaces; do not add passwords or private hosts.
-
-## 3. K100 compatibility graph and 25-segment FP32 denominator
-
-Relevant code is under `src/phase11/`:
-
-```text
-rewrite_layernorm_for_migraphx_ort119.py
-rewrite_convtranspose_stride2_for_migraphx.py
-add_phase11_fpn4_maxpool_barrier.py
-build_phase11_fp32_segment25_head_fpn4_barrier.py
-evaluate_phase11_fp32_segment25_headbarrier_single.py
-evaluate_phase11_fp32_segment25_headbarrier_test90.py
-benchmark_phase11_fp32_segment25_headbarrier_all_resident_trial.py
-aggregate_phase11_fp32_segment25_headbarrier_performance.py
-```
-
-Run the single-sample gates first, then the 90-image task gate, then three fresh performance processes. The 25-segment FP32 result is the topology-matched denominator; the monolithic Full FP16 result is a separate deployment scope.
-
-## 4. INT8 backbone segmentation and discrepancy localization
-
-Use:
-
-```text
-build_phase11_int8_backbone_segment25.py
-validate_phase11_int8_backbone_segment25_cpu.py
-evaluate_phase11_int8_backbone_segment25_cached_single.py
-evaluate_phase11_int8_backbone_segment25_cached_90_diagnostic.py
-diagnose_phase11_int8_backbone_segment25_numeric_localization.py
-```
-
-The local and cumulative CPU--MIGraphX discrepancies are backend diagnostics. They are not pure quantization error and are not universal task-loss sensitivity scores.
-
-## 5. Build and admit M0--M5
-
-Follow the frozen instructions:
-
-- `src/phase11/PHASE11_MIXED_PRECISION_EVAL_README.md`
-- `src/phase11/PHASE11_MIXED_PRECISION_M5_README.md`
-
-The sequence is build → compile FP16 caches → finalize manifest → single sample → three fresh 90-image processes → aggregation → performance → VRAM → Pareto summary.
-
-M0--M4 and M5 have separate evidence roots. M5 must not overwrite M0--M4.
-
-## 6. Kernel evidence
-
-Use the direct-trace v3 protocol:
-
-- `src/phase11/PHASE11_MIXED_PRECISION_KERNEL_EVIDENCE_V3_README.md`
-- `protocols/PHASE11_MIXED_PRECISION_KERNEL_EVIDENCE_PROTOCOL_V3.json`
-
-The untraced prepass materializes the actual boundary tensor; `hipprof` then traces only the target segment. Full acceptance requires all 33 unique traces and all 144 candidate/block mappings. I8II/HBH proves the intended block-level GEMM path only.
-
-## 7. Immutable deployment bundles
-
-The complete tools are in `src/phase11/phase11_minimal_deployment/`.
-
-The acceptance sequence is:
-
-1. bundle construction and static SHA verification;
-2. five fresh cold starts;
-3. three forced termination/reload cycles;
-4. K100-2 and K100-3 smoke tests;
-5. 60-minute stability with 5-second telemetry;
-6. fail-closed final aggregation.
-
-Use `FINAL_DEPLOYMENT_ACCEPTANCE_README.md` in that directory. Failed environmental attempts remain excluded evidence and never count as model failures or passed gates.
-
-## 8. Production-style same-CLI benchmark
-
-Use `src/phase11/phase11_deployment_cli_pair_benchmark/README.md`. It runs six fresh containers in an alternating order, with 30 warm-ups and 100 timed calls per container. This comparison combines precision and topology effects.
-
-## 9. Paper
-
-From `paper/`:
+## 2. Inputs and model export
 
 ```bash
-python C:/Users/<user>/.codex/skills/latex-paper-en/scripts/compile.py main.tex --recipe pdflatex-bibtex
-python C:/Users/<user>/.codex/skills/latex-paper-en/scripts/compile.py main_CN.tex --recipe xelatex-bibtex
+python scripts/prepare_inputs.py flood --help
+python scripts/prepare_inputs.py cloud --records manifests/datasets/cloud/formal_records.csv --source-root external/cloudsen12 --output-root outputs/cloud-inputs
+python scripts/export_model.py flood --project-root external/flood
+python scripts/export_model.py cloud --help
 ```
 
-Any standard IEEEtran-compatible LaTeX toolchain can be substituted. The final English and Chinese PDFs are included for comparison.
+The flood materializer retains the original input-pack identity checks and requires its listed source manifests. Cloud preparation reads local TACO parts; allocate space for all 300 six-band scene tensors. The cloud exporter takes explicit task/backbone checkpoints, a data manifest and `src/model_export/cloud_model.py` as its trainer module. Neither export procedure should be interpreted as authorizing a new training experiment.
 
+## 3. Diagnostics and precision
+
+```bash
+python scripts/diagnose_blocks.py run --help
+python scripts/diagnose_blocks.py aggregate --help
+python scripts/build_deployment.py precision-map --help
+python scripts/build_deployment.py fp16-segments --help
+```
+
+Use the 64-scene configuration pack for diagnostics and the distinct calibration set for quantization. The packed aggregate S7 table is insufficient input for the diagnostic aggregator: that program needs complete per-scene records and their manifest.
+
+For `fp16-segments`, the `--legacy-builder` parameter identifies the byte-preserved `src/precision/segment_builder.py`. For cloud quantization, `--base-quantizer` identifies `src/precision/cloud_quantizer_base.py`. These parameter names are retained for interface compatibility.
+
+## 4. Graph construction and compilation
+
+```bash
+python scripts/build_deployment.py flood-graph --help
+python scripts/build_deployment.py cloud-graph --help
+python scripts/build_deployment.py cloud-split --help
+python scripts/build_deployment.py compile-flood --help
+python scripts/build_deployment.py compile-cloud --help
+```
+
+The cloud graph mapper uses `src/graph/rcs13_builder.py` and `configs/topology/flood_partition_locked.json` as its frozen builder and boundary dependencies. The final cloud split is applied to the corresponding decoder-containing session. Model weights and tensor boundaries must match the indicated source identities.
+
+Compilation runs in the vendor K100 environment. The `--shim` argument refers to the study's explicit container compatibility helper. Compile one session with its matching feed tensors and preserve numerical, provider and resource checks.
+
+## 5. Inference and statistics
+
+```bash
+python scripts/evaluate.py flood --help
+python scripts/evaluate.py cloud --help
+python scripts/evaluate.py cloud-statistics --help
+```
+
+The flood evaluator expects its fixed 90-image pack and runtime manifest. Its historical machine schema includes `formal` fields; the scientific interpretation remains descriptive. The cloud evaluator requires fourteen ordered model/cache pairs, the supplied input contract and a complete scene payload directory. The local reproduction payload status does not assert a new independent test.
+
+`cloud-statistics` is the retained pixel-level analysis path requiring predictions and labels. The offline `analyze_results.py cloud` command instead reads the included compact derived records.
+
+## 6. Timing
+
+Build the appropriate C++ runner using `environment/k100_runtime.md`. Prepare its plan from matching tensor interfaces and artifact identities; `src/runtime/materialize_cpp_plan.py` provides the retained flood manifest-to-plan implementation. Cloud and flood output contracts differ.
+
+```bash
+python scripts/benchmark.py cpp --runner build/flood/flood/k100_pipeline_benchmark --plan external/plans/flood_fp32.tsv --input-raw external/inputs/flood.f32 --cpu 0 --output-dir outputs/flood-latency
+```
+
+Choose a CPU permitted by the target host affinity. Run under the same isolated accelerator and fixed software conditions as the intended comparison. The launcher starts five fresh processes with 50 warm-ups and 200 measured calls each; it does not manage remote nodes or terminate other users' processes.
+
+The single-session flood Python benchmark has its own command interface:
+
+```bash
+python scripts/benchmark.py python-flood --help
+```
+
+Do not merge the Python and C++ timing populations into a precision-only comparison.

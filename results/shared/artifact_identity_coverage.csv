@@ -1,0 +1,9 @@
+Role,Sessions,ONNX (GiB),MXR (GiB),Manifest boundary
+Cloud-14S-FP16,14,0.595,0.660,Hash+I/O complete; operators/parameters not inspected
+Cloud-14S-FP32,14,1.189,1.320,Hash+I/O complete; operators/parameters not inspected
+Cloud-14S-MP-X,14,0.583,0.645,Hash+I/O complete; operators/parameters not inspected
+Flood-13S-FP16,13,0.595,0.660,Hash+I/O complete; operators/parameters not inspected
+Flood-13S-FP32,13,1.189,1.317,Hash+I/O complete; operators/parameters not inspected
+Flood-13S-MP,13,0.420,0.491,Hash+I/O complete; operators/parameters not inspected
+Flood-1S-FP16,1,0.595,0.660,Hash+I/O complete; operators/parameters not inspected
+Flood-1S-FP32,1,1.189,1.317,Hash+I/O complete; operators/parameters not inspected

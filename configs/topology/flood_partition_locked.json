@@ -1,0 +1,628 @@
+{
+  "external_contract": {
+    "input": "FP32[1,6,224,224]",
+    "output": "FP32[1,2,224,224] logits"
+  },
+  "formal_90_image_test_used": false,
+  "name": "RCS13-MP",
+  "runner_contract": {
+    "cpu_fallback_disabled": true,
+    "io_binding": true,
+    "provider": "MIGraphXExecutionProvider",
+    "synchronize_inputs": true,
+    "synchronize_outputs": true
+  },
+  "schema": "journal_rcs13_frozen_partition_v1",
+  "session_count": 13,
+  "source_candidate": {
+    "path": "journal_revision/02_phase2_reset/feasibility_matrix/20260821-phase2c2d-session-minimize-v1/rcs13_candidate_manifest.v2.json",
+    "sha256": "7f5533d13af647bdb7a7733607f3dc7c6fd2a85282550cde47735d9642e45c8e",
+    "size_bytes": 28997
+  },
+  "source_config": {
+    "path": "journal_revision/02_phase2_reset/phase2_final_configs/B8.json",
+    "sha256": "bb344d774534676148d9eb260901ae6fbb75d603bf3be8776261793d884f5cf8",
+    "size_bytes": 10920
+  },
+  "status": "passed",
+  "topology": {
+    "sessions": [
+      {
+        "cache": {
+          "path": "/var/tmp/20260821-phase2c2d-session-minimize-v1/compile/tierC_00_01/C2/C2.mxr",
+          "sha256": "6d07b1c19720ca0d9171233b06a9e4ab9be196df8688c4b34064953f1e7c3c2b",
+          "size_bytes": 47079705
+        },
+        "end_block": 1,
+        "inputs": [
+          {
+            "dtype": "float32",
+            "name": "image",
+            "shape": [
+              1,
+              6,
+              224,
+              224
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "/var/tmp/20260821-phase2c2d-session-minimize-v1/tierC_build_v1/models/tierC_00_01.onnx",
+          "sha256": "1508e93a598a698c68024136e8eac8d66e345d1bc3c5226637d97131bfe674cd",
+          "size_bytes": 41469146
+        },
+        "multiscale_tap_outputs": [],
+        "ordinal": 0,
+        "outputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.1/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "precision_role": "mixed_fp16_to_int8_qdq",
+        "session_id": "RCS13R_00",
+        "start_block": 0
+      },
+      {
+        "cache": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/rcs21_reference25_payload_v2/caches/segment_02.mxr",
+          "sha256": "9d13a028bff27a70b327c4afbff14a0d0a4fbe21726b993ddb4b26608ae7ee4a",
+          "size_bytes": 15430657
+        },
+        "end_block": 2,
+        "inputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.1/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/rcs21_reference25_payload_v2/models/segment_02.onnx",
+          "sha256": "65010122d17cd36b971bf64ac8350305b785f29fcf9fa3b88ea4787af86ca9c7",
+          "size_bytes": 12711897
+        },
+        "multiscale_tap_outputs": [],
+        "ordinal": 1,
+        "outputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.2/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "precision_role": "int8_qdq",
+        "session_id": "RCS13R_01",
+        "start_block": 2
+      },
+      {
+        "cache": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/rcs21_reference25_payload_v2/caches/segment_03.mxr",
+          "sha256": "a5e3f4bb7ba979fa5ab515fc962f31d4860e5e604d8beb56d42d74f67a4e0a2f",
+          "size_bytes": 15227676
+        },
+        "end_block": 3,
+        "inputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.2/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/rcs21_reference25_payload_v2/models/segment_03.onnx",
+          "sha256": "f2ac12254deb7938576777e2df6a8ca7c0df3fa8e6d8aa8ada400d5ec20ce161",
+          "size_bytes": 12711918
+        },
+        "multiscale_tap_outputs": [],
+        "ordinal": 2,
+        "outputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.3/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "precision_role": "int8_qdq",
+        "session_id": "RCS13R_02",
+        "start_block": 3
+      },
+      {
+        "cache": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/rcs21_reference25_payload_v2/caches/segment_04.mxr",
+          "sha256": "6718181e1a767aa8f4445e92a3128182dd3943caac0345c0cb89d613eaf71e46",
+          "size_bytes": 15430630
+        },
+        "end_block": 4,
+        "inputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.3/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/rcs21_reference25_payload_v2/models/segment_04.onnx",
+          "sha256": "027d42e523c869edb14221ff99ae0e7f2ee05d6a15bde6cedb3fe96f44947971",
+          "size_bytes": 12711939
+        },
+        "multiscale_tap_outputs": [],
+        "ordinal": 3,
+        "outputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.4/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "precision_role": "int8_qdq",
+        "session_id": "RCS13R_03",
+        "start_block": 4
+      },
+      {
+        "cache": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/rcs21_reference25_payload_v2/caches/segment_05.mxr",
+          "sha256": "051903e82c09abeaacd0c1b506cb68c94f74d31ce541184ab2ccaab1466eae2e",
+          "size_bytes": 15430644
+        },
+        "end_block": 5,
+        "inputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.4/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/rcs21_reference25_payload_v2/models/segment_05.onnx",
+          "sha256": "a9b736c7a5a34aab483421f89dfda9a10c0a5db824996adbad8b2b526cd26243",
+          "size_bytes": 12711957
+        },
+        "multiscale_tap_outputs": [
+          "/task/model/encoder/blocks.5/Add_1_output_0"
+        ],
+        "ordinal": 4,
+        "outputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.5/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "precision_role": "int8_qdq",
+        "session_id": "RCS13R_04",
+        "start_block": 5
+      },
+      {
+        "cache": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/rcs21_reference25_payload_v2/caches/segment_06.mxr",
+          "sha256": "9aedccb2dbffc57eccdae3b13d911180d772e2552d481ee83dab1b78d0a8c49e",
+          "size_bytes": 15430651
+        },
+        "end_block": 6,
+        "inputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.5/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/rcs21_reference25_payload_v2/models/segment_06.onnx",
+          "sha256": "5fa3aef4f1f4f55c6f15b9eefe49145719a699162ab973deecb746b9126079e4",
+          "size_bytes": 12711948
+        },
+        "multiscale_tap_outputs": [],
+        "ordinal": 5,
+        "outputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.6/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "precision_role": "int8_qdq",
+        "session_id": "RCS13R_05",
+        "start_block": 6
+      },
+      {
+        "cache": {
+          "path": "/var/tmp/20260821-phase2c2d-session-minimize-v1/compile/tierE_07_10/C2/C2.mxr",
+          "sha256": "ac60d512ad1783784bc5bc0d78adfa66e10d175029cf244546b776e190170529",
+          "size_bytes": 98813736
+        },
+        "end_block": 10,
+        "inputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.6/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "/var/tmp/20260821-phase2c2d-session-minimize-v1/tierE1_build_v1/models/tierE_07_10.onnx",
+          "sha256": "db936217ee286581294a31e7ba855b9570fa72ef793d3a19eda77c63e222311c",
+          "size_bytes": 75828348
+        },
+        "multiscale_tap_outputs": [],
+        "ordinal": 6,
+        "outputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.10/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "precision_role": "mixed_int8_qdq_fp16_int8_qdq_fp16",
+        "session_id": "RCS13R_06",
+        "start_block": 7
+      },
+      {
+        "cache": {
+          "path": "/var/tmp/20260821-phase2c2d-session-minimize-v1/compile/tierF_11_14_retain11/C2/C2.mxr",
+          "sha256": "afeb9c107288c43b27dd2c44c222c8ef70918510dfa642a9b978ad1214423204",
+          "size_bytes": 72507670
+        },
+        "end_block": 14,
+        "inputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.10/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "/var/tmp/20260821-phase2c2d-session-minimize-v1/tierF_retain11_build_v1/models/tierF_11_14_retain11.onnx",
+          "sha256": "2b5fa2739b0b492cbc5fb6b72e5b05d8262d08a1bdce6481f36e45c9bf325142",
+          "size_bytes": 63330970
+        },
+        "multiscale_tap_outputs": [
+          "/task/model/encoder/blocks.11/Add_1_output_0"
+        ],
+        "ordinal": 7,
+        "outputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.11/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          },
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.14/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "precision_role": "mixed_int8_qdq_int8_qdq_int8_qdq_fp16_retain11",
+        "session_id": "RCS13R_07",
+        "start_block": 11
+      },
+      {
+        "cache": {
+          "path": "/var/tmp/20260821-phase2c2d-session-minimize-v1/compile/tierB2_15_16/C2/C2.mxr",
+          "sha256": "c3a6e6b056acbde27d86efa0bbcd5ea6342fc04ee83ee6b85cfd47dcbd480733",
+          "size_bytes": 43500865
+        },
+        "end_block": 16,
+        "inputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.14/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "/var/tmp/20260821-phase2c2d-session-minimize-v1/tierB2_build_v1/models/tierB2_15_16.onnx",
+          "sha256": "08a95e021baedb35cac8be93368aede5a71e99ea748c06fd65fdba53c11deead",
+          "size_bytes": 37914712
+        },
+        "multiscale_tap_outputs": [],
+        "ordinal": 8,
+        "outputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.16/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "precision_role": "mixed_fp16_to_int8_qdq",
+        "session_id": "RCS13R_08",
+        "start_block": 15
+      },
+      {
+        "cache": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/compile/fp16_17_18_retain17/C2/C2.mxr",
+          "sha256": "b96ab42889af729ff4bcccb2a727e60088f0da5dea7ac2dd67ad03583de74ea1",
+          "size_bytes": 56143445
+        },
+        "end_block": 18,
+        "inputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.16/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/rcs_retained_build_v2/models/fp16_17_18_retain17.onnx",
+          "sha256": "1408b282d4f7a24cc757f3407a73810eb74d8129f5861c5f88cdded4c546d17e",
+          "size_bytes": 50413062
+        },
+        "multiscale_tap_outputs": [
+          "/task/model/encoder/blocks.17/Add_1_output_0"
+        ],
+        "ordinal": 9,
+        "outputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.17/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          },
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.18/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "precision_role": "fp16",
+        "session_id": "RCS13R_09",
+        "start_block": 17
+      },
+      {
+        "cache": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/compile/fp16_19_20/C2/C2.mxr",
+          "sha256": "ac1d1485409856974deb51b162b131693cbb48e12c5616ae11798e7503112ae5",
+          "size_bytes": 56141578
+        },
+        "end_block": 20,
+        "inputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.18/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "/var/tmp/20260821-phase2c2d-2block-v1/fp16_fallback_pairs_v1/models/fp16_19_20.onnx",
+          "sha256": "01115d3627cffb8a5c7cea26790274cfa5e857b49f52c64eaa70acf102d91193",
+          "size_bytes": 50412988
+        },
+        "multiscale_tap_outputs": [],
+        "ordinal": 10,
+        "outputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.20/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "precision_role": "fp16",
+        "session_id": "RCS13R_10",
+        "start_block": 19
+      },
+      {
+        "cache": {
+          "path": "/var/tmp/20260821-phase2c2d-18s-controlled-v1/compile/fallback_21_22/C2/C2.mxr",
+          "sha256": "869e18f645a5e9d2ac766e28038cacfb2996f2253c07996a1b49da2bdcc67b7a",
+          "size_bytes": 30036267
+        },
+        "end_block": 22,
+        "inputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.20/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "encoder_blocks",
+        "model": {
+          "path": "/var/tmp/20260821-phase2c2d-18s-controlled-v1/fallback_build_v1/models/fallback_21_22.onnx",
+          "sha256": "db2fe9d391a5bdab7fc692997061d9735fc35cd9ed4b934d28e2d31e4fac113f",
+          "size_bytes": 25416473
+        },
+        "multiscale_tap_outputs": [],
+        "ordinal": 11,
+        "outputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.22/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "precision_role": "int8_qdq",
+        "session_id": "RCS13R_11",
+        "start_block": 21
+      },
+      {
+        "cache": {
+          "path": "/var/tmp/20260821-phase2c2d-session-minimize-v1/compile/tierD_23_head/C2/C2.mxr",
+          "sha256": "e7a364c7882bdc0751d610f8548ac99893a361217d933a09437f67275938cba7",
+          "size_bytes": 76515729
+        },
+        "end_block": 24,
+        "inputs": [
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.22/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          },
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.5/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          },
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.11/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          },
+          {
+            "dtype": "float32",
+            "name": "/task/model/encoder/blocks.17/Add_1_output_0",
+            "shape": [
+              1,
+              197,
+              1024
+            ]
+          }
+        ],
+        "logical_role": "block23_plus_UPerNet_head",
+        "model": {
+          "path": "/var/tmp/20260821-phase2c2d-session-minimize-v1/tierD_build_v1/models/tierD_23_head.onnx",
+          "sha256": "5b87912a6f7221e4c9e280c6e944de492b00d40aad9a46a8b83714612d21412d",
+          "size_bytes": 73205698
+        },
+        "multiscale_tap_outputs": [],
+        "ordinal": 12,
+        "outputs": [
+          {
+            "dtype": "float32",
+            "name": "logits",
+            "shape": [
+              1,
+              2,
+              224,
+              224
+            ]
+          },
+          {
+            "dtype": "float32",
+            "name": "/task/model/decoder/fpn4/fpn4.0/MaxPool_output_0",
+            "shape": [
+              1,
+              1024,
+              7,
+              7
+            ]
+          }
+        ],
+        "precision_role": "mixed_int8_qdq_to_fp32_compat_head",
+        "session_id": "RCS13R_12",
+        "start_block": 23
+      }
+    ]
+  }
+}

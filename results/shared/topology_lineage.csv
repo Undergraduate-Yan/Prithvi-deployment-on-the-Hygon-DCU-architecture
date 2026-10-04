@@ -1,0 +1,13 @@
+Task,Sessions,Role,Interpretation
+Flood,25S,root,block-isolated diagnostic topology
+Flood,22S,auxiliary branch,Flood-22S-MP-Aux auxiliary candidate; independent timing incomplete
+Flood,21S,main branch,corrected controlled merge
+Flood,20S,main branch,fully compiled controlled candidate
+Flood,18S,main branch,controlled probe
+Flood,16S,prepared probe,not promoted as a final identity
+Flood,15S,main branch,controlled probe
+Flood,14S,main branch,controlled probe
+Flood,13S,final fair topology,empirical floor under registered compile budget and candidate set
+Flood,1S,production branch,monolithic FP32/FP16 only
+Cloud,13S,failed transfer,graph-context numerical failure
+Cloud,14S,repaired final topology,weight-preserving split of the failing context

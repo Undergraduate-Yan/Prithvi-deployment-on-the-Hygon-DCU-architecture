@@ -1,0 +1,7 @@
+Task / session group,I8II count,HBH count,Scope
+Flood B0-B1,320,120,Representative 20-repeat trace
+Flood B7-B10,560,240,Representative 20-repeat trace
+Flood B11-B14,860,120,Representative 20-repeat trace
+Flood B23 + head,320,Not stated here,Representative integer-path count
+Cloud rejected B23 candidate,120,Not stated here,Candidate trace; task gate failed
+Cloud retained FP16 session,Not stated here,240,Retained FP16 path
