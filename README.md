@@ -80,4 +80,4 @@ Read [reproduction instructions](docs/reproduction.md) and the [paper-to-code ma
 
 Use [CITATION.cff](CITATION.cff) for attribution and identify the repository commit used in a reproduction. The code is maintained in [Prithvi-K100-Auditable-Deployment](https://github.com/Undergraduate-Yan/Prithvi-K100-Auditable-Deployment). No article DOI is asserted here.
 
-Code use and redistribution are governed by [LICENSE](LICENSE). No open-source license has been selected. Third-party components retain their own terms; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Study-authored software and its accompanying software documentation and configuration files are licensed under the [Apache License 2.0](LICENSE). See [licensing](docs/licensing.md) for the scope and [NOTICE](NOTICE) for attribution. Third-party components, datasets, model weights and dataset-derived records remain subject to their applicable terms; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Scholarly citation through `CITATION.cff` is requested and does not add a license condition.

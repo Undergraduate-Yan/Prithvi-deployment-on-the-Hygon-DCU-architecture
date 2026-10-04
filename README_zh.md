@@ -46,4 +46,4 @@ python scripts/analyze_results.py cloud --output-dir outputs/cloud-analysis
 
 洪水运行索引0的记录名称与实际来源不同，说明见 `docs/evaluation_protocols.md`。清单中的历史字段名仅用于数据格式兼容，不能据此将洪水评价解释为独立确认。
 
-代码许可见 `LICENSE`；目前未指定开源许可证。第三方组件许可见 `THIRD_PARTY_NOTICES.md`。
+本研究自编软件及其配套软件文档、配置文件采用 [Apache-2.0 许可证](LICENSE)。许可范围见 [许可说明](docs/licensing.md)，署名信息见 [NOTICE](NOTICE)。第三方组件、数据集、模型权重及数据集派生记录仍受各自适用条款约束，详见 [第三方资源说明](THIRD_PARTY_NOTICES.md)。欢迎依据 `CITATION.cff` 引用本研究；学术引用请求不构成额外许可条件。

@@ -10,6 +10,6 @@
 | CloudSEN12+ | Cloud imagery and labels | Source locations, selection identifiers and derived numerical records; no raster payloads |
 | NumPy / rasterio / OpenCV / PyArrow / Matplotlib | Numerical processing, raster input and diagnostic plots | Referenced as dependencies |
 
-Each third-party resource retains its own license, attribution requirements and redistribution conditions. The study code's license notice does not grant additional rights to these resources. Consult the license distributed with the exact component or dataset revision used.
+Study-authored software is licensed under Apache-2.0. Each third-party resource retains its own license, attribution requirements and redistribution conditions. Apache-2.0 does not grant additional rights to third-party components, datasets, model weights or dataset-derived records. Consult the license distributed with the exact component or dataset revision used.
 
 No third-party weights, container images, runtime libraries or local credentials are distributed as repository payloads.
