@@ -3,7 +3,7 @@ message: "Please cite the associated manuscript and identify the code commit use
 type: software
 license: Apache-2.0
 title: "Prithvi deployment on the Hygon DCU architecture"
-repository-code: "https://github.com/Undergraduate-Yan/Prithvi-K100-Auditable-Deployment"
+repository-code: "https://github.com/Undergraduate-Yan/Prithvi-deployment-on-the-Hygon-DCU-architecture"
 authors:
   - family-names: Yan
     given-names: Chengang

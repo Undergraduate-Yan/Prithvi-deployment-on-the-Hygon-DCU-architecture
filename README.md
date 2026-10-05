@@ -78,7 +78,7 @@ Read [reproduction instructions](docs/reproduction.md) and the [paper-to-code ma
 
 ## Citation and permissions
 
-Use [CITATION.cff](CITATION.cff) for attribution and identify the repository commit used in a reproduction. The code is maintained in [Prithvi-K100-Auditable-Deployment](https://github.com/Undergraduate-Yan/Prithvi-K100-Auditable-Deployment). No article DOI is asserted here.
+Use [CITATION.cff](CITATION.cff) for attribution and identify the repository commit used in a reproduction. The code is maintained in [Prithvi deployment on the Hygon DCU architecture](https://github.com/Undergraduate-Yan/Prithvi-deployment-on-the-Hygon-DCU-architecture). No article DOI is asserted here.
 
 Study-authored software and its accompanying software documentation and configuration files are licensed under the [Apache License 2.0](LICENSE). See [licensing](docs/licensing.md) for the scope and [NOTICE](NOTICE) for attribution. Third-party components, datasets, model weights and dataset-derived records remain subject to their applicable terms; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Scholarly citation through `CITATION.cff` is requested and does not add a license condition.
 
@@ -87,5 +87,7 @@ Study-authored software and its accompanying software documentation and configur
 See the [experiment inventory](docs/experiment_coverage.md), [runbook](docs/experiment_runbook.md), [system measurement procedures](docs/system_measurements.md), and [external material requirements](docs/external_requirements.md). They cover precision controls, graph/compilation probes, statistical sensitivity, controlled timing, power/VRAM, process-cold startup, recovery and sustained operation.
 
 Run the retained-record analyses together with `python scripts/reproduce_offline.py --output-dir outputs/offline`. Execution success is separate from independent numerical validation. The repository includes a [Work Buddy testing prompt](prompt.md) covering both.
+
+Run `python -m unittest discover -s tests -v` for flood input contracts, undefined metrics, retained count aggregates and dependency-free help for all dispatched actions. See [test scope](tests/README.md). The flood aggregate and descriptive bootstrap outputs are unchanged by the input validation rules. Model and K100 execution require the external materials listed above.
 
 The hardware and research commands have not been executed during package preparation. Full replication still requires external artifacts and compatible hardware; see each experiment's prerequisites.

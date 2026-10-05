@@ -144,6 +144,8 @@ def main() -> int:
                     state.update(zip(outputs, values))
                 patch_logits = np.asarray(state["logits"][0], dtype=np.float32)
                 non_finite += int(patch_logits.size - np.count_nonzero(np.isfinite(patch_logits)))
+                # Diagnostic continuation only: NaN suppresses a class in overlap
+                # averaging; any non-finite tile logit makes the final status FAIL.
                 logits_sum[:, y:y + 224, x:x + 224] += np.nan_to_num(patch_logits, nan=-np.inf)
                 counts[y:y + 224, x:x + 224] += 1
         if np.any(counts == 0):

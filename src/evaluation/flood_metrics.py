@@ -12,6 +12,7 @@ from typing import Any, Dict, Iterable, List, Sequence, Tuple
 import numpy as np
 
 from common import identity, write_json
+from flood_labels import validate_labels
 
 
 METRIC_FIELDS = (
@@ -59,8 +60,13 @@ def water_boundary(mask: np.ndarray, radius: int = 2) -> np.ndarray:
 
 
 def confusion_counts(prediction: np.ndarray, target: np.ndarray, valid: np.ndarray) -> Dict[str, int]:
-    pred = prediction.astype(np.uint8)
-    truth = target.astype(np.int64)
+    allowed = validate_labels(prediction, target)
+    if not isinstance(valid, np.ndarray) or valid.dtype != np.bool_ or valid.shape != target.shape:
+        raise ValueError("valid must be a boolean mask with the target shape")
+    if np.any(valid & ~allowed):
+        raise ValueError("valid mask must exclude ignored target pixels")
+    pred = prediction
+    truth = target
     return {
         "tn": int(((pred == 0) & (truth == 0) & valid).sum()),
         "fp": int(((pred == 1) & (truth == 0) & valid).sum()),
@@ -74,7 +80,7 @@ def metrics_for_scene(
     target: np.ndarray,
     reference_prediction: np.ndarray,
 ) -> Dict[str, Any]:
-    valid = target != -1
+    valid = validate_labels(prediction, target, reference_prediction)
     valid_pixels = int(valid.sum())
     if valid_pixels <= 0:
         return {
@@ -185,15 +191,16 @@ def aggregate(rows: Iterable[Dict[str, Any]]) -> Dict[str, Any]:
     boundary_union = sum(int(row["boundary_union"]) for row in materialized)
     valid_pixels = sum(int(row["valid_pixels"]) for row in materialized)
     changed = sum(int(row["changed_valid_pixels"]) for row in materialized)
+    defined = [value for value in (background_iou, water_iou) if math.isfinite(value)]
     return {
         "scenes": len(materialized),
         "valid_pixels": valid_pixels,
         "confusion_matrix": [[totals["tn"], totals["fp"]], [totals["fn"], totals["tp"]]],
-        "miou": float(np.nanmean([background_iou, water_iou])),
+        "miou": float(np.mean(defined)) if defined else float("nan"),
         "water_iou": water_iou,
         "boundary_water_iou": safe_ratio(boundary_intersection, boundary_union),
         "pixel_accuracy": safe_ratio(totals["tn"] + totals["tp"], valid_pixels),
-        "agreement": 1.0 - changed / valid_pixels,
+        "agreement": 1.0 - safe_ratio(changed, valid_pixels),
     }
 
 

@@ -180,6 +180,10 @@
     ]
   },
   {
+    "file": "src/flood_labels.py",
+    "arguments": []
+  },
+  {
     "file": "src/graph/build_fp16_region_probes.py",
     "arguments": [
       "parser.add_argument(\"--b3-manifest\", required=True, type=Path)",

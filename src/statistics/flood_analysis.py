@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import math
 from typing import Any, Dict, List
 
 import numpy as np
+from flood_labels import validate_labels
 
 VARIANTS = [
     ("Mono-FP32", "Mono_FP32"),
@@ -40,8 +42,8 @@ def safe_ratio(numerator: int, denominator: int) -> float:
     return float(numerator / denominator) if denominator else float("nan")
 
 def scene_metrics(prediction: np.ndarray, target: np.ndarray, reference: np.ndarray) -> Dict[str, Any]:
-    valid = (target >= 0) & (target < 2)
-    encoded = target[valid] * 2 + prediction[valid]
+    valid = validate_labels(prediction, target, reference)
+    encoded = target[valid].astype(np.int64) * 2 + prediction[valid].astype(np.int64)
     matrix = np.bincount(encoded, minlength=4).reshape(2, 2)
     tn, fp, fn, tp = (int(matrix[0, 0]), int(matrix[0, 1]), int(matrix[1, 0]), int(matrix[1, 1]))
     background_iou = safe_ratio(tn, tn + fp + fn)
@@ -78,14 +80,15 @@ def aggregate(rows: List[Dict[str, Any]]) -> Dict[str, Any]:
     boundary_union = sum(int(row["boundary_union"]) for row in rows)
     background_iou = safe_ratio(totals["tn"], totals["tn"] + totals["fp"] + totals["fn"])
     water_iou = safe_ratio(totals["tp"], totals["tp"] + totals["fp"] + totals["fn"])
+    defined = [value for value in (background_iou, water_iou) if math.isfinite(value)]
     return {
         "scene_count": len(rows),
         "valid_pixels": valid,
-        "miou": float(np.nanmean([background_iou, water_iou])),
+        "miou": float(np.mean(defined)) if defined else float("nan"),
         "water_iou": water_iou,
         "boundary_water_iou": safe_ratio(boundary_intersection, boundary_union),
         "pixel_accuracy": safe_ratio(totals["tn"] + totals["tp"], valid),
-        "agreement": 1.0 - changed / valid,
+        "agreement": 1.0 - safe_ratio(changed, valid),
         "changed_valid_pixels": changed,
         "confusion_matrix": [[totals["tn"], totals["fp"]], [totals["fn"], totals["tp"]]],
     }
