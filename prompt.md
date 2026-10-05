@@ -10,9 +10,9 @@
 
 ## 1. 测试对象和工作位置
 
-- GitHub 仓库：`https://github.com/Undergraduate-Yan/Prithvi-K100-Auditable-Deployment`
-- 目标分支：`paper-code`，不要默认测试 `main`。
-- 测试目标为 `paper-code` 分支中包含 `docs/experiment_coverage.md`、`scripts/reproduce_offline.py` 和 `src/system/` 的完整版本；开始时记录实际提交 SHA。不要使用仅含早期核心代码的旧提交。
+- GitHub 仓库：`https://github.com/Undergraduate-Yan/Prithvi-deployment-on-the-Hygon-DCU-architecture`
+- 当前默认分支及测试分支：`paper-code`。仓库当前以 `paper-code` 作为默认分支；不要切换到旧的 `main`，也不要把旧分支内容当作测试对象。
+- 测试目标为 `paper-code` 分支中包含 `docs/experiment_coverage.md`、`scripts/reproduce_offline.py` 和 `src/system/` 的完整版本；开始时记录实际提交 SHA（当前已知提交为 `d755993201f87d7d78d0e234571311f59bc0e941`，仍须以实际获取到的远端 SHA 为准）。不要使用仅含早期核心代码的旧提交。
 - 本地代码：用户提供的 `prithvi-hygon-deployment` 目录或相应代码压缩包。
 - 可选论文依据：用户提供的投稿版 `Manuscript.pdf` 和英文 `Supplementary_Materials.pdf`。先确认文件存在及版本，无法获取时不得假称读过。
 
@@ -284,3 +284,4 @@ trace 程序需要真正的 provider/hipprof 输出。Q/DQ 算子、缓存文件
 在原交付物基础上增加 `experiment_coverage.csv`：每行对应 E01–E18，列出源代码、所需输入、材料是否具备、实际命令、执行状态、数值状态和阻塞原因。
 
 另生成 `missing_materials.md`，区分缺少外部数据/权重/厂商环境、仓库代码缺陷和未执行事项。不要笼统写“缺少依赖”。本轮必须明确回答：现有仓库的哪几项论文结论已经获得独立数值支持，哪几项仅有可读源码，哪几项仍需真实 K100 测量。
+
