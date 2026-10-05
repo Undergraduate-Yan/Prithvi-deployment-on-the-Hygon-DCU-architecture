@@ -52,6 +52,6 @@ python scripts/analyze_results.py cloud --output-dir outputs/cloud-analysis
 
 逐项范围见 [实验清单](docs/experiment_coverage.md)，执行步骤见 [复现手册](docs/experiment_runbook.md) 和 [系统测量说明](docs/system_measurements.md)，所需外部材料见 [输入要求](docs/external_requirements.md)。包括精度对照、图重构与编译探测、统计敏感性、受控计时、能耗/显存、冷启动、故障恢复和持续运行。
 
-统一离线入口为 `python scripts/reproduce_offline.py --output-dir outputs/offline`。配套 [prompt.md](prompt.md) 要求独立测试数值正确性、接口与硬件流程。各项结论须与实际执行范围、外部材料和测试证据对应。
+统一离线入口为 `python scripts/reproduce_offline.py --output-dir outputs/offline`。复现时应将独立重算结果与保留的完整精度记录对照，并依据可用数据和硬件报告实际执行范围。各项结论须与外部材料和验证证据对应。
 
 运行 `python -m unittest discover -s tests -v` 可检查洪水标签与形状约束、未定义指标、保留混淆计数，以及全部分发子命令在无第三方依赖时的帮助入口，范围见 [测试说明](tests/README.md)。洪水汇总和描述性 bootstrap 输出经比对不受输入校验规则影响；模型与 K100 执行仍需上述外部材料。

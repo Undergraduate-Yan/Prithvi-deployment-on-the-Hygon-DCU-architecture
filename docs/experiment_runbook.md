@@ -62,4 +62,4 @@ Follow `docs/reproduction.md` for full-scene evaluation and C++ plan constructio
 
 ## Reporting
 
-For each experiment, retain command arguments, input SHA256 values, actual runtime/provider, raw outputs, failure records and node scope. Compare independently recalculated quantities with the packaged full-precision records before comparing rounded manuscript tables. Repository preparation did not execute these research commands; the accompanying `prompt.md` requests independent execution and verification.
+For each experiment, retain command arguments, input SHA256 values, actual runtime/provider, raw outputs, failure records and node scope. Compare independently recalculated quantities with the packaged full-precision records before comparing rounded manuscript tables. Report execution status, numerical agreement and missing prerequisites for each experiment.

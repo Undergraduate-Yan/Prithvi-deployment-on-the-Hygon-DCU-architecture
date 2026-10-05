@@ -86,7 +86,7 @@ Study-authored software and its accompanying software documentation and configur
 
 See the [experiment inventory](docs/experiment_coverage.md), [runbook](docs/experiment_runbook.md), [system measurement procedures](docs/system_measurements.md), and [external material requirements](docs/external_requirements.md). They cover precision controls, graph/compilation probes, statistical sensitivity, controlled timing, power/VRAM, process-cold startup, recovery and sustained operation.
 
-Run the retained-record analyses together with `python scripts/reproduce_offline.py --output-dir outputs/offline`. Execution success is separate from independent numerical validation. The repository includes a [Work Buddy testing prompt](prompt.md) covering both.
+Run the retained-record analyses together with `python scripts/reproduce_offline.py --output-dir outputs/offline`. Assess numerical correctness by comparing independently recalculated quantities with the retained full-precision records, and report which experiments were executed with the available data and hardware.
 
 Run `python -m unittest discover -s tests -v` for flood input contracts, undefined metrics, retained count aggregates and dependency-free help for all dispatched actions. See [test scope](tests/README.md). The flood aggregate and descriptive bootstrap outputs are unchanged by the input validation rules. Model and K100 execution require the external materials listed above.
 
