@@ -81,3 +81,7 @@ python scripts/benchmark.py python-flood --help
 ```
 
 Do not merge the Python and C++ timing populations into a precision-only comparison.
+
+## Complete experiment inventory
+
+See [experiment coverage](experiment_coverage.md), [the runbook](experiment_runbook.md), and [system measurement procedures](system_measurements.md) for controls, sensitivity, resources, startup, recovery and sustained execution.

@@ -1,0 +1,21 @@
+﻿variant,reference,metric,observed_difference,one_sided_95_ci_lower_bound,bootstrap_p05,bootstrap_p95,noninferiority_margin,pass,bootstrap_resamples,bootstrap_seed,valid_scene_count,excluded_nan_scene_count,nan_rule
+Legacy-M5-25S,RCS13-FP32,miou,-8.694388083582475e-05,-0.0008021080631897536,-0.0008021080631897536,0.0005980334907495946,-0.005,PASS,10000,42,89,1,undefined empty-union metrics excluded only for that metric
+Legacy-M5-25S,RCS13-FP32,water_iou,-0.00021814978122761298,-0.0017239924931773903,-0.0017239924931773903,0.0012020981204376592,-0.01,PASS,10000,42,85,5,undefined empty-union metrics excluded only for that metric
+Legacy-M5-25S,RCS13-FP32,boundary_water_iou,-9.417372820866078e-05,-0.001683389880937787,-0.001683389880937787,0.001421634289169992,-0.01,PASS,10000,42,85,5,undefined empty-union metrics excluded only for that metric
+Legacy-M5-25S,RCS13-FP32,agreement,-0.0013324994324176056,-0.001757790755447839,-0.001757790755447839,-0.0009485383372807373,-0.005,PASS,10000,42,89,1,undefined empty-union metrics excluded only for that metric
+MP-RCS-Opt,RCS13-FP32,miou,-0.0002112511998304013,-0.0008328466930835628,-0.0008328466930835628,0.00036170104719988904,-0.005,PASS,10000,42,89,1,undefined empty-union metrics excluded only for that metric
+MP-RCS-Opt,RCS13-FP32,water_iou,-0.0004942043561604651,-0.0017499435992070756,-0.0017499435992070756,0.0006526040111863467,-0.01,PASS,10000,42,85,5,undefined empty-union metrics excluded only for that metric
+MP-RCS-Opt,RCS13-FP32,boundary_water_iou,0.00038364155302129027,-0.0007038792951595857,-0.0007038792951595857,0.0014698391287177419,-0.01,PASS,10000,42,85,5,undefined empty-union metrics excluded only for that metric
+MP-RCS-Opt,RCS13-FP32,agreement,-0.001303646245177982,-0.0017376208197706243,-0.0017376208197706243,-0.0009201857434571132,-0.005,PASS,10000,42,89,1,undefined empty-union metrics excluded only for that metric
+Mono-FP16-Opt,RCS13-FP32,miou,-0.00026799648482230784,-0.00040023258514085183,-0.00040023258514085183,-0.00014088265921730693,-0.005,PASS,10000,42,89,1,undefined empty-union metrics excluded only for that metric
+Mono-FP16-Opt,RCS13-FP32,water_iou,-0.0005693465525391022,-0.0008397710465127021,-0.0008397710465127021,-0.00031531342672817695,-0.01,PASS,10000,42,85,5,undefined empty-union metrics excluded only for that metric
+Mono-FP16-Opt,RCS13-FP32,boundary_water_iou,-0.0003628070965694287,-0.0007565840369083355,-0.0007565840369083355,9.108172986814249e-05,-0.01,PASS,10000,42,85,5,undefined empty-union metrics excluded only for that metric
+Mono-FP16-Opt,RCS13-FP32,agreement,-0.00018946380036877458,-0.00025261295117023913,-0.00025261295117023913,-0.0001369290304488805,-0.005,PASS,10000,42,89,1,undefined empty-union metrics excluded only for that metric
+Mono-FP32,RCS13-FP32,miou,0.0,0.0,0.0,0.0,-0.005,PASS,10000,42,89,1,undefined empty-union metrics excluded only for that metric
+Mono-FP32,RCS13-FP32,water_iou,0.0,0.0,0.0,0.0,-0.01,PASS,10000,42,85,5,undefined empty-union metrics excluded only for that metric
+Mono-FP32,RCS13-FP32,boundary_water_iou,0.0,0.0,0.0,0.0,-0.01,PASS,10000,42,85,5,undefined empty-union metrics excluded only for that metric
+Mono-FP32,RCS13-FP32,agreement,0.0,0.0,0.0,0.0,-0.005,PASS,10000,42,89,1,undefined empty-union metrics excluded only for that metric
+RCS13-FP16-Opt,RCS13-FP32,miou,-0.0002530304376248551,-0.0003810594581173216,-0.0003810594581173216,-0.00012731991410623827,-0.005,PASS,10000,42,89,1,undefined empty-union metrics excluded only for that metric
+RCS13-FP16-Opt,RCS13-FP32,water_iou,-0.0005380583998696935,-0.0007960709001858816,-0.0007960709001858816,-0.00029556838888904164,-0.01,PASS,10000,42,85,5,undefined empty-union metrics excluded only for that metric
+RCS13-FP16-Opt,RCS13-FP32,boundary_water_iou,-0.00032871047696770867,-0.0007319464512800959,-0.0007319464512800959,0.00011318303667399993,-0.01,PASS,10000,42,85,5,undefined empty-union metrics excluded only for that metric
+RCS13-FP16-Opt,RCS13-FP32,agreement,-0.00019075086732788475,-0.00025396191412725726,-0.00025396191412725726,-0.00013525885542161597,-0.005,PASS,10000,42,89,1,undefined empty-union metrics excluded only for that metric

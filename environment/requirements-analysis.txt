@@ -1,3 +1,5 @@
 # Analysis dependencies; exact auxiliary versions are not all recorded in the manuscript.
-numpy
+numpy>=2.0
 matplotlib
+
+# NumPy >=2 supplies trapezoid for the retained energy integration implementation.

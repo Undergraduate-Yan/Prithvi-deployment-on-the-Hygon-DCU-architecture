@@ -1,0 +1,9 @@
+{
+  "frozen_test_replay": {
+    "first_sample_numeric_replay": {
+      "historically_assigned_sample_id": "Ghana_313799",
+      "actual_source_sample_id": "Ghana_1078550"
+    }
+  },
+  "scope": "Runtime index mapping retained in the study; the source raster and replay tensors are external."
+}

@@ -48,6 +48,15 @@
     ]
   },
   {
+    "file": "src/benchmarking/summarize_flood_kernels.py",
+    "arguments": [
+      "parser.add_argument(\"--manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--prepass-result\", required=True, type=Path)",
+      "parser.add_argument(\"--trace-root\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
     "file": "src/benchmarking/trace_cloud_session.py",
     "arguments": [
       "parser.add_argument(\"--model\", required=True, type=Path)",
@@ -56,6 +65,18 @@
       "parser.add_argument(\"--session-ordinal\", required=True, type=int)",
       "parser.add_argument(\"--repetitions\", type=int, default=20)",
       "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/benchmarking/trace_flood_region.py",
+    "arguments": [
+      "parser.add_argument(\"--manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--prepass-result\", required=True, type=Path)",
+      "parser.add_argument(\"--session-ordinal\", required=True, type=int)",
+      "parser.add_argument(\"--repetitions\", type=int, default=20)",
+      "parser.add_argument(\"--expected-start-block\", required=True, type=int)",
+      "parser.add_argument(\"--expected-end-block\", required=True, type=int)",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)"
     ]
   },
   {
@@ -156,6 +177,40 @@
       "parser.add_argument(\"--output-csv\", required=True, type=Path)",
       "parser.add_argument(\"--summary-json\", required=True, type=Path)",
       "parser.add_argument(\"--frozen-test-ids\", type=Path)"
+    ]
+  },
+  {
+    "file": "src/graph/build_fp16_region_probes.py",
+    "arguments": [
+      "parser.add_argument(\"--b3-manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--precision-map\", required=True, type=Path)",
+      "parser.add_argument(\"--input\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)",
+      "parser.add_argument(\"--profile\", choices=(\"full\", \"fallback-pairs\"), default=\"full\")"
+    ]
+  },
+  {
+    "file": "src/graph/build_head_probe.py",
+    "arguments": [
+      "parser.add_argument(\"--manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)",
+      "parser.add_argument(\"--start-block\", type=int, default=23)"
+    ]
+  },
+  {
+    "file": "src/graph/build_multiblock_probes.py",
+    "arguments": [
+      "parser.add_argument(\"--manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--regions-json\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/graph/build_pair_probes.py",
+    "arguments": [
+      "parser.add_argument(\"--manifest\", required=True, type=Path)",
+      "parser.add_argument(\"--regions-json\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
     ]
   },
   {
@@ -362,6 +417,40 @@
     ]
   },
   {
+    "file": "src/precision/cloud_screen_candidate.py",
+    "arguments": [
+      "parser.add_argument(\"--source\", required=True, type=Path)",
+      "parser.add_argument(\"--all24-qdq\", required=True, type=Path)",
+      "parser.add_argument(\"--all24-report\", required=True, type=Path)",
+      "parser.add_argument(\"--all24-parameters\", required=True, type=Path)",
+      "parser.add_argument(\"--task-protocol\", required=True, type=Path)",
+      "parser.add_argument(\"--formal-access-ledger\", required=True, type=Path)",
+      "parser.add_argument(\"--transfer-builder\", required=True, type=Path)",
+      "parser.add_argument(\"--rcs13-base-builder\", required=True, type=Path)",
+      "parser.add_argument(\"--cloud-topology\", required=True, type=Path)",
+      "parser.add_argument(\"--fp16-compat-tool\", required=True, type=Path)",
+      "parser.add_argument(\"--fp16-resize-tool\", required=True, type=Path)",
+      "parser.add_argument(\"--int8-blocks\", required=True)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/precision/cloud_transfer_builder.py",
+    "arguments": [
+      "parser.add_argument(\"--quantized-source\", type=Path, required=True)",
+      "parser.add_argument(\"--quantization-report\", type=Path, required=True)",
+      "parser.add_argument(\"--quantization-parameters\", type=Path, required=True)",
+      "parser.add_argument(\"--flood-transfer-map\", type=Path, required=True)",
+      "parser.add_argument(\"--cloud-topology\", type=Path, required=True)",
+      "parser.add_argument(\"--base-builder\", type=Path, required=True)",
+      "parser.add_argument(\"--fp16-compat-tool\", type=Path, required=True)",
+      "parser.add_argument(\"--fp16-resize-tool\", type=Path, required=True)",
+      "parser.add_argument(\"--synthetic-input\", type=Path, required=True)",
+      "parser.add_argument(\"--output-root\", type=Path, required=True)",
+      "parser.add_argument(\"--mode\", choices=(\"smoke\", \"official\"), default=\"official\")"
+    ]
+  },
+  {
     "file": "src/precision/evaluate_precision_maps.py",
     "arguments": [
       "parser.add_argument(\"--input-pack\", required=True, type=Path)",
@@ -374,6 +463,14 @@
       "parser.add_argument(\"--fp32-cache\", required=True, type=Path)",
       "parser.add_argument(\"--output-dir\", required=True, type=Path)",
       "parser.add_argument(\"--runtime-passes\", type=int, default=3)"
+    ]
+  },
+  {
+    "file": "src/precision/fp16_compat.py",
+    "arguments": [
+      "ap.add_argument(\"--source\", type=Path, required=True)",
+      "ap.add_argument(\"--output\", type=Path, required=True)",
+      "ap.add_argument(\"--report\", type=Path, required=True)"
     ]
   },
   {
@@ -471,12 +568,59 @@
     ]
   },
   {
+    "file": "src/runtime/parse_compile_passes.py",
+    "arguments": [
+      "parser.add_argument(\"--logs-root\", type=Path, required=True)",
+      "parser.add_argument(\"--output\", type=Path, required=True)"
+    ]
+  },
+  {
     "file": "src/runtime/prepare_cloud_feeds.py",
     "arguments": [
       "parser.add_argument(\"--model\", action=\"append\", required=True, type=Path)",
       "parser.add_argument(\"--dv-inputs\", required=True, type=Path)",
       "parser.add_argument(\"--sample-index\", type=int, default=0)",
       "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/runtime/prepare_cloud_system.py",
+    "arguments": [
+      "parser.add_argument(\"--config\", required=True, type=Path)",
+      "parser.add_argument(\"--dv-inputs\", required=True, type=Path)",
+      "parser.add_argument(\"--runner\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/runtime/run_compile_matrix.py",
+    "arguments": [
+      "parser.add_argument(\"--run-id\", required=True)",
+      "parser.add_argument(\"--input-manifest\", type=Path, required=True)",
+      "parser.add_argument(\"--raw-model\", type=Path, required=True)",
+      "parser.add_argument(\"--clean-model\", type=Path, required=True)",
+      "parser.add_argument(\"--feeds\", type=Path, required=True)",
+      "parser.add_argument(\"--shim\", type=Path, required=True)",
+      "parser.add_argument(\"--tools-root\", type=Path, required=True)",
+      "parser.add_argument(\"--output-root\", type=Path, required=True)",
+      "parser.add_argument(\"--configs\", default=\"C0,C1,C2,C3\")",
+      "parser.add_argument(\"--image\", default=EXACT_IMAGE)",
+      "parser.add_argument(\"--host-memory-budget-gib\", type=int, default=48)",
+      "parser.add_argument(\"--safety-stop-margin-gib\", type=int, default=1)",
+      "parser.add_argument(\"--container-hard-limit-gib\", type=int, default=49)",
+      "parser.add_argument(\"--sample-interval-seconds\", type=float, default=1.0)",
+      "parser.add_argument(\"--timeout-seconds\", type=int, default=10800)"
+    ]
+  },
+  {
+    "file": "src/statistics/analysis_utils.py",
+    "arguments": []
+  },
+  {
+    "file": "src/statistics/clean89.py",
+    "arguments": [
+      "parser.add_argument(\"--config\", required=True, type=Path)",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)"
     ]
   },
   {
@@ -492,6 +636,13 @@
     ]
   },
   {
+    "file": "src/statistics/cloud_confusion.py",
+    "arguments": [
+      "parser.add_argument(\"--config\", required=True, type=Path, help=\"JSON analysis configuration\")",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)"
+    ]
+  },
+  {
     "file": "src/statistics/flood_analysis.py",
     "arguments": []
   },
@@ -503,6 +654,123 @@
       "parser.add_argument(\"--iterations\", type=int, default=10000)",
       "parser.add_argument(\"--seed\", type=int, default=42)",
       "parser.add_argument(\"--output-dir\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/statistics/margin_sensitivity.py",
+    "arguments": [
+      "parser.add_argument(\"--config\", required=True, type=Path)",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/statistics/process_latency_ci.py",
+    "arguments": [
+      "parser.add_argument(\"--config\", required=True, type=Path)",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/system/cloud_summary.py",
+    "arguments": [
+      "parser.add_argument(\n        \"--node\", action=\"append\", required=True,\n        help=\"NAME=LATENCY_ROOT, or legacy NAME=LATENCY_ROOT=AUX_ROOT\",\n    )",
+      "parser.add_argument(\n        \"--aux\", action=\"append\", default=[],\n        help=\"NAME=AUX_ROOT; may identify a different clean hardware node from the latency matrix\",\n    )",
+      "parser.add_argument(\"--kernel-gate\", required=True, type=Path)",
+      "parser.add_argument(\"--compile-gate\", required=True, type=Path)",
+      "parser.add_argument(\"--output-root\", required=True, type=Path)"
+    ]
+  },
+  {
+    "file": "src/system/flood_cold.py",
+    "arguments": [
+      "p.add_argument(\"--label\",required=True)",
+      "p.add_argument(\"--config\",type=Path,required=True)",
+      "p.add_argument(\"--input\",type=Path,required=True)",
+      "p.add_argument(\"--output-dir\",type=Path,required=True)"
+    ]
+  },
+  {
+    "file": "src/system/flood_stability.py",
+    "arguments": [
+      "parser.add_argument(\"--label\", required=True)",
+      "parser.add_argument(\"--config\", type=Path, required=True)",
+      "parser.add_argument(\"--input\", type=Path, required=True)",
+      "parser.add_argument(\"--output-dir\", type=Path, required=True)",
+      "parser.add_argument(\"--duration-seconds\", type=float, default=3600.0)",
+      "parser.add_argument(\"--runner\", type=Path, required=True)",
+      "parser.add_argument(\"--sampler\", type=Path, required=True)"
+    ]
+  },
+  {
+    "file": "src/system/flood_system.py",
+    "arguments": [
+      "parser.add_argument(\"--mode\", choices=[\"benchmark\", \"cold-trial\", \"vram\", \"stability\", \"placement\"], required=True)",
+      "parser.add_argument(\"--label\", required=True)",
+      "parser.add_argument(\"--config\", required=True, type=Path)",
+      "parser.add_argument(\"--input\", required=True, type=Path)",
+      "parser.add_argument(\"--output-dir\", required=True, type=Path)",
+      "parser.add_argument(\"--warmup\", type=int, default=50)",
+      "parser.add_argument(\"--measured\", type=int, default=200)",
+      "parser.add_argument(\"--duration-seconds\", type=float, default=3600.0)"
+    ]
+  },
+  {
+    "file": "src/system/summarize_flood_cold_start.py",
+    "arguments": [
+      "parser.add_argument('--input-root', required=True, type=Path, action='append')",
+      "parser.add_argument('--output-dir', required=True, type=Path)",
+      "parser.add_argument('--node', required=True)"
+    ]
+  },
+  {
+    "file": "src/system/summarize_flood_energy.py",
+    "arguments": [
+      "parser.add_argument('--input-root', required=True, type=Path, action='append')",
+      "parser.add_argument('--output-dir', required=True, type=Path)",
+      "parser.add_argument('--node', required=True)"
+    ]
+  },
+  {
+    "file": "src/system/summarize_flood_recovery.py",
+    "arguments": [
+      "parser.add_argument('--input-root', required=True, type=Path, action='append')",
+      "parser.add_argument('--output-dir', required=True, type=Path)",
+      "parser.add_argument('--node', required=True)"
+    ]
+  },
+  {
+    "file": "src/system/summarize_flood_stability.py",
+    "arguments": [
+      "parser.add_argument(\"--raw-dir\", type=Path, required=True)",
+      "parser.add_argument(\"--output-dir\", type=Path, required=True)",
+      "parser.add_argument(\"--node\", required=True)"
+    ]
+  },
+  {
+    "file": "src/system/summarize_flood_vram.py",
+    "arguments": [
+      "parser.add_argument('--input-root', required=True, type=Path, action='append')",
+      "parser.add_argument('--output-dir', required=True, type=Path)",
+      "parser.add_argument('--node', required=True)"
+    ]
+  },
+  {
+    "file": "src/system/telemetry.py",
+    "arguments": [
+      "parser.add_argument(\"--stop\", type=Path, required=True)",
+      "parser.add_argument(\"--output\", type=Path, required=True)",
+      "parser.add_argument(\"--interval\", type=float, default=5.0)"
+    ]
+  },
+  {
+    "file": "src/system/vram_sampler.py",
+    "arguments": [
+      "parser.add_argument(\"--stop\", required=True, type=Path)",
+      "parser.add_argument(\"--output\", required=True, type=Path)",
+      "parser.add_argument(\"--interval\", type=float, default=0.05)",
+      "parser.add_argument(\"--vram-used\", type=Path, default=Path(\"/sys/class/drm/card1/device/mem_info_vram_used\"))",
+      "parser.add_argument(\"--vram-total\", type=Path, default=Path(\"/sys/class/drm/card1/device/mem_info_vram_total\"))",
+      "parser.add_argument(\"--kfd-proc\", type=Path, default=Path(\"/sys/class/kfd/kfd/proc\"))"
     ]
   }
 ]

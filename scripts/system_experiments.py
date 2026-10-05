@@ -1,0 +1,3 @@
+from _entrypoint import dispatch
+if __name__ == "__main__":
+    dispatch({'flood': 'src/system/flood_system.py', 'flood-cold': 'src/system/flood_cold.py', 'flood-stability': 'src/system/flood_stability.py', 'telemetry': 'src/system/telemetry.py', 'vram-sampler': 'src/system/vram_sampler.py', 'cloud-summary': 'src/system/cloud_summary.py', 'cloud-prepare': 'src/system/../runtime/prepare_cloud_system.py', 'flood-energy-summary': 'src/system/summarize_flood_energy.py', 'flood-vram-summary': 'src/system/summarize_flood_vram.py', 'flood-cold_start-summary': 'src/system/summarize_flood_cold_start.py', 'flood-recovery-summary': 'src/system/summarize_flood_recovery.py', 'flood-stability-summary': 'src/system/summarize_flood_stability.py'})

@@ -1,0 +1,43 @@
+{
+  "seed": 42,
+  "bootstrap_resamples": 10000,
+  "clean89": {
+    "per_scene_csv": "../../results/flood/per_scene_metrics.csv",
+    "identity_manifest": "../../manifests/datasets/flood/identity_mapping.json",
+    "historical_assigned_id": "Ghana_313799",
+    "actual_source_id": "Ghana_1078550",
+    "excluded_sample_index": 0
+  },
+  "margin_sensitivity": {
+    "inputs": {
+      "flood": "../../results/flood/bootstrap_full_precision.csv",
+      "cloud": "../../results/cloud/noninferiority_full_precision.csv"
+    },
+    "margins": [
+      0.0001,
+      0.00025,
+      0.0005,
+      0.001,
+      0.0025,
+      0.005,
+      0.01,
+      0.02
+    ]
+  },
+  "cloud_confusion": {
+    "classes": [
+      "Clear",
+      "Thick Cloud",
+      "Thin Cloud",
+      "Cloud Shadow"
+    ],
+    "inputs": {
+      "Cloud-RCS-FP32-Compat": "../../results/cloud/per_scene/fp32_confusion.csv",
+      "Cloud-RCS-FP16-Opt-v2": "../../results/cloud/per_scene/fp16_confusion.csv",
+      "Cloud-RCS-MP-Task-v2": "../../results/cloud/per_scene/mp_confusion.csv"
+    }
+  },
+  "same_node_ci": {
+    "latency_csv": "../../results/cloud/process_latency_calls.csv"
+  }
+}

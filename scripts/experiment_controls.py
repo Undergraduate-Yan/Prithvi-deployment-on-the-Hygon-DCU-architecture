@@ -1,0 +1,3 @@
+from _entrypoint import dispatch
+if __name__ == "__main__":
+    dispatch({'evaluate-precision': 'src/precision/evaluate_precision_maps.py', 'pair-probes': 'src/graph/build_pair_probes.py', 'multiblock-probes': 'src/graph/build_multiblock_probes.py', 'fp16-region-probes': 'src/graph/build_fp16_region_probes.py', 'head-probe': 'src/graph/build_head_probe.py', 'compile-matrix': 'src/runtime/run_compile_matrix.py', 'compile-passes': 'src/runtime/parse_compile_passes.py', 'flood-trace': 'src/benchmarking/trace_flood_region.py', 'flood-kernels': 'src/benchmarking/summarize_flood_kernels.py', 'cloud-candidate': 'src/precision/cloud_screen_candidate.py'})

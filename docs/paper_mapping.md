@@ -13,6 +13,6 @@
 
 `scripts/reproduce_tables.py` renders the 25 retained numerical/protocol tables indexed in `results/table_index.json`. It does not reproduce the supplementary correspondence table S1 or access-policy table S27.
 
-The diagnostic figure entry point requires complete per-scene block records. It does not certify regeneration of every manuscript figure. Selected runtime source is provided for the measured inference paths; the private orchestration, remote-host management and all original long-duration reliability workflows are not bundled.
+The diagnostic figure entry point requires complete per-scene block records. It does not certify regeneration of every manuscript figure. System measurement and sustained-operation workflows are provided in `src/system/` and `scripts/system/`. Remote login and file-transfer administration are excluded. See [experiment coverage](experiment_coverage.md) for included source, inputs and external prerequisites.
 
 The compact statistical entry point preserves the task-specific estimands. Its output is separate from the retained published tabulations and is written only to a new output directory.

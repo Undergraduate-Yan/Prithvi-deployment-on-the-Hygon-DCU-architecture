@@ -1,0 +1,42 @@
+{
+  "schema": "journal_precision_map_v1",
+  "name": "Ctrl_D5",
+  "status": "retained_paper_assignment",
+  "backbone": {
+    "fp16_blocks": [
+      0,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "int8_blocks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      22,
+      23
+    ]
+  },
+  "head_precision": "FP32",
+  "external_io": {
+    "input": "FP32[1,6,224,224]",
+    "output": "FP32[1,2,224,224]"
+  },
+  "selection_source": "results/flood/configuration_candidates.csv",
+  "scope": "configuration-set comparison; flood public-pool evaluation remains descriptive"
+}

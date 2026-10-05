@@ -1,0 +1,66 @@
+[
+  {
+    "paper_label": "Ctrl_early",
+    "configuration": "configs/precision/candidates/Ctrl_early.json"
+  },
+  {
+    "paper_label": "Ctrl_late",
+    "configuration": "configs/precision/candidates/Ctrl_late.json"
+  },
+  {
+    "paper_label": "Ctrl_D5",
+    "configuration": "configs/precision/candidates/Ctrl_D5.json"
+  },
+  {
+    "paper_label": "C0",
+    "configuration": "configs/precision/candidates/C0.json"
+  },
+  {
+    "paper_label": "C1",
+    "configuration": "configs/precision/candidates/C1.json"
+  },
+  {
+    "paper_label": "C2",
+    "configuration": "configs/precision/candidates/C2.json"
+  },
+  {
+    "paper_label": "C3",
+    "configuration": "configs/precision/candidates/C3.json"
+  },
+  {
+    "paper_label": "C4",
+    "configuration": "configs/precision/candidates/C4.json"
+  },
+  {
+    "paper_label": "C5",
+    "configuration": "configs/precision/candidates/C5.json"
+  },
+  {
+    "paper_label": "Ctrl_U42",
+    "configuration": "configs/precision/candidates/Ctrl_U42.json"
+  },
+  {
+    "paper_label": "Ctrl_U43",
+    "configuration": "configs/precision/candidates/Ctrl_U43.json"
+  },
+  {
+    "paper_label": "Ctrl_U44",
+    "configuration": "configs/precision/candidates/Ctrl_U44.json"
+  },
+  {
+    "paper_label": "Ctrl_U45",
+    "configuration": "configs/precision/candidates/Ctrl_U45.json"
+  },
+  {
+    "paper_label": "Ctrl_U46",
+    "configuration": "configs/precision/candidates/Ctrl_U46.json"
+  },
+  {
+    "paper_label": "Ctrl_runtime",
+    "configuration": "configs/precision/candidates/Ctrl_runtime.json"
+  },
+  {
+    "paper_label": "Ctrl_task-sensitivity",
+    "configuration": "configs/precision/candidates/Ctrl_task-sensitivity.json"
+  }
+]

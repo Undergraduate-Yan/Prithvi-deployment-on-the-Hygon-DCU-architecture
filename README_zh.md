@@ -47,3 +47,9 @@ python scripts/analyze_results.py cloud --output-dir outputs/cloud-analysis
 洪水运行索引0的记录名称与实际来源不同，说明见 `docs/evaluation_protocols.md`。清单中的历史字段名仅用于数据格式兼容，不能据此将洪水评价解释为独立确认。
 
 本研究自编软件及其配套软件文档、配置文件采用 [Apache-2.0 许可证](LICENSE)。许可范围见 [许可说明](docs/licensing.md)，署名信息见 [NOTICE](NOTICE)。第三方组件、数据集、模型权重及数据集派生记录仍受各自适用条款约束，详见 [第三方资源说明](THIRD_PARTY_NOTICES.md)。欢迎依据 `CITATION.cff` 引用本研究；学术引用请求不构成额外许可条件。
+
+## 实验复现与测试
+
+逐项范围见 [实验清单](docs/experiment_coverage.md)，执行步骤见 [复现手册](docs/experiment_runbook.md) 和 [系统测量说明](docs/system_measurements.md)，所需外部材料见 [输入要求](docs/external_requirements.md)。包括精度对照、图重构与编译探测、统计敏感性、受控计时、能耗/显存、冷启动、故障恢复和持续运行。
+
+统一离线入口为 `python scripts/reproduce_offline.py --output-dir outputs/offline`。配套 [prompt.md](prompt.md) 要求独立测试数值正确性、接口与硬件流程。整理代码时未执行这些实验；外部材料是否齐全、代码是否运行通过，应由测试逐项确认。
