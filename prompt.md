@@ -12,7 +12,7 @@
 
 - GitHub 仓库：`https://github.com/Undergraduate-Yan/Prithvi-deployment-on-the-Hygon-DCU-architecture`
 - 当前默认分支及测试分支：`paper-code`。仓库当前以 `paper-code` 作为默认分支；不要切换到旧的 `main`，也不要把旧分支内容当作测试对象。
-- 测试目标为 `paper-code` 分支中包含 `docs/experiment_coverage.md`、`scripts/reproduce_offline.py` 和 `src/system/` 的完整版本；开始时记录实际提交 SHA（当前已知提交为 `708a56553e9fb1e97a469dcf43183d376537d8d9`，仍须以实际获取到的远端 SHA 为准）。不要使用仅含早期核心代码的旧提交。
+- 测试目标为 `paper-code` 分支中包含 `docs/experiment_coverage.md`、`scripts/reproduce_offline.py` 和 `src/system/` 的完整版本；开始时必须记录实际获取到的远端提交 SHA，并以该 SHA 作为测试对象标识。不要使用仅含早期核心代码的旧提交。
 - 本地代码：用户提供的 `prithvi-hygon-deployment` 目录或相应代码压缩包。
 - 可选论文依据：用户提供的投稿版 `Manuscript.pdf` 和英文 `Supplementary_Materials.pdf`。先确认文件存在及版本，无法获取时不得假称读过。
 
