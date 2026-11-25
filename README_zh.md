@@ -1,8 +1,18 @@
 # 面向海光DCU架构的Prithvi部署
 
-本仓库对应论文 **Onboard Deployment of Remote Sensing Foundation Models for the Hygon DCU Architecture**，提供分块数值诊断、精度分配、执行图重构、任务评价与性能测量代码，以及可用于结果复查的派生记录。
+本仓库对应论文 **面向服务器 DCU 的遥感基础模型星载部署**，提供分块数值诊断、精度分配、执行图重构、任务评价与性能测量代码，以及可用于结果复查的派生记录。
 
-作者：严晨钢、谭海宁、尹龙祥、王有为、罗杰、邱吉冰。通讯邮箱：qiujibing@ict.ac.cn。
+作者：严晨钢、邱吉冰、谭海宁、尹龙祥、王有为、罗杰。通讯邮箱：qiujibing@ict.ac.cn。
+
+## 本轮主修
+
+[主修材料与复算说明](revision/major/README.md)汇总了中英文高亮手稿、补充材料、主要实验代码和派生结果。
+
+```bash
+python revision/major/python/verify_offline.py
+```
+
+该命令用 NumPy 从已保留的派生记录复算外部洪水评估的事件加权统计，并核验新增的同节点系统测量。实验数据来自地面 K100 试验。拟议的星载方案由服务器级 CPU 接收相机数据并调度，DCU 在轨执行推理。
 
 ## 研究范围
 

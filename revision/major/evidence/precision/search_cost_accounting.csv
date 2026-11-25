@@ -1,0 +1,4 @@
+method,configuration_images,task_graph_evaluations_for_selection,task_graph_evaluations_for_candidate_check,cpu_block_invocations_for_diagnostics,accelerator_block_invocations_for_diagnostics,retained_measured_seconds,measurement_scope,total_search_wall_time_measured
+Local-discrepancy candidate construction,64,0,64,3008,3008,180.4745587320067,"sum of 24 timed per-block loops, including CPU/MIGraphX tensor comparisons; excludes session creation, model preparation, compilation and candidate task check",False
+"Uniform random 9-block map, one seed",64,0,64,0,0,,map sampling plus one candidate evaluation; wall time not retained,False
+Task-singleton sensitivity heuristic,64,1536,64,0,0,,"24 one-block substitutions times64 images, excluding shared all-INT8 and FP32 reference evaluations; no complete search wall time retained",False

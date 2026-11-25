@@ -1,0 +1,3 @@
+segments,precision,processes,calls,median_ms,p95_ms,p99_ms,median_process_peak_host_RSS_GiB,maximum_sampled_device_GiB,logical_declared_tensor_buffers_MiB
+25,C5 backbone; FP32-compatible head,5,1000,23.243170499999998,24.3965973,27.252709219999996,6.354114532470703,17.458988189697266,20.19140625
+13,C5 backbone; FP32-compatible head,5,1000,20.696174,21.3235817,23.28559905,6.395294189453125,10.810596466064453,12.49609375

@@ -1,0 +1,11 @@
+variant,metric,estimand,groups,mean_difference,ci95_low,ci95_high,one_sided95_lcb,status,undefined_event_groups,undefined_event_ids,allowed_decrease,required_gate,noninferiority_established
+RCS13_FP16_OPT,miou,equal_event_mean_of_paired_event_pooled_metric_differences,21,-0.0002934994404650731,-0.0004972456413288432,-0.00010437147394140565,-0.00046204602595947093,ESTIMATED,0,,0.005,True,True
+RCS13_FP16_OPT,water_iou,equal_event_mean_of_paired_event_pooled_metric_differences,21,-0.0005028554559445012,-0.0008638150863949072,-0.0001890846169321245,-0.0007986814186614042,ESTIMATED,0,,0.01,True,True
+RCS13_FP16_OPT,boundary_water_iou,equal_event_mean_of_paired_event_pooled_metric_differences,21,-0.0002081203442760192,-0.0006415780524428238,0.00018140844548212857,-0.000564683144806819,ESTIMATED,0,,0.01,True,True
+RCS13_FP16_OPT,pixel_accuracy,equal_event_mean_of_paired_event_pooled_metric_differences,21,-6.455838312364419e-05,-0.0001572728086276147,2.611214865628643e-05,-0.0001409774826093076,ESTIMATED,0,,,False,
+RCS13_FP16_OPT,agreement,equal_event_mean_of_paired_event_pooled_metric_differences,21,-0.00021683385132701774,-0.0003244076359693322,-0.0001252171681986185,-0.00030599487058478804,ESTIMATED,0,,0.005,True,True
+MP_RCS_OPT,miou,equal_event_mean_of_paired_event_pooled_metric_differences,21,-0.001162637184862959,-0.002755948577683056,2.5509664967356148e-05,-0.0024273988114348853,ESTIMATED,0,,0.005,True,True
+MP_RCS_OPT,water_iou,equal_event_mean_of_paired_event_pooled_metric_differences,21,-0.0018339399209409723,-0.003949904261041506,-7.415302902672951e-05,-0.003587490348098828,ESTIMATED,0,,0.01,True,True
+MP_RCS_OPT,boundary_water_iou,equal_event_mean_of_paired_event_pooled_metric_differences,21,0.00013279232445701744,-0.0019001782485606191,0.0019925235432900652,-0.0015162229028887271,ESTIMATED,0,,0.01,True,True
+MP_RCS_OPT,pixel_accuracy,equal_event_mean_of_paired_event_pooled_metric_differences,21,-0.0004550502455369048,-0.0013514633493807331,9.514770173019739e-05,-0.0012490758063210155,ESTIMATED,0,,,False,
+MP_RCS_OPT,agreement,equal_event_mean_of_paired_event_pooled_metric_differences,21,-0.0018230865182724543,-0.00295994665639547,-0.0009646307878421282,-0.0027700438016375925,ESTIMATED,0,,0.005,True,True

@@ -1,0 +1,3 @@
+precision,node,sessions,processes,tile_calls,median_tile_gross_device_J,median_tile_above_idle_device_J,median_incremental_device_GiB,median_sampled_absolute_device_GiB,maximum_host_VmHWM_GiB,power_scope,minimum_tile_above_idle_device_J,maximum_tile_above_idle_device_J,minimum_incremental_device_GiB,maximum_incremental_device_GiB
+fp32,3,14,5,13866,5.989623085967346,4.187924643815463,12.446792602539062,12.44887924194336,9.05312728881836,DCU package only,4.128287063647866,4.230299405797346,12.405807495117188,12.470268249511719
+fp16,3,14,5,17233,3.938625547466292,2.501060927824284,10.8984375,10.900524139404297,7.039951324462891,DCU package only,2.4783670034493945,2.510561335682051,10.895259857177734,10.95712661743164

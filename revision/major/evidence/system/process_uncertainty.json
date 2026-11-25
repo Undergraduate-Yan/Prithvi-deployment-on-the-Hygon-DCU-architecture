@@ -1,0 +1,21 @@
+{
+  "flood_25_minus13_process_median_ms_95CI": [
+    2.4386260000000006,
+    2.6666507999999984
+  ],
+  "cloud_fp32_minus_fp16_process_mean_scene_s_95CI": [
+    0.34653473346494107,
+    0.36360157592687753
+  ],
+  "resampling_unit": "paired round/process; five pairs; scenes/calls within process not independent replicates",
+  "replicates": 10000,
+  "seed": 42,
+  "cloud_fp32_minus_fp16_process_mean_above_idle_J_per_tile_95CI": [
+    1.6557294404351208,
+    1.7154818655530513
+  ],
+  "cloud_fp32_minus_fp16_process_mean_device_increment_GiB_95CI": [
+    1.4896324157714844,
+    1.560198974609375
+  ]
+}

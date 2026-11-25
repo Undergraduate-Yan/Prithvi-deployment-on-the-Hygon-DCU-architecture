@@ -1,0 +1,5 @@
+configuration,formal_budget_GiB,active_stop_GiB,hard_limit_GiB,peak_cgroup_GiB,peak_process_tree_RSS_sum_GiB,budget_stopped,oom_killed_flag,cgroup_failcnt,mxr_generated,source_sha256
+C0,48.0,48.0,49.0,48.060760498046875,49.11948776245117,True,True,0,False,f72dfd0039e88e7d0bf8d8be3fb3da63667103e9fc35dca2290d5e3fa357d7de
+C1,48.0,47.0,49.0,47.45772933959961,48.98421096801758,True,True,0,False,19c184e2954aaec080088c0e250586ec27a93dbf393de367b838653e1a82de93
+C2,48.0,47.0,49.0,47.4820671081543,48.975433349609375,True,True,0,False,894367a1df1a0148ec26dab05cc710c15253894de4e69f5178490f0bac47c965
+C3,48.0,47.0,49.0,47.446353912353516,48.81866455078125,True,True,0,False,cab9939deb460cbfa90d6f8c5e7da31232969e2e39aca31b68e0eb4575321dfd

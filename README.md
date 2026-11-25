@@ -4,10 +4,14 @@
 
 Research code and compact derived records associated with:
 
-**Onboard Deployment of Remote Sensing Foundation Models for the Hygon DCU Architecture**
+**Onboard Deployment of Remote Sensing Foundation Models with a Server-Class DCU**
 
-Chengang Yan, Haining Tan, Longxiang Yin, Youwei Wang, Jie Luo and Jibing Qiu.
+Chengang Yan, Jibing Qiu, Haining Tan, Longxiang Yin, Youwei Wang and Jie Luo.
 Correspondence: qiujibing@ict.ac.cn.
+
+## Major revision
+
+See the [major revision materials](revision/major/README.md) for the highlighted manuscript, supplements and derived evidence. The [offline verification command](revision/major/README.md#offline-checks) reproduces the external flood event statistics and checks the new paired system measurements.
 
 ## Research scope
 

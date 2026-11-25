@@ -1,0 +1,9 @@
+﻿item,target_or_reference,evidence_category,assessment,missing_qualification
+Spacecraft class,500 kg class,author-specified research design envelope,Not a measured spacecraft configuration,Mission-specific platform allocation and integration design
+Computing subsystem mass,50 kg design allocation,author-specified design budget,No flight-equipment mass measurement or component mass breakdown is supplied,"Electronics, storage, enclosure, power conversion, harness, shielding and thermal hardware allocation"
+Computing power,1800 W peak or design upper limit,author-specified design budget,Not continuous orbital power and not a measured ground-computer peak,"Whole-computer power, peak duration, orbit-average energy, conversion loss and other payload loads"
+Host and device memory,64 GB-class host RAM and 64 GB-class DCU VRAM proxy,ground-platform reference for design,"Host RAM, device VRAM, persistent model storage and compile memory are separate quantities","Flight-qualified memory architecture, ECC/fault handling and available runtime headroom"
+Volume,not specified,unresolved design parameter,Mass alone cannot establish fit,"Computer dimensions, mounting, connectors and thermal interface"
+Data source,Camera -> onboard data store -> computing subsystem,author-specified functional architecture,Ground scene replay starts at stored image-product reading,"Actual sensor data level, ingest bandwidth, calibration/registration and storage-interface measurement"
+Spectral input,B02 B03 B04 B8A B11 B12,frozen model input contract,Includes SWIR B11/B12; VNIR-only cameras are not directly equivalent,"Camera spectral-response match, resampling and model validation for the actual sensor"
+Thermal and environmental behaviour,not measured in orbit or thermal vacuum,explicit limitation,Ground stability loops validate the recorded software process only,"Heat rejection, radiation response, vibration and mission-level recovery qualification"

@@ -12,3 +12,7 @@ configs/topology/flood_partition_locked.json -text
 # Preserve retained numerical tables byte-for-byte.
 results/** -text
 manifests/datasets/** -text
+# Preserve revision evidence bytes, including original retained CSV line endings.
+revision/major/evidence/** -text
+# Preserve frozen hardware source bytes.
+revision/major/hardware/** -text

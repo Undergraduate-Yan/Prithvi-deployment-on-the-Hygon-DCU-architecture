@@ -1,0 +1,74 @@
+{
+  "cardinalities_in_generator": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    9
+  ],
+  "nine_is_historical_prespecified_candidate_count": true,
+  "not_recovered": [
+    "a hardware-byte budget derivation of nine",
+    "an exhaustive search or marginal-gain stopping rule establishing nine as optimal"
+  ],
+  "frozen_C5_fp16_blocks": [
+    0,
+    8,
+    10,
+    14,
+    15,
+    17,
+    18,
+    19,
+    20
+  ],
+  "full_ranking": [
+    0,
+    14,
+    17,
+    18,
+    15,
+    20,
+    19,
+    8,
+    10,
+    16,
+    11,
+    21,
+    13,
+    1,
+    2,
+    9,
+    3,
+    6,
+    12,
+    7,
+    5,
+    4,
+    22,
+    23
+  ],
+  "tie_rule": [
+    "descending local relative-L2 P90",
+    "descending local MAE P90",
+    "descending local max-absolute-error P90",
+    "ascending block index"
+  ],
+  "all_primary_scores_distinct_in_full64": true,
+  "all_possible_9_of24_assignments": 1307504,
+  "same_cardinality_only": true,
+  "complete_compiled_byte_accounting_for_all_controls_available": false,
+  "task_singleton_top9_reproduced": [
+    0,
+    3,
+    9,
+    12,
+    13,
+    14,
+    15,
+    16,
+    20
+  ],
+  "task_singleton_is_not_joint_or_exhaustive_search": true
+}
